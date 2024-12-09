@@ -65,7 +65,7 @@ export default function HeroCarousel() {
                         {images.map((_, index) => (
                             <span
                                 key={index}
-                                className={`w-2 h-2 rounded-full ${current === index ? 'bg-green-500' : 'bg-gray-300'
+                                className={`w-6 h-2 rounded-full ${current === index ? 'bg-green-500' : 'bg-gray-300'
                                     }`}
                             />
                         ))}

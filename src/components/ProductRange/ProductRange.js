@@ -1,87 +1,84 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import Image from 'next/image'
-import { motion, useInView } from 'framer-motion'
-import { Card, CardContent } from '@/components/ui/card'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import { useMediaQuery } from '@/hooks/use-media-query'
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 const products = [
   {
-    name: 'Long Grain Rice',
-    image: '/images/products/image.png'
+    name: "Long Grain Rice",
+    image: "/images/products/image.png",
   },
   {
-    name: 'Sharbati Golden Sella Rice',
-     image: '/images/products/image-1.png'
+    name: "Sharbati Golden Sella Rice",
+    image: "/images/products/image-1.png",
   },
   {
-    name: 'Sona Masoori Rice',
-    image: '/images/products/image-2.png'
+    name: "Sona Masoori Rice",
+    image: "/images/products/image-2.png",
   },
   {
-    name: 'Cotton Seed Cake',
-    image: '/images/products/image-3.png'
+    name: "Cotton Seed Cake",
+    image: "/images/products/image-3.png",
   },
   {
-    name: 'Raisin',
-    image: '/images/products/image-4.png'
-  }
-]
-
-const MotionCard = motion(Card)
+    name: "Raisin",
+    image: "/images/products/image-4.png",
+  },
+];
 
 export default function ProductRange() {
-  const isMobile = useMediaQuery('(max-width: 768px)')
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const ref = useRef(null);
+  const [isInView, setIsInView] = useState(false);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
+  useEffect(() => {
+    const currentRef = ref.current; // Copy ref value to a variable
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 100
-      }
-    }
-  }
+    if (!currentRef) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(currentRef);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []); // No extra dependencies needed
 
   return (
     <section className="w-full py-16 px-4" ref={ref}>
       <div className="container mx-auto">
-        <motion.h2 
-          className="text-2xl md:text-3xl font-medium mb-8 text-left"
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.5 }}
+        <h2
+          className={`text-2xl md:text-3xl font-medium mb-8 text-left transform transition-all duration-500 ${
+            isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+          }`}
         >
           Check Out Our Range
-        </motion.h2>
+        </h2>
 
         {isMobile ? (
           <Carousel className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {products.map((product, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5 md:basis-1/2">
-                  <MotionCard 
-                    className="border-none shadow-none"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 basis-4/5 md:basis-1/2"
+                >
+                  <Card className="border-none shadow-none transform transition-transform duration-300 hover:scale-105">
                     <CardContent className="p-0">
                       <div className="aspect-square relative overflow-hidden rounded-lg mb-3">
                         <Image
@@ -96,7 +93,7 @@ export default function ProductRange() {
                         {product.name}
                       </h3>
                     </CardContent>
-                  </MotionCard>
+                  </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -104,19 +101,20 @@ export default function ProductRange() {
             <CarouselNext className="-right-3 md:-right-5" />
           </Carousel>
         ) : (
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+          <div
+            className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 transform transition-opacity duration-700 ${
+              isInView ? "opacity-100" : "opacity-0"
+            }`}
           >
             {products.map((product, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <MotionCard 
-                  className="border-none bg-transparent shadow-none"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
+              <div
+                key={index}
+                className="transform transition-transform duration-500 hover:scale-105"
+                style={{
+                  transitionDelay: `${index * 100}ms`, // Stagger effect
+                }}
+              >
+                <Card className="border-none bg-transparent shadow-none">
                   <CardContent className="p-0">
                     <div className="aspect-square relative overflow-hidden rounded-lg mb-3">
                       <Image
@@ -131,13 +129,12 @@ export default function ProductRange() {
                       {product.name}
                     </h3>
                   </CardContent>
-                </MotionCard>
-              </motion.div>
+                </Card>
+              </div>
             ))}
-          </motion.div>
+          </div>
         )}
       </div>
     </section>
-  )
+  );
 }
-

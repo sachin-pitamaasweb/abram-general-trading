@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import FooterBottom from "@/components/Footer/FooterBottom";
 
 const geistSans = localFont({
   src: "./fonts/MADE-Tommy-Soft-Light-PERSONAL-USE.woff",
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <FooterBottom />
       </body>
     </html>
   );

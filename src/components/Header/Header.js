@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, ChevronDown } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -99,14 +98,13 @@ export default function Header() {
                     </DropdownMenuContent>
                   </DropdownMenu>
                 ) : (
-                  <motion.div key={item.label} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      href={item.href}
-                      className="text-sm font-medium text-gray-800 hover:text-primary transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-sm font-medium text-gray-800 hover:text-primary transition-transform hover:scale-105"
+                  >
+                    {item.label}
+                  </Link>
                 )
               ))}
             </nav>
@@ -125,45 +123,36 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto"
-          >
-            <div className="container mx-auto px-4 py-6">
-              <div className="flex justify-between items-center mb-8">
-                <CloseButton onClick={() => setIsMenuOpen(false)} className="order-2" />
-                <h2 className="text-2xl font-bold text-gray-800">Menu</h2>
-                <div className="w-10" /> {/* Spacer for alignment */}
-              </div>
-              <div className="flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <div key={item.label}>
-                    {item.hasDropdown ? (
-                      <MobileDropdown label={item.label} items={productItems} />
-                    ) : (
-                      <motion.div whileHover={{ x: 10 }} whileTap={{ scale: 0.95 }}>
-                        <Link
-                          href={item.href}
-                          className="text-lg font-medium text-gray-800 hover:text-primary transition-colors"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      </motion.div>
-                    )}
-                  </div>
-                ))}
-              </div>
+      {isMenuOpen && (
+        <div className={`fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-transform transform ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex justify-between items-center mb-8">
+              <CloseButton onClick={() => setIsMenuOpen(false)} className="order-2" />
+              <h2 className="text-2xl font-bold text-gray-800">Menu</h2>
+              <div className="w-10" /> {/* Spacer for alignment */}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  {item.hasDropdown ? (
+                    <MobileDropdown label={item.label} items={productItems} />
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-lg font-medium text-gray-800 hover:text-primary transition-transform hover:translate-x-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
-
