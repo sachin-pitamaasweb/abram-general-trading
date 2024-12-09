@@ -40,6 +40,39 @@ export default function RootLayout({ children }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         />
+        {/* OpenGraph Meta Tags */}
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.abramgeneraltrading.com/" />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:site_name" content="Abram General Trading L.L.C." />
+
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://www.abramgeneraltrading.com/" />
+
+        {/* Schema.org Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Abram General Trading L.L.C.",
+            "url": "https://www.abramgeneraltrading.com/",
+            "logo": "https://www.abramgeneraltrading.com/logo.png",
+            "description": metadata.description,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dubai",
+              "addressRegion": "UAE",
+              "addressCountry": "United Arab Emirates",
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+971-xxx-xxxx",
+              "contactType": "Customer Service",
+            },
+          })}
+        </script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
