@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abram-general-trading.vercel.app/sitemap.xml
