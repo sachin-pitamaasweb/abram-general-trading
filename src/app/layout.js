@@ -18,8 +18,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Abram General Trading L.L.C. | Quality Agro Products Exporter",
-  description:
-    "Abram General Trading L.L.C. offers high-quality Basmati Rice, Chickpeas, Groundnuts, Spices, Pulses, Sugar, Dairy Products, Tea, Coffee Beans, and other agro products. Headquartered in Dubai, we serve Gulf and worldwide clients with premium agro exports.",
+  description: "Abram General Trading L.L.C. exports premium Basmati Rice, Spices, Pulses, Tea, and Dairy Products globally. Based in Dubai, we ensure quality.",
   keywords:
     "Abram General Trading, Agro Products Exporter, Basmati Rice, Chickpeas, Groundnuts, Spices, Pulses, Sugar, Dairy Products, Agro Products Dubai, Indian Agro Products Exporter, Gulf Agro Supplier",
   author: "Abram General Trading Team",
