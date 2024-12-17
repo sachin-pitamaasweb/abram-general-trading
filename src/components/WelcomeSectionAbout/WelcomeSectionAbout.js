@@ -2,8 +2,8 @@ import React from "react";
 
 export default function WelcomeSection() {
     return (
-      <div className="min-h-screen mt-30">
-        <div className="bg-emerald-500 p-6">
+      <div className="mt-30">
+        <div className="bg-green-500 p-6">
           <h1 className="text-center text-white text-2xl md:text-3xl font-bold">
             WELCOME TO ABRAM GENERAL TRADING
           </h1>

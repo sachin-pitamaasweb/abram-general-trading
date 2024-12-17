@@ -1,7 +1,11 @@
+import React from "react";
+
 import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
 import MetricsSection from "@/components/MetricsSection/MetricsSection";
 import WelcomeSectionAbout from "@/components/WelcomeSectionAbout/WelcomeSectionAbout";
-import React from "react";
+import CompanyInfo from "@/components/CompanyInfo/CompanyInfo";
+import MarketingCard from "@/components/MarketingCard/MarketingCard";
+import SupportSection from "@/components/SupportSection/SupportSection";
 
 export const metadata = {
   title: "About Us | Abram General Trading L.L.C.",
@@ -15,6 +19,9 @@ export default function AboutPage() {
      <HeroCarousel />
      <WelcomeSectionAbout />  
      <MetricsSection />
+     <CompanyInfo />
+     <MarketingCard />
+     <SupportSection />
     </>
   );
 }
