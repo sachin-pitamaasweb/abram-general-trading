@@ -6,6 +6,7 @@ import WelcomeSectionAbout from "@/components/WelcomeSectionAbout/WelcomeSection
 import CompanyInfo from "@/components/CompanyInfo/CompanyInfo";
 import MarketingCard from "@/components/MarketingCard/MarketingCard";
 import SupportSection from "@/components/SupportSection/SupportSection";
+import WhyUsSection from "@/components/WhyUsSection/WhyUsSection";
 
 export const metadata = {
   title: "About Us | Abram General Trading L.L.C.",
@@ -21,6 +22,7 @@ export default function AboutPage() {
      <MetricsSection />
      <CompanyInfo />
      <MarketingCard />
+     <WhyUsSection />
      <SupportSection />
     </>
   );
