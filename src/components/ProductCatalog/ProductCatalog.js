@@ -108,26 +108,26 @@ export default function ProductCatalog() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div className="aspect-square relative rounded-lg overflow-hidden">
                                     <Image
-                                        src="/images/products/pulses/p-1.png"
+                                        src="/images/pulses/p-1.png"
                                         alt="Pulses variety 1"
                                         fill
-                                        className="object-contain"
+                                        className="object-cover"
                                     />
                                 </div>
                                 <div className="aspect-square relative rounded-lg overflow-hidden">
                                     <Image
-                                        src="/images/products/pulses/p-2.png"
+                                        src="/images/pulses/p-2.png"
                                         alt="Pulses variety 2"
                                         fill
-                                        className="object-contain"
+                                        className="object-cover"
                                     />
                                 </div>
                                 <div className="aspect-square relative rounded-lg overflow-hidden">
                                     <Image
-                                        src="/images/products/pulses/p-3.png"
+                                        src="/images/pulses/p-3.png"
                                         alt="Pulses variety 3"
                                         fill
-                                        className="object-contain"
+                                        className="object-cover"
                                     />
                                 </div>
                             </div>
