@@ -108,7 +108,7 @@ export default function ProductCatalog() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div className="aspect-square relative rounded-lg overflow-hidden">
                                     <Image
-                                        src="/images/pulses/p-1.png"
+                                        src="https://res.cloudinary.com/dtivafy25/image/upload/v1734516146/p-1_g3lsnn.png"
                                         alt="Pulses variety 1"
                                         fill
                                         className="object-cover"
@@ -116,7 +116,7 @@ export default function ProductCatalog() {
                                 </div>
                                 <div className="aspect-square relative rounded-lg overflow-hidden">
                                     <Image
-                                        src="/images/pulses/p-2.png"
+                                        src="https://res.cloudinary.com/dtivafy25/image/upload/v1734516147/p-2_okrikt.png"
                                         alt="Pulses variety 2"
                                         fill
                                         className="object-cover"
@@ -124,7 +124,7 @@ export default function ProductCatalog() {
                                 </div>
                                 <div className="aspect-square relative rounded-lg overflow-hidden">
                                     <Image
-                                        src="/images/pulses/p-3.png"
+                                        src="https://res.cloudinary.com/dtivafy25/image/upload/v1734516147/p-3_brhzni.png"
                                         alt="Pulses variety 3"
                                         fill
                                         className="object-cover"
