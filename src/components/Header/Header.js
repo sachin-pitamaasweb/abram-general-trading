@@ -40,10 +40,10 @@ export default function Header() {
     { label: 'ABOUT US', href: '/about' },
     // { label: 'OUR PRODUCTS', href: '/products', hasDropdown: true },
     { label: 'OUR PRODUCTS', href: '/products' },
-    { label: 'RECIPES', href: '/recipes' },
+    // { label: 'RECIPES', href: '/recipes' },
     { label: 'OUR QUALITY', href: '/quality' },
     { label: 'PHOTO GALLERY', href: '/gallery' },
-    { label: 'CAREER', href: '/career' },
+    // { label: 'CAREER', href: '/career' },
     { label: 'CONTACT US', href: '/contact' },
   ]
 

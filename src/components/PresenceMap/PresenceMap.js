@@ -73,11 +73,11 @@ export default function PresenceMap() {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
           />
           {/* Location Indicators */}
-          <div className="absolute top-[45%] right-[78%] w-4 h-4 bg-green-500 rounded-full animate-location" /> {/* Gujarat */}
-          <div className="absolute top-[56%] right-[68%] w-8 h-8 bg-green-500 rounded-full animate-location delay-100" /> {/* Maharashtra - larger dot */}
-          <div className="absolute top-[46%] right-[60%] w-3 h-3 bg-green-500 rounded-full animate-location delay-200" /> {/* Madhya Pradesh */}
-          <div className="absolute top-[50%] right-[48%] w-3 h-3 bg-green-500 rounded-full animate-location delay-300" /> {/* Chhattisgarh */}
-          <div className="absolute bottom-[26%] right-[68%] w-4 h-4 bg-green-500 rounded-full animate-location delay-400" /> {/* Karnataka */}
+          <div className="absolute top-[45%] right-[78%] w-4 h-4 bg-[#9FCCB5] rounded-full animate-location" /> {/* Gujarat */}
+          <div className="absolute top-[56%] right-[68%] w-8 h-8 bg-[#09723C] rounded-full animate-location delay-100" /> {/* Maharashtra - larger dot */}
+          <div className="absolute top-[46%] right-[60%] w-3 h-3 bg-[#09723C] rounded-full animate-location delay-200" /> {/* Madhya Pradesh */}
+          <div className="absolute top-[50%] right-[48%] w-3 h-3 bg-[#09723C] rounded-full animate-location delay-300" /> {/* Chhattisgarh */}
+          <div className="absolute bottom-[26%] right-[68%] w-4 h-4 bg-[#09723C] rounded-full animate-location delay-400" /> {/* Karnataka */}
         </div>
       </div>
 
