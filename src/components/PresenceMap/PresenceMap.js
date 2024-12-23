@@ -45,11 +45,11 @@ import Image from "next/image";
 
 export default function PresenceMap() {
   return (
-    <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div className="mx-auto px-4 py-8 sm:py-12 lg:py-16 bg-gray-50">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Text Content */}
         <div className="space-y-4 text-center lg:text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">Presence</h2>
+          <h2 className="text-4xl font-medium mb-8">Presence</h2>
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
             We have a strong presence across key states in India. Our operations span Maharashtra,
             Madhya Pradesh, Karnataka, Gujarat, and Chhattisgarh, allowing us to serve a wide
