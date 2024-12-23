@@ -194,7 +194,7 @@ export default function BrandShowcase() {
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {brands.map((brand) => (
-                <div key={brand.name} className="flex-[0_0_80%] min-w-0 pl-4 first:pl-0">
+                <div key={brand.name} className="flex-[0_0_80%] min-w-0 pl-4 first:pl-4">
                   <BrandCard name={brand.name} logo={brand.logo} />
                 </div>
               ))}

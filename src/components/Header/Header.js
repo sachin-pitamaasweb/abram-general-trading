@@ -58,8 +58,8 @@ export default function Header() {
                 src={logo}
                 alt="Company Logo"
                 width={60}
-                height={60}
-                className="w-[60px] h-[60px]"
+                // height={60}
+                className="w-[60px]"
                 priority
               />
             </Link>

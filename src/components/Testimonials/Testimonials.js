@@ -52,7 +52,7 @@ export default function Testimonials() {
               <Card className="border-0 shadow-none h-full">
                 <CardContent className="p-6 h-full relative overflow-hidden">
                   {/* Gradient Background */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50 transition-colors duration-300 group-hover:from-green-50 group-hover:to-green-250" />
                   
                   {/* Content */}
                   <div className="relative h-full flex flex-col">
@@ -70,7 +70,7 @@ export default function Testimonials() {
         </CarouselContent>
 
         {/* Dot Indicators */}
-        <div className="flex justify-center gap-2 mt-6">
+        {/* <div className="flex justify-center gap-2 mt-6">
           {testimonials.map((_, index) => (
             <div
               key={index}
@@ -79,7 +79,7 @@ export default function Testimonials() {
               }`}
             />
           ))}
-        </div>
+        </div> */}
       </Carousel>
     </section>
   )

@@ -105,9 +105,15 @@
 'use client'
 
 import Image from "next/image"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel"
 
-import { useMediaQuery } from '../../hooks/use-media-query';
+import { useMediaQuery } from '../../hooks/use-media-query'
 
 const images = [
   {
@@ -148,29 +154,30 @@ const images = [
 ]
 
 export default function OfficeGallery() {
-  const isMobile = useMediaQuery({ maxWidth: 768 })
-
+     const isMobile = useMediaQuery('(max-width: 768px)');
   if (isMobile) {
     return (
-      <div className="w-full px-4">
-        <Carousel className="w-full max-w-3xl mx-auto">
+      <div className="w-full px-4 py-8">
+        <h2 className="text-2xl font-medium mb-6">Gallery</h2>
+        <Carousel className="w-full max-w-xs mx-auto">
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="p-1">
+                <div className="relative aspect-video overflow-hidden rounded-lg">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    width={600}
-                    height={400}
-                    className="rounded-lg object-cover w-full h-[300px]"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw"
+                    priority={index < 2}
                   />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10" />
+          <CarouselNext className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10" />
         </Carousel>
       </div>
     )
@@ -227,4 +234,3 @@ export default function OfficeGallery() {
     </div>
   )
 }
-
