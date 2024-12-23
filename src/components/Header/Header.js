@@ -38,12 +38,9 @@ export default function Header() {
   const navItems = [
     { label: 'HOME', href: '/' },
     { label: 'ABOUT US', href: '/about' },
-    // { label: 'OUR PRODUCTS', href: '/products', hasDropdown: true },
     { label: 'OUR PRODUCTS', href: '/products' },
-    // { label: 'RECIPES', href: '/recipes' },
     { label: 'OUR QUALITY', href: '/quality' },
     { label: 'PHOTO GALLERY', href: '/gallery' },
-    // { label: 'CAREER', href: '/career' },
     { label: 'CONTACT US', href: '/contact' },
   ]
 
@@ -58,7 +55,6 @@ export default function Header() {
                 src={logo}
                 alt="Company Logo"
                 width={60}
-                // height={60}
                 className="w-[60px]"
                 priority
               />
@@ -67,46 +63,14 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
-                item.hasDropdown ? (
-                  <DropdownMenu key={item.label}>
-                    <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium text-gray-800 hover:text-primary transition-colors">
-                      <span>{item.label}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="w-48">
-                      {Object.entries(productItems).map(([category, subItems]) => (
-                        subItems.length > 0 ? (
-                          <DropdownMenuSub key={category}>
-                            <DropdownMenuSubTrigger>{category}</DropdownMenuSubTrigger>
-                            <DropdownMenuSubContent>
-                              {subItems.map((subItem) => (
-                                <DropdownMenuItem key={subItem}>
-                                  <Link href={`/products/${subItem.toLowerCase().replace(/\s+/g, '-')}`} className="w-full">
-                                    {subItem}
-                                  </Link>
-                                </DropdownMenuItem>
-                              ))}
-                            </DropdownMenuSubContent>
-                          </DropdownMenuSub>
-                        ) : (
-                          <DropdownMenuItem key={category}>
-                            <Link href={`/products/${category.toLowerCase().replace(/\s+/g, '-')}`} className="w-full">
-                              {category}
-                            </Link>
-                          </DropdownMenuItem>
-                        )
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="text-sm font-medium text-gray-800 hover:text-primary transition-transform hover:scale-105"
-                  >
-                    {item.label}
-                  </Link>
-                )
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="relative text-sm font-medium text-gray-800 hover:text-primary transition-transform hover:scale-105 group"
+                >
+                  <span className="group-hover:font-bold">{item.label}</span>
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primary transition-all group-hover:w-full"></span>
+                </Link>
               ))}
             </nav>
 
@@ -125,9 +89,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className={`fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-transform transform ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
+        <div className={`fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="container mx-auto px-4 py-6">
             <div className="flex justify-between items-center mb-8">
               <CloseButton onClick={() => setIsMenuOpen(false)} className="order-2" />
@@ -137,17 +99,13 @@ export default function Header() {
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <div key={item.label}>
-                  {item.hasDropdown ? (
-                    <MobileDropdown label={item.label} items={productItems} />
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="text-lg font-medium text-gray-800 hover:text-primary transition-transform hover:translate-x-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={item.href}
+                    className="text-lg font-medium text-gray-800 hover:text-primary transition-transform hover:translate-x-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
                 </div>
               ))}
             </div>

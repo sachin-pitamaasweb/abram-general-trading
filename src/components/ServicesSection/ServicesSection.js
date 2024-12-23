@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 const services = [
     {
@@ -59,7 +60,16 @@ export default function ServicesSection() {
     return (
         <section className="py-12 px-4 md:px-6">
             <div className="max-w-7xl mx-auto" style={{ maxWidth: '90rem' }}>
-                <div className="mb-8">
+                <motion.div
+                    className="mb-8"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.8 }}
+                >
                     <h2 className="text-4xl font-medium mb-8">Services & Products</h2>
                     <p className="text-muted-foreground">
                         At Alamin General Trading, we deliver seamless supply chain solutions, including C&F services, state-level
@@ -67,24 +77,45 @@ export default function ServicesSection() {
                         business need, ensuring quality and reliability in every transaction while maintaining strong relationships with
                         our partners.
                     </p>
-                </div>
+                </motion.div>
 
                 {isMobile ? (
-                    // Mobile carousel view
                     <div className="overflow-hidden" ref={emblaRef}>
                         <div className="flex">
                             {services.map((service, index) => (
-                                <div key={index} className="flex-[0_0_100%] min-w-0 pl-4 first:pl-0">
+                                <motion.div
+                                    key={index}
+                                    className="flex-[0_0_100%] min-w-0 pl-4 first:pl-0"
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: false, amount: 0.2 }}
+                                    variants={{
+                                        hidden: { opacity: 0, x: 50 },
+                                        visible: { opacity: 1, x: 0 },
+                                    }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                                >
                                     <ServiceCard title={service.title} description={service.description} image={service.image} />
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
                 ) : (
-                    // Desktop grid view
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                         {services.map((service, index) => (
-                            <ServiceCard key={index} title={service.title} description={service.description} image={service.image} />
+                            <motion.div
+                                key={index}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: false, amount: 0.2 }}
+                                variants={{
+                                    hidden: { opacity: 0, scale: 0.9 },
+                                    visible: { opacity: 1, scale: 1 },
+                                }}
+                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                            >
+                                <ServiceCard title={service.title} description={service.description} image={service.image} />
+                            </motion.div>
                         ))}
                     </div>
                 )}
@@ -95,18 +126,55 @@ export default function ServicesSection() {
 
 function ServiceCard({ title, description, image }) {
     return (
-        <Card className="h-full">
-            <div className="relative w-full overflow-hidden rounded-t-lg sm:h-64 md:h-80 lg:h-[27rem]">
+        <Card className="h-full group">
+            <motion.div
+                className="relative w-full overflow-hidden rounded-t-lg sm:h-64 md:h-80 lg:h-[27rem]"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                variants={{
+                    hidden: { opacity: 0, scale: 0.9 },
+                    visible: { opacity: 1, scale: 1 },
+                }}
+                transition={{ duration: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+            >
                 <Image
                     src={image}
                     alt={title}
                     fill
                     className="object-cover h-full w-full"
                 />
-            </div>
+            </motion.div>
             <CardContent className="p-4">
-                <h3 className="font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-muted-foreground">{description}</p>
+                <motion.h3
+                    className="font-semibold mb-2"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.6 }}
+                    whileHover={{ x: 10 }}
+                >
+                    {title}
+                </motion.h3>
+                <motion.p
+                    className="text-sm text-muted-foreground"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    variants={{
+                        hidden: { opacity: 0, x: 50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.6 }}
+                    whileHover={{ x: -10 }}
+                >
+                    {description}
+                </motion.p>
             </CardContent>
         </Card>
     )

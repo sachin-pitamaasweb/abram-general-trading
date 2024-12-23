@@ -1,8 +1,13 @@
 'use client'
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { useState } from "react"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
+import { motion } from "framer-motion" // Import framer-motion for animations
+import { useState, useEffect } from "react"
 
 const testimonials = [
   {
@@ -10,78 +15,91 @@ const testimonials = [
     author: "RK Shetty"
   },
   {
-    content: "Being a part of Abran General Trading has been an enriching experience, with the company's commitment to its clients and employees creating an environment of growth and excellence.",
-    author: "RK Shetty"
+    content: "The dedication of the team at Abran General Trading is unmatched. Their expertise and professionalism are truly inspiring.",
+    author: "John Doe"
   },
   {
-    content: "Being a part of Abran General Trading has been an enriching experience, with the company's commitment to its clients and employees creating an environment of growth and excellence.",
-    author: "RK Shetty"
+    content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
+    author: "Jane Smith"
   },
   {
-    content: "Being a part of Abran General Trading has been an enriching experience, with the company's commitment to its clients and employees creating an environment of growth and excellence.",
-    author: "RK Shetty"
+    content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
+    author: "Jane Smith"
   },
   {
-    content: "Being a part of Abran General Trading has been an enriching experience, with the company's commitment to its clients and employees creating an environment of growth and excellence.",
-    author: "RK Shetty"
+    content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
+    author: "Jane Smith"
   },
   {
-    content: "Being a part of Abran General Trading has been an enriching experience, with the company's commitment to its clients and employees creating an environment of growth and excellence.",
-    author: "RK Shetty"
+    content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
+    author: "Jane Smith"
   },
-  {
-    content: "Being a part of Abran General Trading has been an enriching experience, with the company's commitment to its clients and employees creating an environment of growth and excellence.",
-    author: "RK Shetty"
-  },
+  // Add more testimonials as needed
 ]
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
+  // Automatically scroll to the next slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="container w-full max-w-6xl mx-auto px-4 py-12">
-      <h2 className="text-4xl font-medium mb-8">Testimonial</h2>
-      
-      <Carousel 
-        className="w-full" 
-        onSelect={(index) => setCurrentSlide(index)}
+      <motion.h2
+        className="text-4xl font-medium mb-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+        }}
       >
-        <CarouselContent>
-          {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <Card className="border-0 shadow-none h-full">
-                <CardContent className="p-6 h-full relative overflow-hidden">
-                  {/* Gradient Background */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50 transition-colors duration-300 group-hover:from-green-50 group-hover:to-green-250" />
-                  
-                  {/* Content */}
-                  <div className="relative h-full flex flex-col">
-                    <p className="text-sm text-muted-foreground flex-grow">
-                      {testimonial.content}
-                    </p>
-                    <p className="mt-4 text-sm font-medium">
-                      {testimonial.author}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
+        Testimonials
+      </motion.h2>
 
-        {/* Dot Indicators */}
-        {/* <div className="flex justify-center gap-2 mt-6">
-          {testimonials.map((_, index) => (
-            <div
-              key={index}
-              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                currentSlide === index ? "bg-[#00A651]" : "bg-white border border-gray-300"
-              }`}
-            />
-          ))}
-        </div> */}
-      </Carousel>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+        }}
+      >
+        <Carousel
+          className="w-full relative"
+          activeIndex={currentSlide}
+          onSelect={(index) => setCurrentSlide(index)}
+        >
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className={`md:basis-1/2 lg:basis-1/3`}>
+                <Card className="border-0 shadow-md h-full">
+                  <CardContent className="p-6 h-full relative overflow-hidden">
+                    {/* Gradient Background */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50" />
+
+                    {/* Content */}
+                    <div className="relative h-full flex flex-col">
+                      <p className="text-sm text-muted-foreground flex-grow">
+                        {testimonial.content}
+                      </p>
+                      <p className="mt-4 text-sm font-medium">{testimonial.author}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </motion.div>
     </section>
   )
 }
-

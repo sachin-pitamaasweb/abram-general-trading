@@ -4,9 +4,8 @@ import { Box, ShieldCheck, Thermometer } from 'lucide-react'
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import { useState } from 'react'
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-
-import './style.css'
+import { motion } from 'framer-motion'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 export default function Infrastructure() {
     const [activeSlide, setActiveSlide] = useState(0)
@@ -36,17 +35,34 @@ export default function Infrastructure() {
             description: "Precise temperature and humidity regulation",
         },
     ]
+
+    // Scroll Animation Variants
+    const fadeInVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    }
+
     return (
-        <section className="mx-auto px-4 py-12"  style={{ maxWidth: '90rem' }}>
+        <section className="mx-auto px-4 py-12" style={{ maxWidth: '90rem' }}>
             <h2 className="text-4xl font-medium mb-8">Infrastructure</h2>
 
             <div className="grid lg:grid-cols-2 gap-8">
                 {/* Image Carousel */}
-                <div className="relative w-full">
+                <motion.div
+                    className="relative w-full"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.5 }}
+                    variants={fadeInVariants}
+                >
                     <Carousel
-                        className="w-full"
+                        className="w-full relative"
                         onSelect={(index) => setActiveSlide(index)}
                     >
+                        {/* Carousel Arrows */}
+                        <CarouselPrevious className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:scale-105 transition-transform" />
+                        <CarouselNext className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:scale-105 transition-transform" />
+
                         <CarouselContent>
                             {images.map((image, index) => (
                                 <CarouselItem key={index}>
@@ -62,41 +78,40 @@ export default function Infrastructure() {
                             ))}
                         </CarouselContent>
                     </Carousel>
-                </div>
+                </motion.div>
 
                 {/* Features Section */}
                 <div className="grid gap-4">
                     {features.map((feature, index) => (
-                        <Card key={index} className="overflow-hidden border-0 rounded-lg shadow-md transition-transform duration-300">
-                            <div className="p-6 bg-gradient-to-r from-white to-green-50 rounded-lg flex items-center transition-colors duration-300 hover:to-green-200">
-                                <div className="flex flex-col items-start gap-3">
-                                    <div className="text-green-600">
-                                        <feature.icon className="w-10 h-10" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-medium text-lg mb-1">{feature.title}</h3>
-                                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                        <motion.div
+                            key={index}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ amount: 0.5 }}
+                            variants={fadeInVariants}
+                        >
+                            <Card
+                                className="overflow-hidden border-0 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+                                style={{
+                                    background: `linear-gradient(90deg, #ffffff, #f0fdf4)`,
+                                }}
+                            >
+                                <div className="p-6 bg-gradient-to-r from-white to-green-50 rounded-lg flex items-center transition-colors duration-300 hover:to-green-200">
+                                    <div className="flex flex-col items-start gap-3">
+                                        <div className="text-green-600">
+                                            <feature.icon className="w-10 h-10" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-medium text-lg mb-1">{feature.title}</h3>
+                                            <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Card>
+                            </Card>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-
-            {/* Cursor Dots */}
-            {/* <div className="flex justify-center gap-3 mt-8">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveSlide(index)}
-            className={`w-2.5 h-2.5 rounded-full transition-colors ${
-              index === activeSlide ? "bg-green-600" : "bg-gray-200"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div> */}
         </section>
     )
 }
