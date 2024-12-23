@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export default function Founders() {
   return (
-    <section className="container mx-auto max-w-6xl px-4 py-12">
+    <section className="container mx-auto max-w-6xl px-4 py-12" style={{ maxWidth: '90rem' }}>
       <h2 className="text-4xl font-medium mb-8">Our Founders, Our Foundation</h2>
 
       <div className="grid gap-8 md:grid-cols-2">

@@ -58,7 +58,7 @@ export default function ServicesSection() {
 
     return (
         <section className="py-12 px-4 md:px-6">
-            <div className="container max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto" style={{ maxWidth: '90rem' }}>
                 <div className="mb-8">
                     <h2 className="text-4xl font-medium mb-8">Services & Products</h2>
                     <p className="text-muted-foreground">

@@ -14,7 +14,6 @@ export default function ContactSocialSection() {
   const onSubmit = async (data) => {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
-    console.log(data)
     setIsSubmitted(true)
     reset()
     setTimeout(() => setIsSubmitted(false), 3000)

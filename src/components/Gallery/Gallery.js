@@ -184,7 +184,7 @@ export default function OfficeGallery() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="mx-auto px-4 py-8" style={{ maxWidth: '90rem' }}>
       <h2 className="text-4xl font-medium mb-8">Gallery</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {/* Top row - two large images */}

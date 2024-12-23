@@ -186,7 +186,7 @@ export default function BrandShowcase() {
 
   return (
     <section className="py-12 px-4 md:px-6">
-      <div className="container max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto" style={{ maxWidth: '90rem' }}>
         <h2 className="text-4xl font-medium mb-8">Our Brands</h2>
 
         {isMobile ? (

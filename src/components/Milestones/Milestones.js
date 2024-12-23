@@ -98,7 +98,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Milestones() {
   return (
-    <section className="relative container mx-auto min-h-[600px] w-full overflow-hidden rounded-lg">
+    <section className="relative mx-auto min-h-[600px] w-full overflow-hidden rounded-lg" style={{ maxWidth: '90rem' }}>
       {/* Background Image */}
       <Image
         src="/images/home/Milestones.png"
