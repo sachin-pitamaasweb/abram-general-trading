@@ -64,19 +64,23 @@ export default function ServicesSection() {
                     className="mb-8"
                     initial="hidden"
                     animate="visible"
+                    viewport={{ once: false, amount: 0.2 }}
                     variants={{
                         hidden: { opacity: 0, y: 50 },
                         visible: { opacity: 1, y: 0 },
                     }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-4xl font-medium mb-8">Services & Products</h2>
-                    <p className="text-muted-foreground">
-                        At Alamin General Trading, we deliver seamless supply chain solutions, including C&F services, state-level
-                        marketing expertise, and super distributing. Our diverse range of offerings is tailored to meet every
-                        business need, ensuring quality and reliability in every transaction while maintaining strong relationships with
-                        our partners.
-                    </p>
+                    <motion.h2
+                        className="text-4xl font-medium mb-8"
+                        initial={{ opacity: 0, x: 50, scale: 0.8 }}
+                        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                    >
+                        Services & Products
+                    </motion.h2>
+                    <AnimatedParagraph />
                 </motion.div>
 
                 {isMobile ? (
@@ -124,58 +128,92 @@ export default function ServicesSection() {
     )
 }
 
+function AnimatedParagraph() {
+    const paragraph =
+        "At Alamin General Trading, we deliver seamless supply chain solutions, including C&F services, state-level marketing expertise, and super distributing. Our diverse range of offerings is tailored to meet every business need, ensuring quality and reliability in every transaction while maintaining strong relationships with our partners.";
+
+    const words = paragraph.split(" "); // Split the paragraph into individual words
+
+    return (
+        <motion.p
+            className="text-muted-foreground flex flex-wrap"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }} // Allow reverse scroll effect
+            variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+            }}
+        >
+            {words.map((word, index) => (
+                <motion.span
+                    key={index}
+                    className="mr-1"
+                    variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.3 }}
+                >
+                    {word}
+                </motion.span>
+            ))}
+        </motion.p>
+    );
+}
+
 function ServiceCard({ title, description, image }) {
     return (
-        <Card className="h-full group">
+        <Card
+            className="h-full group relative transform-gpu transition-transform duration-500 hover:scale-105"
+            style={{ perspective: '1500px' }} // Adds depth
+        >
             <motion.div
-                className="relative w-full overflow-hidden rounded-t-lg sm:h-64 md:h-80 lg:h-[27rem]"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-                variants={{
-                    hidden: { opacity: 0, scale: 0.9 },
-                    visible: { opacity: 1, scale: 1 },
+                className="relative w-full overflow-hidden rounded-t-lg sm:h-64 md:h-80 lg:h-[27rem] bg-gradient-to-br from-gray-50 via-white to-gray-100 shadow-lg"
+                style={{
+                    transformStyle: 'preserve-3d', // Maintains 3D transformations
+                    transition: 'transform 0.6s ease',
                 }}
-                transition={{ duration: 0.8 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                    translateZ: 20, // Moves the card closer to the viewer
+                    scale: 1.05, // Adds a slight zoom effect
+                }}
             >
                 <Image
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover h-full w-full"
+                    className="object-cover h-full w-full rounded-lg"
                 />
             </motion.div>
-            <CardContent className="p-4">
+            <CardContent className="p-4 relative">
                 <motion.h3
-                    className="font-semibold mb-2"
+                    className="font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors duration-300"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: false, amount: 0.2 }}
                     variants={{
-                        hidden: { opacity: 0, x: -50 },
-                        visible: { opacity: 1, x: 0 },
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0 },
                     }}
                     transition={{ duration: 0.6 }}
-                    whileHover={{ x: 10 }}
                 >
                     {title}
                 </motion.h3>
                 <motion.p
-                    className="text-sm text-muted-foreground"
+                    className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: false, amount: 0.2 }}
                     variants={{
-                        hidden: { opacity: 0, x: 50 },
-                        visible: { opacity: 1, x: 0 },
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0 },
                     }}
                     transition={{ duration: 0.6 }}
-                    whileHover={{ x: -10 }}
                 >
                     {description}
                 </motion.p>
             </CardContent>
         </Card>
-    )
+    );
 }
