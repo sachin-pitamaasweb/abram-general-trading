@@ -42,7 +42,7 @@ export default function Card({ image, title, content }) {
 
   return (
     <div
-      className={styles.cardWrap}
+      className={`${styles.cardWrap} mx-auto`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       ref={cardRef}
@@ -75,3 +75,4 @@ export default function Card({ image, title, content }) {
     </div>
   );
 }
+

@@ -28,7 +28,7 @@ export default function Founders() {
         {words.map((word, index) => (
           <motion.span
             key={index}
-            className="mr-1"
+            className="mr-1 aling-text-justify"
             variants={{
               hidden: { opacity: 0, x: -50 },
               visible: { opacity: 1, x: 0 },
@@ -79,7 +79,7 @@ export default function Founders() {
                   <p className="font-medium text-base">Managing Director</p>
                 </div>
                 {animateParagraph(
-                  "  Suresh brings over two decades of expertise in agro-trading and logistics, ensuring Abram General Trading remains a trusted name in the industry."
+                  "Suresh brings over two decades of expertise in agro-trading and logistics, ensuring Abram General Trading remains a trusted name in the industry."
                 )}
               </div>
             </CardContent>
