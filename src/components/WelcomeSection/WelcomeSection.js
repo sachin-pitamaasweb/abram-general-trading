@@ -4,27 +4,18 @@ import { Button } from '@/components/ui/button'
 export default function WelcomeSection() {
   return (
     <section className="w-full py-16 px-4 md:py-24">
-      <div className="container mx-auto">
+      <div className="mx-auto" style={{ maxWidth: '90rem' }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900">
-              Welcome to Abram General Trading
+              Delivering premium agro-products globally with excellence and care.
             </h2>
             <div className="space-y-4 text-gray-600">
-              <p className="leading-relaxed">
-                At Abram General Trading, we have pride in our stable reputation as a
-                reliable supplier of agricultural commodities. Our wide range of
-                services activities includes farming rice, feed items, rice by-products,
-                sea, sorghum, miller sunflower meal, rapeseed meal, sesame seed, and
-                a much more.
-              </p>
-              <p className="leading-relaxed">
-                We are committed to produce and supply high quality of products and
-                adhere to organic farming practices ensuring the highest standards of
-                hygiene, taste, and quality. Our outstanding commitment to quality is
-                reflected in our products and services. We have earned an excellent
-                business guaranteeing satisfaction for our clients.
+              <p className="leading-relaxed text-align-justify">
+                Delivering premium agro-products globally with excellence and care.
+                Our mission is to bridge the gap between farmers and global consumers by providing high-quality, sustainably sourced agro-products.
+                We believe in fostering relationships built on trust, innovation, and a shared commitment to agricultural excellence.
               </p>
             </div>
             <Button className="bg-green-600 hover:bg-green-700 text-white px-8">

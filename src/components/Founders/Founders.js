@@ -66,20 +66,20 @@ export default function Founders() {
             <CardContent className="flex flex-col sm:flex-row gap-6 p-0">
               <div className="relative w-full sm:w-90 h-60 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/home/f-1.png"
-                  alt="Profile photo of Subodh Kumar"
+                  src="https://via.placeholder.com/600x400"
+                  alt="Profile photo of Suresh Kumar"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="space-y-3">
-                <h3 className="font-medium text-2xl">Subodh Kumar</h3>
+                <h3 className="font-medium text-2xl">Suresh Kumar</h3>
                 <div className="space-y-1">
                   <p className="font-medium text-base">Founder &</p>
                   <p className="font-medium text-base">Managing Director</p>
                 </div>
                 {animateParagraph(
-                  "Skilled farmer, strategic planner, and visionary leader. Expertise in farming, growth, synthesis, and innovation. Committed to developing lasting impact on agricultural sustainability."
+                  "  Suresh brings over two decades of expertise in agro-trading and logistics, ensuring Abram General Trading remains a trusted name in the industry."
                 )}
               </div>
             </CardContent>
@@ -98,20 +98,20 @@ export default function Founders() {
             <CardContent className="flex flex-col sm:flex-row gap-6 p-0">
               <div className="relative w-full sm:w-90 h-60 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/home/f-2.png"
-                  alt="Profile photo of Manish Balyan"
+                  src="https://via.placeholder.com/600x400"
+                  alt="Profile photo of Mehak Khurana"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="space-y-3">
-                <h3 className="font-medium text-2xl">Manish Balyan</h3>
+                <h3 className="font-medium text-2xl">Mehak Khurana</h3>
                 <div className="space-y-1">
                   <p className="font-medium text-base">Co-founder &</p>
                   <p className="font-medium text-base">Managing Director</p>
                 </div>
                 {animateParagraph(
-                  "Driven by a passion for sustainable and innovative agricultural practices. Hard work, integrity, and smart strategic planning define his approach to agricultural sustainability."
+                  "Mehak’s innovative vision and leadership have propelled Abram General Trading to new heights, expanding its presence across continents."
                 )}
               </div>
             </CardContent>

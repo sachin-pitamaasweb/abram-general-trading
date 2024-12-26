@@ -1,17 +1,23 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion"; // Import framer-motion
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import WorldMap from "react-svg-worldmap";
 
 export default function PresenceMap() {
-  // Animation Variants for Scroll
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensure WorldMap only renders on the client
+  }, []);
+
   const fadeInVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   const animateParagraph = (text) => {
-    const words = text.split(" "); // Split paragraph into words
+    const words = text.split(" ");
     return (
       <motion.p
         className="text-gray-600 text-sm sm:text-base leading-relaxed flex flex-wrap"
@@ -40,6 +46,28 @@ export default function PresenceMap() {
     );
   };
 
+  const countries = [
+    "INDIA", "DUBAI", "TURKEY", "SAUDI ARABIA", "MADAGASCAR", "MIDDLE EAST", 
+    "EUROPE", "CANADA", "REUNION", "MALDIVES", "SINGAPORE", "MAURITIUS", 
+    "AUSTRALIA", "SRI LANKA", "NEW ZEALAND", "RUSSIA", "TURKMINISTAN", 
+    "UKRAINE", "AZERBAIJAN", "GEORGIA", "EGYPT", "SUDAN", "LIBYA", 
+    "CAPE TOWN", "LEBANON"
+  ];
+
+  const countryToCode = {
+    INDIA: "IN", DUBAI: "AE", TURKEY: "TR", SAUDI_ARABIA: "SA", MADAGASCAR: "MG", 
+    MIDDLE_EAST: "SA", EUROPE: "EU", CANADA: "CA", REUNION: "RE", MALDIVES: "MV", 
+    SINGAPORE: "SG", MAURITIUS: "MU", AUSTRALIA: "AU", SRI_LANKA: "LK", 
+    NEW_ZEALAND: "NZ", RUSSIA: "RU", TURKMINISTAN: "TM", UKRAINE: "UA", 
+    AZERBAIJAN: "AZ", GEORGIA: "GE", EGYPT: "EG", SUDAN: "SD", LIBYA: "LY", 
+    CAPE_TOWN: "ZA", LEBANON: "LB"
+  };
+
+  const data = countries.map((country) => ({
+    country: countryToCode[country] || country,
+    value: 1,
+  }));
+
   return (
     <div className="bg-white">
       <div className="mx-auto px-4 py-8 sm:py-12 lg:py-16" style={{ maxWidth: "90rem" }}>
@@ -59,80 +87,36 @@ export default function PresenceMap() {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              Presence
+              Global Presence
             </motion.h2>
             {animateParagraph(
-              "We have a strong presence across key states in India. Our operations span Maharashtra, Madhya Pradesh, Karnataka, Gujarat, and Chhattisgarh, allowing us to serve a wide range of customers efficiently."
+              "We have established a strong global presence, spanning across multiple continents and regions. Our operations extend from India to the Middle East, Europe, North America, Africa, and the Asia-Pacific region."
             )}
             {animateParagraph(
-              "Through this strategic presence, we are not only consolidating our position domestically but also expanding our reach to international markets, strengthening our commitment to operational growth and global excellence."
+              "This extensive international network allows us to serve a diverse range of markets efficiently, fostering global partnerships and driving innovation across borders. Our strategic presence in key locations worldwide reinforces our commitment to global excellence and sustainable growth."
             )}
           </motion.div>
 
-          {/* Map */}
-          <motion.div
-            className="relative w-full aspect-[3/4] sm:aspect-square max-w-lg mx-auto lg:max-w-none"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.5 }}
-            variants={fadeInVariants}
-          >
-            <Image
-              src="https://res.cloudinary.com/dtivafy25/image/upload/v1734524253/dgsgxgzv_2_k0fvaz.png"
-              alt="Map of India showing company presence"
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-            />
-
-            {/* Location Indicators */}
-            <div className="absolute top-[45%] right-[78%] w-4 h-4 bg-[#9FCCB5] rounded-full animate-location group">
-              <div className="absolute -top-8 left-0 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white text-gray-600 text-xs font-medium px-2 py-1 rounded shadow">
-                Gujarat
-              </div>
-            </div>
-            <div className="absolute top-[56%] right-[68%] w-8 h-8 bg-[#09723C] rounded-full animate-location group">
-              <div className="absolute -top-8 left-0 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white text-gray-600 text-xs font-medium px-2 py-1 rounded shadow">
-                Maharashtra
-              </div>
-            </div>
-            <div className="absolute top-[46%] right-[60%] w-3 h-3 bg-[#09723C] rounded-full animate-location group">
-              <div className="absolute -top-8 left-0 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white text-gray-600 text-xs font-medium px-2 py-1 rounded shadow">
-                Madhya Pradesh
-              </div>
-            </div>
-            <div className="absolute top-[50%] right-[48%] w-3 h-3 bg-[#09723C] rounded-full animate-location group">
-              <div className="absolute -top-8 left-0 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white text-gray-600 text-xs font-medium px-2 py-1 rounded shadow">
-                Chhattisgarh
-              </div>
-            </div>
-            <div className="absolute bottom-[26%] right-[68%] w-4 h-4 bg-[#09723C] rounded-full animate-location group">
-              <div className="absolute -top-8 left-0 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white text-gray-600 text-xs font-medium px-2 py-1 rounded shadow">
-                Karnataka
-              </div>
-            </div>
-          </motion.div>
+          {/* World Map */}
+          {isClient && (
+            <motion.div
+              className="relative w-full aspect-[16/9] max-w-lg mx-auto lg:max-w-none"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.5 }}
+              variants={fadeInVariants}
+            >
+              <WorldMap
+                color="#09723C"
+                valueSuffix="presence"
+                size="responsive"
+                data={data}
+                tooltipBgColor="#09723C"
+                tooltipTextColor="#ffffff"
+              />
+            </motion.div>
+          )}
         </div>
-
-        {/* Add the animation styles */}
-        <style jsx global>{`
-          @keyframes locationPulse {
-            0%,
-            100% {
-              transform: scale(1);
-              opacity: 0.8;
-            }
-            50% {
-              transform: scale(1.3);
-              opacity: 1;
-            }
-          }
-
-          .animate-location {
-            animation: locationPulse 2s ease-in-out infinite;
-          }
-        `}</style>
       </div>
     </div>
   );

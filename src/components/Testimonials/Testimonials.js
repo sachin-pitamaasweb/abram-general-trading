@@ -82,9 +82,9 @@ export default function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className={`md:basis-1/2 lg:basis-1/3`}>
                 <Card className="border-0 shadow-md h-full">
-                  <CardContent className="p-6 h-full relative overflow-hidden">
+                  <CardContent className="p-12 h-full relative overflow-hidden">
                     {/* Gradient Background */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50 hover:to-green-200 transition-colors" />
 
                     {/* Content */}
                     <div className="relative h-full flex flex-col">

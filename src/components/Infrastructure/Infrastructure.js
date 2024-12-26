@@ -22,17 +22,17 @@ export default function Infrastructure() {
         {
             icon: Box,
             title: "Inventory Management",
-            description: "Advanced systems ensuring perfect order accuracy",
+            description: "Advanced systems for seamless logistics.",
         },
         {
             icon: ShieldCheck,
             title: "Security",
-            description: "24/7 surveillance and access control",
+            description: " Strict adherence to food safety and quality control.",
         },
         {
             icon: Thermometer,
             title: "Climate Control",
-            description: "Precise temperature and humidity regulation",
+            description: "Facilities designed to maintain product integrity.",
         },
     ]
 

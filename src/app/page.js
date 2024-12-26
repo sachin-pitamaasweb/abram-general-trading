@@ -10,19 +10,21 @@ import Founders from "@/components/Founders/Founders";
 import Infrastructure from "@/components/Infrastructure/Infrastructure";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import ServicesSection from "@/components/ServicesSection/ServicesSection";
+import CardGrid from "@/components/CardGrid/CardGrid";
 
 export default function Home() {
   return (
     <>
     <HeroCarousel />
-    {/* <WelcomeSection /> */}
-    <ServicesSection />
+    <WelcomeSection />
+    {/* <ServicesSection /> */}
+    <CardGrid />
     <Founders />
     <Milestones />
-    <BrandMarquee />
+    {/* <BrandMarquee /> */}
     {/* <ProductRange /> */}
-    <PresenceMap />
     <Infrastructure />
+    <PresenceMap />
     {/* <BannerSection /> */}
     <Gallery />
     <Testimonials />
