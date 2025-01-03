@@ -39,8 +39,8 @@ export default function Header() {
     { label: 'HOME', href: '/' },
     { label: 'ABOUT US', href: '/about' },
     { label: 'OUR PRODUCTS', href: '/products' },
-    { label: 'OUR QUALITY', href: '/quality' },
-    { label: 'PHOTO GALLERY', href: '/gallery' },
+    // { label: 'OUR QUALITY', href: '/quality' },
+    // { label: 'PHOTO GALLERY', href: '/gallery' },
     { label: 'CONTACT US', href: '/contact' },
   ]
 

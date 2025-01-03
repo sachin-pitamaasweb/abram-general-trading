@@ -1,37 +1,95 @@
 'use client'
 
-import Image from "next/image"
-import { useState } from "react"
+import Image from "next/image";
+import { useState } from "react";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion"
-import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronRight } from 'lucide-react'
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Skeleton } from "@/components/ui/skeleton";
+import categoryData from "@/helpers/categoryData";
 
 const categories = [
-    { name: "Rice", items: ["Long Grain Rice", "Sharbati Golden Sella Rice", "Sona Masoori Rice"] },
-    { name: "Pulses", items: ["Cotton Seed Cake", "Rapeseed Meal", "Sorghum", "Soybean Meal", "Yellow Corn (Maize)"] },
-    { name: "Spices", items: ["Black Pepper", "Cardamom", "Cinnamon"] },
-    { name: "Chickpeas", items: ["Almonds", "Cashews", "Raisins"] },
-    { name: "Oil Seeds", items: ["Mustard Seeds", "Sunflower Seeds", "Sesame Seeds"] },
-    { name: "Edible Oil", items: ["Mustard Oil", "Sunflower Oil", "Soybean Oil"] },
-    { name: "Dry Fruits", items: ["Almonds", "Cashews", "Raisins"] },
-    { name: "Animal Feed", items: ["Cotton Seed Cake", "Rapeseed Meal", "Sorghum", "Soybean Meal", "Yellow Corn (Maize)"] },
-    { name: "Cereals", items: ["Long Grain Rice", "Sharbati Golden Sella Rice", "Sona Masoori Rice"] },
-    { name: "Organic Products", items: ["Organic Rice", "Organic Pulses", "Organic Spices"] },
+    {
+        name: "Pulses",
+        items: [
+            "ChickPeas",
+            "ChanaDal",
+            "Rajma",
+            "ToorDal",
+            "UradDal",
+            "MasoorDal",
+            "MoongDal",
+            "GreenGram"
+        ]
+    },
+    {
+        name: "Rice",
+        items: [
+            "Long Grain Rice",
+            "Sharbati Golden Sella Rice"
+        ]
+    },
+    {
+        name: "Spices",
+        items: [
+            "Black Pepper",
+            "Cardamom",
+            "Clove",
+            "Coriander Seeds",
+            "Cumin Seeds",
+            "Dry Ginger",
+            "Fennel Seeds"
+        ]
+    },
+    {
+        name: "OilSeeds",
+        items: [
+            "Ground Nut",
+            "Sesame Seeds",
+            "Mustard"
+        ]
+    },
+    {
+        name: "EdibleOil",
+        items: [
+            "Corn Oil",
+            "Mustard Oil",
+            "Palmolein Oil",
+            "Sesame Oil",
+            "Soya Oil",
+            "Sunflower Oil"
+        ]
+    }
 ]
 
 export default function ProductCatalog() {
-    const [selectedCategory, setSelectedCategory] = useState("Pulses")
+    const [selectedCategory, setSelectedCategory] = useState("Pulses");
+    const [selectedItem, setSelectedItem] = useState("ChickPeas");
+    const [loading, setLoading] = useState(false);
+
+    // Handle item selection with loading simulation
+    const handleItemChange = (category, item) => {
+        setLoading(true);
+        setTimeout(() => {
+            setSelectedCategory(category);
+            setSelectedItem(item);
+            setLoading(false);
+        }, 500);
+    };
+
+    const categoryInfo = categoryData[selectedCategory];
+    const itemInfo = categoryInfo?.items[selectedItem];
 
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col lg:flex-row gap-8">
+
                 {/* Mobile Category Menu */}
                 <Sheet>
                     <SheetTrigger asChild>
@@ -42,117 +100,115 @@ export default function ProductCatalog() {
                     </SheetTrigger>
                     <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                         <nav className="py-4">
-                            <Accordion type="single" collapsible className="w-full">
-                                {categories.map((category) => (
-                                    <AccordionItem key={category.name} value={category.name}>
-                                        <AccordionTrigger className="text-left">
-                                            {category.name}
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <div className="flex flex-col space-y-2">
-                                                {category.items.map((item) => (
-                                                    <Button
-                                                        key={item}
-                                                        variant="ghost"
-                                                        className="justify-start pl-6"
-                                                        onClick={() => setSelectedCategory(item)}
-                                                    >
-                                                        {item}
-                                                    </Button>
-                                                ))}
-                                            </div>
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                ))}
-                            </Accordion>
+                            {loading ? (
+                                <div className="space-y-4">
+                                    {Array(6).fill().map((_, index) => (
+                                        <Skeleton key={index} className="h-6 w-3/4" />
+                                    ))}
+                                </div>
+                            ) : (
+                                <Accordion type="single" collapsible className="w-full">
+                                    {categories.map((category) => (
+                                        <AccordionItem key={category.name} value={category.name}>
+                                            <AccordionTrigger className="text-left">
+                                                {category.name}
+                                            </AccordionTrigger>
+                                            <AccordionContent>
+                                                <div className="flex flex-col space-y-2">
+                                                    {category.items.map((item) => (
+                                                        <Button
+                                                            key={item}
+                                                            variant="ghost"
+                                                            className="justify-start pl-6"
+                                                            onClick={() => handleItemChange(category.name, item)}
+                                                        >
+                                                            {item}
+                                                        </Button>
+                                                    ))}
+                                                </div>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                    ))}
+                                </Accordion>
+                            )}
                         </nav>
                     </SheetContent>
                 </Sheet>
 
                 {/* Desktop Category Menu */}
                 <nav className="hidden lg:block w-[300px] bg-background rounded-lg border p-4">
-                    <Accordion type="single" collapsible className="w-full">
-                        {categories.map((category) => (
-                            <AccordionItem key={category.name} value={category.name}>
-                                <AccordionTrigger className="text-left">
-                                    {category.name}
-                                </AccordionTrigger>
-                                <AccordionContent>
-                                    <div className="flex flex-col space-y-2">
-                                        {category.items.map((item) => (
-                                            <Button
-                                                key={item}
-                                                variant="ghost"
-                                                className="justify-start pl-6"
-                                                onClick={() => setSelectedCategory(item)}
-                                            >
-                                                {item}
-                                            </Button>
-                                        ))}
-                                    </div>
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
+                    {loading ? (
+                        <div className="space-y-4">
+                            {Array(6).fill().map((_, index) => (
+                                <Skeleton key={index} className="h-6 w-3/4" />
+                            ))}
+                        </div>
+                    ) : (
+                        <Accordion type="single" collapsible className="w-full">
+                            {categories.map((category) => (
+                                <AccordionItem key={category.name} value={category.name}>
+                                    <AccordionTrigger className="text-left">
+                                        {category.name}
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <div className="flex flex-col space-y-2">
+                                            {category.items.map((item) => (
+                                                <Button
+                                                    key={item}
+                                                    variant="ghost"
+                                                    className="justify-start pl-6"
+                                                    onClick={() => handleItemChange(category.name, item)}
+                                                >
+                                                    {item}
+                                                </Button>
+                                            ))}
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))}
+                        </Accordion>
+                    )}
                 </nav>
 
-                {/* Main Content */}
+                {/* Main Content Section */}
                 <main className="flex-1">
-                    <div className="space-y-8">
-                        <section>
-                            <h1 className="text-3xl font-semibold mb-2">Pulses</h1>
-                            <p className="text-muted-foreground mb-6">
-                                Discover our premium selection of pulses, from ChickPeas to Moong Dal,
-                                each carefully processed to preserve authentic flavors.
-                            </p>
+                    {loading ? (
+                        <div className="space-y-8">
+                            <Skeleton className="h-8 w-1/3 mb-4" />
+                            <Skeleton className="h-5 w-2/3 mb-6" />
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div className="aspect-square relative rounded-lg overflow-hidden">
-                                    <Image
-                                        src="https://res.cloudinary.com/dtivafy25/image/upload/v1734516146/p-1_g3lsnn.png"
-                                        alt="Pulses variety 1"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <div className="aspect-square relative rounded-lg overflow-hidden">
-                                    <Image
-                                        src="https://res.cloudinary.com/dtivafy25/image/upload/v1734516147/p-2_okrikt.png"
-                                        alt="Pulses variety 2"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <div className="aspect-square relative rounded-lg overflow-hidden">
-                                    <Image
-                                        src="https://res.cloudinary.com/dtivafy25/image/upload/v1734516147/p-3_brhzni.png"
-                                        alt="Pulses variety 3"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
+                                {Array(3).fill().map((_, index) => (
+                                    <Skeleton key={index} className="aspect-square w-full rounded-lg" />
+                                ))}
                             </div>
-                        </section>
+                        </div>
+                    ) : (
+                        <div className="space-y-8">
+                            <section>
+                                <h1 className="text-3xl font-semibold mb-2">{itemInfo?.title}</h1>
+                                <p className="text-muted-foreground mb-6">{itemInfo?.description}</p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {itemInfo?.images?.map((image, index) => (
+                                        <div key={index} className="aspect-square relative rounded-lg overflow-hidden">
+                                            <Image
+                                                src={image}
+                                                alt={`${itemInfo?.title} image ${index + 1}`}
+                                                layout="fill"
+                                                objectFit="cover"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
 
-                        <section className="prose dark:prose-invert max-w-none">
-                            <h2 className="text-2xl font-semibold mb-4">Our Quality</h2>
-                            <p>
-                                Among the various range of pulses that we deal in, ChickPeas, Chana Dal, Rajma, Toor Dal, Urad Dal, Masoor Dal, Moong Dal,
-                                Green Gram and has been widely acclaimed due to its tasteful flavor. We export pulses which are cleaned and processed
-                                before packing and transporting. Only the best of grains of pulses are selected and processed to the clients so that the taste of
-                                the food can remain authentic. We export all kind of pulses which are cleaned and processed before packing and transporting.
-                                Only the best of grains of pulses are selected and processed to the clients so that the taste of the food can remain authentic.
-                            </p>
-                            <p>
-                                We are facilitated with a classy infrastructure facility, which is sprawling as one of the best manufacturing industries for Dal Mill
-                                Plant machinery today with the technologically updated machines and equipment that are governed by our skilled workforce
-                                and reliable engineers. we are also well known for our affordable prices and on time deliveries and providing best-in-class
-                                quality fans.
-                            </p>
-                        </section>
-                    </div>
+                            <section className="prose dark:prose-invert max-w-none">
+                                <h2 className="text-2xl font-semibold mb-4">Our Quality</h2>
+                                <p>{itemInfo?.quality}</p>
+                            </section>
+                        </div>
+                    )}
                 </main>
             </div>
         </div>
     )
 }
-

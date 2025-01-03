@@ -21,25 +21,25 @@ const images = [
     alt: "Open office environment with team members",
   },
   {
-    src: "/images/gallery/p-3.png",
+    src: "/images/gallery/g-3.png",
     alt: "Modern office with geometric wall design",
   },
   {
-    src: "/images/gallery/p-4.png",
+    src: "/images/gallery/g-3.png",
     alt: "Casual meeting space collaboration",
   },
   {
-    src: "/images/gallery/p-5.png",
+    src: "/images/gallery/g-3.png",
     alt: "Close-up of technology collaboration",
   },
-  {
-    src: "/images/gallery/p-6.png",
-    alt: "Team reviewing mobile content",
-  },
-  {
-    src: "/images/gallery/p-7.png",
-    alt: "Group working on laptop",
-  }
+  // {
+  //   src: "/images/gallery/p-6.png",
+  //   alt: "Team reviewing mobile content",
+  // },
+  // {
+  //   src: "/images/gallery/p-7.png",
+  //   alt: "Group working on laptop",
+  // }
 ]
 
 export default function OfficeGallery() {
@@ -90,7 +90,7 @@ export default function OfficeGallery() {
         variants={fadeInVariants}
       >
         {/* Top row - two large images */}
-        <div className="col-span-2 md:col-span-3 grid grid-cols-2 gap-4">
+        {/* <div className="col-span-2 md:col-span-3 grid grid-cols-2 gap-4">
           {images.slice(0, 2).map((image, index) => (
             <motion.div
               key={index}
@@ -108,7 +108,7 @@ export default function OfficeGallery() {
               />
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         {/* Middle row - three square images */}
         {images.slice(2, 5).map((image, index) => (
@@ -130,7 +130,7 @@ export default function OfficeGallery() {
         ))}
 
         {/* Bottom row - 2:1 ratio images */}
-        <motion.div
+        {/* <motion.div
           className="col-span-2 relative h-[350px] overflow-hidden rounded-lg"
           initial="hidden"
           whileInView="visible"
@@ -143,8 +143,8 @@ export default function OfficeGallery() {
             fill
             className="object-cover transition-transform duration-300 hover:scale-110"
           />
-        </motion.div>
-        <motion.div
+        </motion.div> */}
+        {/* <motion.div
           className="relative h-[350px] overflow-hidden rounded-lg"
           initial="hidden"
           whileInView="visible"
@@ -157,7 +157,7 @@ export default function OfficeGallery() {
             fill
             className="object-cover transition-transform duration-300 hover:scale-110"
           />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   )
