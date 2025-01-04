@@ -41,10 +41,10 @@ export default function Footer() {
               { href: "/", label: "HOME" },
               { href: "/about", label: "ABOUT US" },
               { href: "/products", label: "OUR PRODUCTS" },
-              { href: "/recipes", label: "RECIPES" },
-              { href: "/quality", label: "OUR QUALITY" },
-              { href: "/gallery", label: "PHOTO GALLERY" },
-              { href: "/career", label: "CAREER" },
+              // { href: "/recipes", label: "RECIPES" },
+              // { href: "/quality", label: "OUR QUALITY" },
+              // { href: "/gallery", label: "PHOTO GALLERY" },
+              // { href: "/career", label: "CAREER" },
               { href: "/contact", label: "CONTACT US" },
             ].map((link) => (
               <Link
