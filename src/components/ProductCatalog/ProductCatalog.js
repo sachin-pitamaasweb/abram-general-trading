@@ -1,18 +1,12 @@
 'use client'
 
-import Image from "next/image";
-import { useState } from "react";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Skeleton } from "@/components/ui/skeleton";
-import categoryData from "@/helpers/categoryData";
+import { useState } from "react"
+import { ChevronDown } from 'lucide-react'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Skeleton } from "@/components/ui/skeleton"
+import { ProductPreview } from "../ProductPreview/ProductPreview"
 
 const categories = [
     {
@@ -25,15 +19,46 @@ const categories = [
             "UradDal",
             "MasoorDal",
             "MoongDal",
-            "GreenGram"
-        ]
+        ],
     },
     {
         name: "Rice",
         items: [
-            "Long Grain Rice",
-            "Sharbati Golden Sella Rice"
-        ]
+            {
+                name: "Basmati",
+                options: [
+                    "1121 Steam Basmati",
+                    "1121 Sella Basmati",
+                    "1121 Golden Sella",
+                    "1509 Steam Basmati",
+                    "1509 Sella Basmati",
+                    "1509 Golden Sella",
+                    "1401 Steam Basmati",
+                    "Pusa Sella",
+                    "Pusa Golden Sella",
+                    "Sugandha Steam",
+                    "Sugandha Sella",
+                    "Sugandha Golden Sella",
+                    "Sharbati Steam",
+                    "Sharbati Sella",
+                    "Sharbati Golden Sella"
+                ]
+            },
+            {
+                name: "Non-Basmati",
+                options: [
+                    "P.R. 11 Steam",
+                    "P.R. 11 Sella",
+                    "P.R. 11 Golden Sella",
+                    "Long Grain Parboiled",
+                    "Long Grain White Rice",
+                    "Swarna Parboiled",
+                    "Swarna White Rice",
+                    "Sona Mansoori Steam",
+                    "Sona Mansoori Raw"
+                ]
+            },
+        ],
     },
     {
         name: "Spices",
@@ -44,16 +69,12 @@ const categories = [
             "Coriander Seeds",
             "Cumin Seeds",
             "Dry Ginger",
-            "Fennel Seeds"
-        ]
+            "Fennel Seeds",
+        ],
     },
     {
         name: "OilSeeds",
-        items: [
-            "Ground Nut",
-            "Sesame Seeds",
-            "Mustard"
-        ]
+        items: ["Ground Nut", "Sesame Seeds", "Mustard"],
     },
     {
         name: "EdibleOil",
@@ -63,34 +84,118 @@ const categories = [
             "Palmolein Oil",
             "Sesame Oil",
             "Soya Oil",
-            "Sunflower Oil"
-        ]
-    }
+            "Sunflower Oil",
+        ],
+    },
 ]
 
 export default function ProductCatalog() {
-    const [selectedCategory, setSelectedCategory] = useState("Pulses");
-    const [selectedItem, setSelectedItem] = useState("ChickPeas");
-    const [loading, setLoading] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(categories[0].name)
+    const [selectedSubCategory, setSelectedSubCategory] = useState(null)
+    const [selectedItem, setSelectedItem] = useState(
+        typeof categories[0].items[0] === 'string'
+            ? categories[0].items[0]
+            : categories[0].items[0].options[0]
+    )
+    const [loading, setLoading] = useState(false)
 
-    // Handle item selection with loading simulation
-    const handleItemChange = (category, item) => {
-        setLoading(true);
-        setTimeout(() => {
-            setSelectedCategory(category);
-            setSelectedItem(item);
-            setLoading(false);
-        }, 500);
-    };
+    const renderCategoryItems = (items) => {
+        return items.map((item) => {
+            if (typeof item === 'string') {
+                return (
+                    <Button
+                        key={item}
+                        variant="ghost"
+                        className={`justify-start pl-6 relative ${item === selectedItem ? "underline text-green-600" : ""
+                            }`}
+                        onClick={() => {
+                            setSelectedItem(item)
+                            setSelectedSubCategory(null)
+                        }}
+                    >
+                        {item}
+                        {item === selectedItem && (
+                            <span className="absolute right-4 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-green-600" />
+                        )}
+                    </Button>
+                )
+            } else {
+                return (
+                    <Accordion
+                        key={item.name}
+                        type="single"
+                        collapsible
+                        className="w-full"
+                        value={selectedSubCategory || undefined}
+                    >
+                        <AccordionItem value={item.name}>
+                            <AccordionTrigger
+                                className="text-left pl-6"
+                                onClick={() => {
+                                    setSelectedSubCategory(item.name)
+                                    setSelectedItem(item.options[0])
+                                }}
+                            >
+                                {item.name}
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <div className="flex flex-col space-y-2">
+                                    {item.options.map((option) => (
+                                        <Button
+                                            key={option}
+                                            variant="ghost"
+                                            className={`justify-start pl-12 relative ${option === selectedItem ? "underline text-green-600" : ""
+                                                }`}
+                                            onClick={() => setSelectedItem(option)}
+                                        >
+                                            {option}
+                                            {option === selectedItem && (
+                                                <span className="absolute right-4 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-green-600" />
+                                            )}
+                                        </Button>
+                                    ))}
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                )
+            }
+        })
+    }
 
-    const categoryInfo = categoryData[selectedCategory];
-    const itemInfo = categoryInfo?.items[selectedItem];
+    const CategoryMenu = () => (
+        <Accordion type="single" collapsible className="w-full" value={selectedCategory}>
+            {categories.map((category) => (
+                <AccordionItem key={category.name} value={category.name}>
+                    <AccordionTrigger
+                        className="text-left"
+                        onClick={() => {
+                            setSelectedCategory(category.name)
+                            const firstItem = category.items[0]
+                            if (typeof firstItem === 'string') {
+                                setSelectedItem(firstItem)
+                                setSelectedSubCategory(null)
+                            } else {
+                                setSelectedSubCategory(firstItem.name)
+                                setSelectedItem(firstItem.options[0])
+                            }
+                        }}
+                    >
+                        {category.name}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                        <div className="flex flex-col space-y-2">
+                            {renderCategoryItems(category.items)}
+                        </div>
+                    </AccordionContent>
+                </AccordionItem>
+            ))}
+        </Accordion>
+    )
 
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col lg:flex-row gap-8">
-
-                {/* Mobile Category Menu */}
                 <Sheet>
                     <SheetTrigger asChild>
                         <Button variant="outline" className="lg:hidden mb-4">
@@ -102,111 +207,35 @@ export default function ProductCatalog() {
                         <nav className="py-4">
                             {loading ? (
                                 <div className="space-y-4">
-                                    {Array(6).fill().map((_, index) => (
+                                    {Array(6).fill(null).map((_, index) => (
                                         <Skeleton key={index} className="h-6 w-3/4" />
                                     ))}
                                 </div>
                             ) : (
-                                <Accordion type="single" collapsible className="w-full">
-                                    {categories.map((category) => (
-                                        <AccordionItem key={category.name} value={category.name}>
-                                            <AccordionTrigger className="text-left">
-                                                {category.name}
-                                            </AccordionTrigger>
-                                            <AccordionContent>
-                                                <div className="flex flex-col space-y-2">
-                                                    {category.items.map((item) => (
-                                                        <Button
-                                                            key={item}
-                                                            variant="ghost"
-                                                            className="justify-start pl-6"
-                                                            onClick={() => handleItemChange(category.name, item)}
-                                                        >
-                                                            {item}
-                                                        </Button>
-                                                    ))}
-                                                </div>
-                                            </AccordionContent>
-                                        </AccordionItem>
-                                    ))}
-                                </Accordion>
+                                <CategoryMenu />
                             )}
                         </nav>
                     </SheetContent>
                 </Sheet>
 
-                {/* Desktop Category Menu */}
                 <nav className="hidden lg:block w-[300px] bg-background rounded-lg border p-4">
                     {loading ? (
                         <div className="space-y-4">
-                            {Array(6).fill().map((_, index) => (
+                            {Array(6).fill(null).map((_, index) => (
                                 <Skeleton key={index} className="h-6 w-3/4" />
                             ))}
                         </div>
                     ) : (
-                        <Accordion type="single" collapsible className="w-full">
-                            {categories.map((category) => (
-                                <AccordionItem key={category.name} value={category.name}>
-                                    <AccordionTrigger className="text-left">
-                                        {category.name}
-                                    </AccordionTrigger>
-                                    <AccordionContent>
-                                        <div className="flex flex-col space-y-2">
-                                            {category.items.map((item) => (
-                                                <Button
-                                                    key={item}
-                                                    variant="ghost"
-                                                    className="justify-start pl-6"
-                                                    onClick={() => handleItemChange(category.name, item)}
-                                                >
-                                                    {item}
-                                                </Button>
-                                            ))}
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
+                        <CategoryMenu />
                     )}
                 </nav>
 
-                {/* Main Content Section */}
                 <main className="flex-1">
-                    {loading ? (
-                        <div className="space-y-8">
-                            <Skeleton className="h-8 w-1/3 mb-4" />
-                            <Skeleton className="h-5 w-2/3 mb-6" />
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {Array(3).fill().map((_, index) => (
-                                    <Skeleton key={index} className="aspect-square w-full rounded-lg" />
-                                ))}
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="space-y-8">
-                            <section>
-                                <h1 className="text-3xl font-semibold mb-2">{itemInfo?.title}</h1>
-                                <p className="text-muted-foreground mb-6">{itemInfo?.description}</p>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {itemInfo?.images?.map((image, index) => (
-                                        <div key={index} className="aspect-square relative rounded-lg overflow-hidden">
-                                            <Image
-                                                src={image}
-                                                alt={`${itemInfo?.title} image ${index + 1}`}
-                                                layout="fill"
-                                                objectFit="cover"
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
-
-                            <section className="prose dark:prose-invert max-w-none">
-                                <h2 className="text-2xl font-semibold mb-4">Our Quality</h2>
-                                <p>{itemInfo?.quality}</p>
-                            </section>
-                        </div>
-                    )}
+                    <ProductPreview
+                        item={selectedItem}
+                        category={selectedCategory}
+                        subCategory={selectedSubCategory}
+                    />
                 </main>
             </div>
         </div>

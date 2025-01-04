@@ -39,7 +39,7 @@ export default function ReachUs() {
                 {/* Map iframe */}
                 <div className="relative aspect-[20/10] w-full rounded-2xl overflow-hidden">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4248.803213139318!2d75.80016157622441!3d30.886397878188745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a83fa24e07b1b%3A0xc4b205480ff0d3e6!2sPITAMAAS%20PVT.%20LTD!5e1!3m2!1sen!2sin!4v1734512150336!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d233.5485615929356!2d55.29506100238429!3d25.2689893731602!2m2!1f11.4355921245118!2f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x3e5f43002fa32b79%3A0xb1ef8f671fd14106!2sAlRasBuilding!5e1!3m2!1sen!2sin!4v1735984166284!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
