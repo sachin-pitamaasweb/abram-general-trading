@@ -1,17 +1,13 @@
 import React from "react";
 
 import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
-// import MetricsSection from "@/components/MetricsSection/MetricsSection";
 import WelcomeSectionAbout from "@/components/WelcomeSectionAbout/WelcomeSectionAbout";
 import VisionMissionSection from "@/components/VisionMissionSection/VisionMissionSection";
 import PrinciplesSection from "@/components/PrinciplesSection/PrinciplesSection";
 import ManufacturingFacilities from "@/components/ManufacturingFacilities/ManufacturingFacilities";
-// import CompanyInfo from "@/components/CompanyInfo/CompanyInfo";
-// import MarketingCard from "@/components/MarketingCard/MarketingCard";
 import SupportSection from "@/components/SupportSection/SupportSection";
 import QualityControl from "@/components/QualityControl/QualityControl";
 import WorldMapComponent from "@/components/WorldMapComponent/WorldMapComponent";
-// import WhyUsSection from "@/components/WhyUsSection/WhyUsSection";
 
 export const metadata = {
   title: "About Us | Abram General Trading L.L.C.",
@@ -38,11 +34,6 @@ export default function AboutPage() {
      <QualityControl />
      <WorldMapComponent />
      <SupportSection />
-     {/* <MetricsSection />
-     <CompanyInfo />
-     <MarketingCard />
-     <WhyUsSection />
-     <SupportSection /> */}
     </>
   );
 }
