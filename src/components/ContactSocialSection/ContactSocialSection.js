@@ -90,7 +90,7 @@ export default function ContactSocialSection() {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-primary/80 transition-colors"
+              className="w-full bg-[#FCCD4E] text-white py-2 px-4 rounded-md hover:bg-[#FCCD4E] transition-colors"
             >
               Submit
             </button>
