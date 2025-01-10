@@ -1,76 +1,90 @@
-import React from "react";
+'use client';
+import { motion } from 'framer-motion';
+
+const animateParagraph = (text) => {
+    const words = text.split(" ");
+    return (
+      <motion.p
+        className="text-gray-600 text-sm sm:text-base leading-relaxed flex flex-wrap"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+        }}
+      >
+        {words.map((word, index) => (
+          <motion.span
+            key={index}
+            className="mr-1"
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {word}
+          </motion.span>
+        ))}
+      </motion.p>
+    );
+};
 
 export default function WelcomeSection() {
-    return (
-      <div className="mt-30">
-        <div className="bg-green-500 p-6">
-          <h1 className="text-center text-white text-2xl md:text-3xl font-bold">
-            WELCOME TO ABRAM GENERAL TRADING
-          </h1>
-        </div>
-        
-        <div className="container mx-auto px-4 py-8 md:py-12">
-          <div className="grid md:grid-cols-2 gap-8 mx-auto">
-            {/* Left Column */}
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <h2 className="text-2xl font-bold">
-                  We build bridges between{" "}
-                  <br />
-                  <span className="text-emerald-500">
-                    suppliers and customers
-                  </span>
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  To build bridges that serve customer needs based on trust and satisfaction 
-                  between the ability to create fruitful and enduring relationships with customers.
-                </p>
-              </div>
-  
-              <div className="space-y-4">
-                <p className="text-gray-700 leading-relaxed">
-                  <span className="text-emerald-500">ABRAM GENERAL TRADING L.L.C.</span> a Limited Liability Company having its Head 
-                  Office in DUBAI, professionally managed by prominent business entity having 
-                  vast experience in handling agro based business specially RICE and other Agro 
-                  Products of Indian Origin. We provide finest quality of various Agro Products like 
-                  Basmati Rice, Chickpeas (Kabuli), Groundnuts, Spices, Pulses, Sugar, Dairy 
-                  Products, Yellow Corn, Coffee Bean, Tea,Sorghum, Millet, Soya Bean ,Meal, 
-                  Rapeseed Meal, Sesame Seed and Dry Fruits etc.
-                </p>
-              </div>
-            </div>
-  
-            {/* Right Column */}
-            <div className="space-y-6 mt-16">
-              <p className="text-gray-700 leading-relaxed">
-                An extensive Range is available to the most judicious of customers and with 
-                continuous development and improvement in production techniques, operating 
-                to All European standards. Food Safety and quality is assured with the latest 
-                traceability technology and latest state of art machineries.
-              </p>
-  
-              <p className="text-gray-700 leading-relaxed">
-                Having its Head Office in centre of Commercial Hub at AL Ras Deira, Dubai, 
-                ABRAM GENERAL TRADING L.L.C. is committed to provide best of Indian Basmati 
-                (King of Fragrance) and other variety of RICE which are very famous in the 
-                entire world specially in GULF REGION.
-              </p>
-            </div>
+  return (
+    <div className="flex flex-col w-full">
+      {/* Top Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full bg-[#FFD55F] py-6 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+      >
+        <h1 className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
+          WELCOME TO ABRAM GENERAL TRADING
+        </h1>
+      </motion.div>
+
+      {/* Content Section */}
+      <div className="w-full mx-auto px-6 sm:px-8 md:px-12 py-12 md:py-16 lg:py-20" style={{ maxWidth: '90rem' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="space-y-8"
+        >
+          {/* Heading Section */}
+          <div className="space-y-4 text-center md:text-left">
+            <motion.h2
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+              className="text-3xl font-bold leading-tight"
+            >
+              We build bridges between
+              <br />
+              <span className="text-emerald-600 font-bold text-2xl">
+                suppliers and customers
+              </span>
+            </motion.h2>
+            {animateParagraph("To build bridges that serve customer needs based on trust and satisfaction between the ability to create fruitful and enduring relationships with customers.")}
           </div>
-          <div className="space-y-6 mt-16">
-          <p className="text-gray-700 leading-relaxed">
-                  Our Parent Company M/s. GLOBAL AGRO CORP an ISO 22000-2005 and HACCP Certified Company, having its Head Office in Delhi (India) engaged in Export of all Varieties 
-                  of INDIAN Rice and other Agro Products since 2005. Being located in the RICE Belt of India, GAC enjoys the proximity to major basmati growing area like Haryana, Punjab, 
-                  Rajasthan & Uttar Pradesh. The locational advantage confirms the supply of uninterrupted traded goods for Export at a competitive price.
-                </p>
-            <p className="text-gray-700 leading-relaxed">
-                Thus ABRAM GENERAL TRADING L.L.C. is providing best of Indian Agro Products at very reasonable & competitive price with strict quality control to the customers of entire 
-                Gulf Countries.
-              </p>
-            </div>
-        </div>
+
+          {/* Content Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6 text-justify"
+          >
+            {animateParagraph(`"ABRAM GENERAL TRADING L.L.C." was established in the year 2005, with its operating unit located in New Delhi, India. The company is engaged in offering a wide variety of Agri-Products in overseas markets. Within a short span of time, we find ourselves at a dignified place in the industry by nurturing best practices and innovations through extensive investment in technology, resources, and logistics. We occupy a prominent position in the arena of India's rice export, achieving more than 100 thousand metric tons per annum.`)}
+
+            {animateParagraph(`Global Agro Corporation Pvt. Ltd. (GACPL) has established a true business model that has led to a widening of the global customer base. Our continuous improvement in quality standards with both existing and new products has significantly contributed to India's agro-economy. We offer an extensive range of products suited for the most judicious of customers, with continuous development and improvement in production techniques adhering to European standards. Food safety and quality are assured through the latest state-of-the-art technology and machinery.`)}
+          </motion.div>
+        </motion.div>
       </div>
-    )
-  }
-  
-  
+    </div>
+  );
+}

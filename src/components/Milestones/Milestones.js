@@ -80,8 +80,8 @@ export default function Milestones() {
   return (
     <section
       ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={reset3DEffect}
+      // onMouseMove={handleMouseMove}
+      // onMouseLeave={reset3DEffect}
       className="relative mx-auto min-h-[600px] w-full overflow-hidden rounded-lg cursor-pointer"
       style={{ maxWidth: "90rem" }}
     >

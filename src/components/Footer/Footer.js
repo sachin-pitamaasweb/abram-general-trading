@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Reach Us Button Section */}
           <div className="flex items-center justify-center">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8">
+            <Button className="bg-[#FCCD4E] hover:bg-[#FCCD4E] text-white px-8">
               Reach Us
             </Button>
           </div>
