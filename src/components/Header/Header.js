@@ -5,17 +5,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-} from '@/components/ui/dropdown-menu'
-import { cn } from '@/lib/utils'
-import { MobileDropdown } from '../MobileDropdown/MobileDropdown';
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+//   DropdownMenuSub,
+//   DropdownMenuSubContent,
+//   DropdownMenuSubTrigger,
+// } from '@/components/ui/dropdown-menu'
+// import { cn } from '@/lib/utils'
+// import { MobileDropdown } from '../MobileDropdown/MobileDropdown';
 import { CloseButton } from '../CloseButton/CloseButton';
 
 import logo from '../../app/logo.png'
@@ -23,24 +23,24 @@ import logo from '../../app/logo.png'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const productItems = {
-    'Rice': [],
-    'Pulses': [],
-    'Spices': ['Black Pepper', 'Cardamom', 'Cinnamon'],
-    'Chickpeas': [],
-    'Oil Seeds': ['Mustard Seeds', 'Sesame Seeds', 'Sunflower Seeds'],
-    'Edible Oil': ['Mustard Oil', 'Sunflower Oil', 'Soybean Oil'],
-    'Dry Fruits': ['Almonds', 'Cashews', 'Raisins'],
-    'Animal Feed': ['Cotton Seed Cake', 'Rapeseed Meal', 'Sorghum', 'Soybean Meal', 'Yellow Corn (Maize)'],
-    'Organic Products': ['Organic Rice', 'Organic Pulses', 'Organic Spices']
-  }
+  // const productItems = {
+  //   'Rice': [],
+  //   'Pulses': [],
+  //   'Spices': ['Black Pepper', 'Cardamom', 'Cinnamon'],
+  //   'Chickpeas': [],
+  //   'Oil Seeds': ['Mustard Seeds', 'Sesame Seeds', 'Sunflower Seeds'],
+  //   'Edible Oil': ['Mustard Oil', 'Sunflower Oil', 'Soybean Oil'],
+  //   'Dry Fruits': ['Almonds', 'Cashews', 'Raisins'],
+  //   'Animal Feed': ['Cotton Seed Cake', 'Rapeseed Meal', 'Sorghum', 'Soybean Meal', 'Yellow Corn (Maize)'],
+  //   'Organic Products': ['Organic Rice', 'Organic Pulses', 'Organic Spices']
+  // }
 
   const navItems = [
     { label: 'HOME', href: '/' },
     { label: 'ABOUT US', href: '/about' },
     { label: 'OUR PRODUCTS', href: '/products' },
-    // { label: 'OUR QUALITY', href: '/quality' },
-    // { label: 'PHOTO GALLERY', href: '/gallery' },
+    { label: 'RECIPES', href: '/recipes' },
+    { label: 'PHOTO GALLERY', href: '/gallery' },
     { label: 'CONTACT US', href: '/contact' },
   ]
 

@@ -2,7 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    // CarouselNext,
+    // CarouselPrevious
+} from '@/components/ui/carousel';
 import { useMediaQuery } from '@/hooks/use-media-query';
 
 export default function HeroCarousel({ images = [] }) {
@@ -38,12 +44,12 @@ export default function HeroCarousel({ images = [] }) {
                         </CarouselContent>
                     )}
 
-                    {!isMobile && (
+                    {/* {!isMobile && (
                         <>
                             <CarouselPrevious className="left-4" />
                             <CarouselNext className="right-4" />
                         </>
-                    )}
+                    )} */}
                 </Carousel>
                 {/* Pagination Dots */}
                 <div className="flex justify-center mt-4">

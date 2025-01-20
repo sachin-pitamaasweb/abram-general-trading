@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -28,6 +30,34 @@ const galleryImages = [
         id: 4,
         src: "/images/gallery/pic-1.png",
         alt: "Business Meeting 4",
+        width: 400,
+        height: 300,
+    },
+    {
+        id: 5,
+        src: "/images/gallery/pic-1.png",
+        alt: "Business Meeting 5",
+        width: 400,
+        height: 300,
+    },
+    {
+        id: 6,
+        src: "/images/gallery/pic-1.png",
+        alt: "Business Meeting 6",
+        width: 400,
+        height: 300,
+    },
+    {
+        id: 7,
+        src: "/images/gallery/pic-1.png",
+        alt: "Business Meeting 7",
+        width: 400,
+        height: 300,
+    },
+    {
+        id: 8,
+        src: "/images/gallery/pic-1.png",
+        alt: "Business Meeting 8",
         width: 400,
         height: 300,
     },

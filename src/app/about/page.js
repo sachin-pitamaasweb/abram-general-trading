@@ -8,6 +8,7 @@ import ManufacturingFacilities from "@/components/ManufacturingFacilities/Manufa
 import SupportSection from "@/components/SupportSection/SupportSection";
 import QualityControl from "@/components/QualityControl/QualityControl";
 import WorldMapComponent from "@/components/WorldMapComponent/WorldMapComponent";
+import WhoWeAre from "@/components/WhoWeAre/WhoWeAre";
 
 export const metadata = {
   title: "About Us | Abram General Trading L.L.C.",
@@ -16,24 +17,25 @@ export const metadata = {
 };
 const images = [
   {
-      src: "/images/about/bg-1.png",
-      alt: "Aerial view of agricultural fields showing farmers planting crops",
+    src: "/images/home/banner/about.png",
+    alt: "Aerial view of agricultural fields showing farmers planting crops",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-     <HeroCarousel 
-      images={images}
-     />
-     <WelcomeSectionAbout />  
-     <VisionMissionSection />
-     <PrinciplesSection />
-     <ManufacturingFacilities />
-     <QualityControl />
-     <WorldMapComponent />
-     <SupportSection />
+      <HeroCarousel
+        images={images}
+      />
+      <WelcomeSectionAbout />
+      <VisionMissionSection />
+      <PrinciplesSection />
+      {/* <ManufacturingFacilities /> */}
+      <WhoWeAre />
+      <QualityControl />
+      <WorldMapComponent />
+      <SupportSection />
     </>
   );
 }

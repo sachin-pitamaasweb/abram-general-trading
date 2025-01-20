@@ -89,27 +89,6 @@ export default function OfficeGallery() {
         viewport={{ amount: 0.5 }}
         variants={fadeInVariants}
       >
-        {/* Top row - two large images */}
-        {/* <div className="col-span-2 md:col-span-3 grid grid-cols-2 gap-4">
-          {images.slice(0, 2).map((image, index) => (
-            <motion.div
-              key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.5 }}
-              variants={fadeInVariants}
-              className="relative h-[450px] overflow-hidden rounded-lg"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-300 hover:scale-110"
-              />
-            </motion.div>
-          ))}
-        </div> */}
-
         {/* Middle row - three square images */}
         {images.slice(2, 5).map((image, index) => (
           <motion.div
@@ -129,35 +108,6 @@ export default function OfficeGallery() {
           </motion.div>
         ))}
 
-        {/* Bottom row - 2:1 ratio images */}
-        {/* <motion.div
-          className="col-span-2 relative h-[350px] overflow-hidden rounded-lg"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.5 }}
-          variants={fadeInVariants}
-        >
-          <Image
-            src={images[5].src}
-            alt={images[5].alt}
-            fill
-            className="object-cover transition-transform duration-300 hover:scale-110"
-          />
-        </motion.div> */}
-        {/* <motion.div
-          className="relative h-[350px] overflow-hidden rounded-lg"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.5 }}
-          variants={fadeInVariants}
-        >
-          <Image
-            src={images[6].src}
-            alt={images[6].alt}
-            fill
-            className="object-cover transition-transform duration-300 hover:scale-110"
-          />
-        </motion.div> */}
       </motion.div>
     </div>
   )
