@@ -8,8 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel"
-import { motion } from "framer-motion" // Import framer-motion for animations
 import { useMediaQuery } from '../../hooks/use-media-query'
+
 
 const images = [
   {
@@ -32,24 +32,10 @@ const images = [
     src: "/images/gallery/g-3.png",
     alt: "Close-up of technology collaboration",
   },
-  // {
-  //   src: "/images/gallery/p-6.png",
-  //   alt: "Team reviewing mobile content",
-  // },
-  // {
-  //   src: "/images/gallery/p-7.png",
-  //   alt: "Group working on laptop",
-  // }
 ]
 
 export default function OfficeGallery() {
   const isMobile = useMediaQuery('(max-width: 768px)')
-
-  // Animation Variants
-  const fadeInVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  }
 
   if (isMobile) {
     return (
@@ -66,7 +52,7 @@ export default function OfficeGallery() {
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
                     sizes="(max-width: 768px) 100vw"
-                    priority={index < 2}
+                    priority={index === 0} // Use priority for the first image
                   />
                 </div>
               </CarouselItem>
@@ -82,35 +68,23 @@ export default function OfficeGallery() {
   return (
     <div className="mx-auto px-4 py-8" style={{ maxWidth: '90rem' }}>
       <h2 className="text-4xl font-medium mb-8">Gallery</h2>
-      <motion.div
-        className="grid grid-cols-2 md:grid-cols-3 gap-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.5 }}
-        variants={fadeInVariants}
-      >
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 animate-fade-in">
         {/* Middle row - three square images */}
         {images.slice(2, 5).map((image, index) => (
-          <motion.div
+          <div
             key={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.5 }}
-            variants={fadeInVariants}
-            className="relative h-[350px] overflow-hidden rounded-lg"
+            className="relative h-[350px] overflow-hidden rounded-lg fade-in"
           >
             <Image
               src={image.src}
               alt={image.alt}
               fill
               className="object-cover transition-transform duration-300 hover:scale-110"
+              loading={index === 0 ? undefined : "lazy"} // Lazy load for non-priority images
             />
-          </motion.div>
+          </div>
         ))}
-
-      </motion.div>
+      </div>
     </div>
   )
 }
-
-
