@@ -1,7 +1,10 @@
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import categoryData from '@/helpers/categoryData';
 
 export function ProductPreview({ item, category, subCategory }) {
+    const titleRef = useRef(null); // Create a ref for the title
+
     let selectedProduct;
 
     if (category === 'Rice' && subCategory) {
@@ -12,6 +15,17 @@ export function ProductPreview({ item, category, subCategory }) {
         selectedProduct = categoryData[category]?.items[item] ?? null;
     }
 
+    useEffect(() => {
+        if (selectedProduct && titleRef.current) {
+            // Scroll the title into view when switching products
+            titleRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center', // Center the title in the viewport
+                inline: 'nearest'
+            });
+        }
+    }, [selectedProduct, category, item]);  // Trigger when category or item changes
+
     if (!selectedProduct) {
         return <p className="text-red-600">Product not found. Please select a valid item.</p>;
     }
@@ -21,7 +35,9 @@ export function ProductPreview({ item, category, subCategory }) {
     return (
         <div className="space-y-8">
             <article className="prose dark:prose-invert max-w-none">
-                <h1 className="text-4xl font-bold mb-4">{title}</h1>
+                <h1 className="text-4xl font-bold mb-4" ref={titleRef}>
+                    {title}
+                </h1>
                 <p className="text-lg text-muted-foreground mb-8">{description}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">

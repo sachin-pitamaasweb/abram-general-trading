@@ -22,6 +22,27 @@ const categories = [
         ],
     },
     {
+        name: "DryFruits",
+        items: [
+            "Almonds",
+            "Cashews",
+            "Pistachio",
+            "Raisins",
+            "Walnuts",
+            "Apricots",
+            "Dates",
+        ],
+    },
+    {
+        name: "Lentils",
+        items: [
+            "Black Lentils",
+            "Green Lentils",
+            "Red Lentils",
+            "Yellow Lentils",
+        ],
+    },
+    {
         name: "Rice",
         items: [
             {

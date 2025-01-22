@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 // import WorldMap from "react-svg-worldmap";
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function WorldMapComponent() {
   const [isClient, setIsClient] = useState(false);
@@ -42,6 +42,7 @@ export default function WorldMapComponent() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full px-4 py-8 sm:py-12 lg:py-16 max-w-7xl">
+        <h2 className="text-center text-3xl font-bold mb-8">Our Global Presence</h2>
         <motion.div
           className="relative w-full aspect-[16/9] lg:aspect-auto max-w-4xl mx-auto"
           initial="hidden"

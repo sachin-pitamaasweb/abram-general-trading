@@ -72,7 +72,7 @@ export function PhotoGallery() {
                     {galleryImages.map((image) => (
                         <Card key={image.id} className="overflow-hidden">
                             <CardContent className="p-0">
-                                <div className="relative aspect-[4/3]">
+                                <div className="relative aspect-[4/3] prefers-reduced-motion:transition-none">
                                     <Image
                                         src={image.src}
                                         alt={image.alt}
@@ -89,4 +89,3 @@ export function PhotoGallery() {
         </section>
     )
 }
-

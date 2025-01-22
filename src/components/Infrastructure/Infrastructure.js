@@ -11,11 +11,8 @@ export default function Infrastructure() {
     const [activeSlide, setActiveSlide] = useState(0)
 
     const images = [
-        "https://res.cloudinary.com/dtivafy25/image/upload/v1734945532/Infrastructure_pdjxqh.png",
-        "https://res.cloudinary.com/dtivafy25/image/upload/v1734945532/Infrastructure_pdjxqh.png",
-        "https://res.cloudinary.com/dtivafy25/image/upload/v1734945532/Infrastructure_pdjxqh.png",
-        "https://res.cloudinary.com/dtivafy25/image/upload/v1734945532/Infrastructure_pdjxqh.png",
-        "https://res.cloudinary.com/dtivafy25/image/upload/v1734945532/Infrastructure_pdjxqh.png",
+        "https://res.cloudinary.com/dtivafy25/image/upload/v1737532978/WhatsApp_Image_2025-01-22_at_11.39.43_AM_x5jkub.jpg",
+        "https://res.cloudinary.com/dtivafy25/image/upload/v1737532978/WhatsApp_Image_2025-01-22_at_11.39.43_AM_1_qb6b2h.jpg",
     ]
 
     const features = [

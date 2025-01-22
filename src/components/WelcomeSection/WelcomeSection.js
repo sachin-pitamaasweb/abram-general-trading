@@ -1,5 +1,7 @@
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+"use client";
+
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 export default function WelcomeSection() {
   return (
@@ -18,7 +20,10 @@ export default function WelcomeSection() {
                 We believe in fostering relationships built on trust, innovation, and a shared commitment to agricultural excellence.
               </p>
             </div>
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8">
+            <Button
+              className="bg-green-600 hover:bg-green-700 text-white px-8"
+              onClick={() => (window.location.href = '/about')}
+            >
               Read More
             </Button>
           </div>
@@ -37,6 +42,5 @@ export default function WelcomeSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

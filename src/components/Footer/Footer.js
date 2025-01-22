@@ -1,92 +1,91 @@
-"use client";
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion"; // Import framer-motion for animations
-
-import logo from "../../app/logo.png";
+import Logo from "../../app/logo.png"
 
 export default function Footer() {
-  // Animation Variants
-  const fadeInVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
-
   return (
-    <footer className="w-full py-12 px-4 md:px-6 lg:px-8">
+    <footer className="w-full bg-gray-50 py-8 px-4 md:px-6 lg:px-8">
       <div className="container mx-auto">
-        <motion.div
-          className="bg-white rounded-[20px] p-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.5 }}
-          variants={fadeInVariants}
-        >
-          {/* Logo Section */}
-          <div className="flex items-center justify-center">
-            <Image
-              src={logo}
-              alt="Abram Logo"
-              width={120}
-              height={120}
-              className="h-auto w-auto"
-            />
-          </div>
+        <Card className="p-6 md:p-8 shadow-sm border-radius[20px]">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Logo Column */}
+            <div className="flex flex-col items-center justify-center lg:items-center">
+              <div className="relative h-24 w-24 overflow-hidden">
+                <Image
+                  src={Logo}
+                  alt="Company Logo"
+                  width={96}
+                  height={96}
+                  className="object-contain"
+                />
+              </div>
+            </div>
 
-          {/* Quick Links Section */}
-          <nav className="flex flex-col items-center justify-center space-y-3">
-            {[
-              { href: "/", label: "HOME" },
-              { href: "/about", label: "ABOUT US" },
-              { href: "/products", label: "OUR PRODUCTS" },
-              // { href: "/recipes", label: "RECIPES" },
-              // { href: "/quality", label: "OUR QUALITY" },
-              // { href: "/gallery", label: "PHOTO GALLERY" },
-              // { href: "/career", label: "CAREER" },
-              { href: "/contact", label: "CONTACT US" },
-            ].map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-gray-700 hover:text-green-600 transition-colors relative group"
-              >
-                <span className="group-hover:font-bold">{link.label}</span>
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-green-600 transition-all group-hover:w-full"></span>
+            {/* Quick Links Column */}
+            <nav className="flex flex-col items-center justify-center ml-12 lg:items-start space-y-3">
+              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                HOME
               </Link>
-            ))}
-          </nav>
+              <Link href="/about-us" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                ABOUT US
+              </Link>
+              <Link href="/products" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                OUR PRODUCTS
+              </Link>
+              <Link href="/recipes" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                RECIPES
+              </Link>
+              <Link href="/gallery" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                PHOTO GALLERY
+              </Link>
+              <Link href="/contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                CONTACT US
+              </Link>
+            </nav>
 
-          {/* Reach Us Button Section */}
-          <div className="flex items-center justify-center">
-            <Button className="bg-[#FCCD4E] hover:bg-[#FCCD4E] text-white px-8">
-              Reach Us
-            </Button>
-          </div>
+            {/* Reach Us Button Column */}
+            <div className="flex justify-center items-center lg:justify-center">
+              <Button className="bg-[#FCCD4E] hover:bg-[#FCCD4E]/90 text-white rounded-md px-8 py-2">Reach Us</Button>
+            </div>
 
-          {/* Contact Information Section */}
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h3 className="font-bold text-xl">ABRAM GENERAL TRADING</h3>
-            <div className="flex items-center space-x-2 text-gray-600">
-              <p>Shop Number:- 5, AL-Ras Building, Alras, Deira P.o. Box: 120510, Dubai - U.A.E.</p>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-gray-600">
-                <p>00971-4-2202424</p>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-600">
-                <a
-                  href="mailto:abramgeneraltrading@gmail.com"
-                  className="hover:text-green-600 transition-colors"
-                >
-                  abramgeneraltrading@gmail.com
-                </a>
+            {/* Contact Details Column */}
+            <div className="flex flex-col items-center justify-center lg:items-start space-y-3">
+              <h3 className="font-semibold text-gray-900">ARIRAM GENERAL TRADING</h3>
+              <p className="text-sm text-gray-600 text-center lg:text-left">
+                Shop Number - 5, AL-Ras Building, Arris,Deira
+                <br />
+                P.o. Box: 120510, Dubai - U.A.E
+              </p>
+              <div className="space-y-1">
+                <p className="text-sm text-gray-600">
+                  <span className="font-semibold">Contact</span>
+                  <br />
+                  00971-4-2252424
+                </p>
+                <p className="text-sm text-gray-600">
+                  <span className="font-semibold">Mail</span>
+                  <br />
+                  <Link href="mailto:ariramgeneraltrading@gmail.com" className="hover:text-gray-900 transition-colors">
+                    ariramgeneraltrading@gmail.com
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
-        </motion.div>
+        </Card>
+
+        {/* Copyright Section */}
+        <div className="mt-8 text-center sm:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-xs text-gray-600">Copyright by ARIRAM GENERAL TRADING {new Date().getFullYear()}</p>
+            <p className="text-xs text-gray-600">Design & Developed by PITAMAAS</p>
+          </div>
+        </div>
       </div>
     </footer>
-  );
+  )
 }
+

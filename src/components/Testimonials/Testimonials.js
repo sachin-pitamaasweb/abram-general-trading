@@ -22,18 +22,6 @@ const testimonials = [
     content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
     author: "Jane Smith"
   },
-  {
-    content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
-    author: "Jane Smith"
-  },
-  {
-    content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
-    author: "Jane Smith"
-  },
-  {
-    content: "I have witnessed firsthand the growth and innovation at Abran General Trading. It’s an incredible place to work.",
-    author: "Jane Smith"
-  },
   // Add more testimonials as needed
 ]
 
@@ -81,17 +69,19 @@ export default function Testimonials() {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className={`md:basis-1/2 lg:basis-1/3`}>
-                <Card className="border-0 shadow-md h-full">
-                  <CardContent className="p-12 h-full relative overflow-hidden">
+                <Card className="border-0 shadow-md h-full group">
+                  <CardContent className="p-12 h-full relative overflow-hidden transition-all duration-300 ease-in-out group-hover:rounded-lg">
                     {/* Gradient Background */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50 hover:to-green-200 transition-colors" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white to-green-50 transition-all duration-300 ease-in-out group-hover:to-green-200 group-hover:opacity-90" />
 
                     {/* Content */}
-                    <div className="relative h-full flex flex-col">
-                      <p className="text-sm text-muted-foreground flex-grow">
+                    <div className="relative h-full flex flex-col p-4">
+                      <p className="text-sm text-muted-foreground flex-grow transition-all duration-300 ease-in-out group-hover:text-gray-800">
                         {testimonial.content}
                       </p>
-                      <p className="mt-4 text-sm font-medium">{testimonial.author}</p>
+                      <p className="mt-4 text-sm font-medium transition-all duration-300 ease-in-out group-hover:text-gray-900">
+                        {testimonial.author}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>

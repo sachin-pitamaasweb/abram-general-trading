@@ -28,7 +28,7 @@ export default function VisionMissionSection() {
           <div className="max-w-sm">
             <h2 className="font-medium text-lg mb-3">OUR VISION IS TO MAKE</h2>
             <p className="text-gray-800">
-              GLOBAL ARGO CORPORATION PVT. LTD. (GACPL) THE MOST TRUSTED AND PROMISING FOOD BRAND GLOBALLY.
+              ABRAM GENERAL TRADING L.L.C. THE MOST TRUSTED AND PROMISING FOOD BRAND GLOBALLY.
             </p>
           </div>
         </motion.div>

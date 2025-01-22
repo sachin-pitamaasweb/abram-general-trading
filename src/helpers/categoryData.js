@@ -682,7 +682,7 @@ const categoryData = {
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735992156/bg-rice-swarna-masuri-01_jwyvce.jpg"
                 ]
             },
-            "Sona Mansoori Steam":{
+            "Sona Mansoori Steam": {
                 title: "Sona Mansoori Steam Rice – Premium Quality Rice for Everyday Meals",
                 description: `
                     Sona Mansoori Steam Rice is a premium variety of rice known for its distinct aroma and long, slender grains. Perfect for everyday meals, this rice variety adds a unique flavor to your dishes, making it a staple in Indian and other South Asian kitchens. The steaming process preserves the rice's natural nutrients while ensuring that the grains remain separate and fluffy when cooked.
@@ -704,7 +704,7 @@ const categoryData = {
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735992314/sona-masoori-steam-rice-500x500_dkllhs.webp"
                 ]
             },
-            "Sona Mansoori Raw":{
+            "Sona Mansoori Raw": {
                 title: "Sona Mansoori Raw Rice – High-Quality, Aromatic Raw Rice for Daily Meals",
                 description: `
                     Sona Mansoori Raw Rice is a premium, high-quality variety of rice known for its delicate aroma and long, slender grains. Ideal for a variety of culinary uses, this raw rice is perfect for making biryanis, pulaos, and other traditional rice dishes. Its unique fragrance and fluffy texture make it a favorite choice for both everyday meals and special occasions.
@@ -1117,7 +1117,263 @@ const categoryData = {
                 ],
             },
         },
-    }
+    },
+    DryFruits: {
+        title: "Dry Fruits",
+        description: "Indulge in our premium range of dry fruits, perfect for snacking, baking, and gifting.",
+        quality: "Our dry fruits are sourced from the finest farms, ensuring freshness and superior taste.",
+        items: {
+            "Almonds": {
+                title: "Almonds – Premium Quality Almonds for Snacking and Baking",
+                description: `
+                    Our premium almonds are perfect for snacking, baking, and adding a nutritious crunch to your favorite dishes. 
+                    Known for their rich flavor and crunchy texture, almonds are a versatile nut that can be enjoyed on their own 
+                    or used in a variety of recipes. Whether you're looking for a healthy snack or a delicious ingredient for your 
+                    baked goods, our almonds are a great choice. Packed with essential nutrients like vitamin E, magnesium, and 
+                    healthy fats, almonds offer numerous health benefits and are a delicious addition to your diet.
+                `,
+                quality: `
+                    Sourced from the best almond farms, our almonds are carefully selected and processed to ensure the highest quality 
+                    and freshness. Each almond is packed with essential nutrients and antioxidants, making them a healthy and delicious 
+                    snack option. Our almonds are free from additives, preservatives, and artificial flavors, ensuring that you get 
+                    nothing but pure, natural goodness in every bite. Whether you're enjoying them on their own or incorporating them 
+                    into your favorite recipes, our almonds are a nutritious and flavorful choice.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737528063/almonds_wmegfj.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737528054/almonds-bowl-marble-background_a9i2qb.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737528037/almonds-close_1_nlzxgk.jpg"
+                ]
+            },
+            "Cashews": {
+                title: "Cashews – Premium Quality Cashews for Snacking and Cooking",
+                description: `
+                    Our premium cashews are perfect for snacking, cooking, and adding a creamy texture to your dishes. Known for their 
+                    rich, buttery flavor and delicate crunch, cashews are a versatile nut that can be enjoyed in a variety of ways. 
+                    Whether you're looking for a healthy snack or a delicious ingredient for your recipes, our cashews are a great choice. 
+                    Packed with essential nutrients like healthy fats, protein, and vitamins, cashews offer numerous health benefits and 
+                    are a delicious addition to your diet.
+                `,
+                quality: `
+                    Sourced from the best cashew farms, our cashews are carefully selected and processed to ensure the highest quality 
+                    and freshness. Each cashew is packed with essential nutrients and antioxidants, making them a healthy and flavorful 
+                    snack option. Our cashews are free from additives, preservatives, and artificial flavors, ensuring that you get 
+                    nothing but pure, natural goodness in every bite. Whether you're enjoying them on their own or incorporating them 
+                    into your favorite recipes, our cashews are a nutritious and delicious choice.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737376855/raw-cashews-nuts-bag-dark-background_x4gael.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737376854/raw-cashews-nuts-bowl-dark-background_yqnnxm.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737376854/natural-cashew_ilhyks.jpg"
+                ]
+            },
+            "Pistachio": {
+                title: "Pistachio – Premium Quality Pistachios for Snacking and Cooking",
+                description: `
+                    Our premium pistachios are perfect for snacking, cooking, and adding a creamy texture to your dishes. Known for their 
+                    rich, buttery flavor and delicate crunch, pistachios are a versatile nut that can be enjoyed in a variety of ways. 
+                    Whether you're looking for a healthy snack or a delicious ingredient for your recipes, our pistachios are a great choice. 
+                    Packed with essential nutrients like healthy fats, protein, and vitamins, pistachios offer numerous health benefits and 
+                    are a delicious addition to your diet.
+                `,
+                quality: `
+                    Sourced from the best pistachio farms, our pistachios are carefully selected and processed to ensure the highest quality 
+                    and freshness. Each pistachio is packed with essential nutrients and antioxidants, making them a healthy and flavorful 
+                    snack option. Our pistachios are free from additives, preservatives, and artificial flavors, ensuring that you get 
+                    nothing but pure, natural goodness in every bite. Whether you're enjoying them on their own or incorporating them
+                    into your favorite recipes, our pistachios are a nutritious and delicious choice.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737377939/pistachios_2_h3xxnp.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737377939/pistachios_1_ro6ygf.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737377941/pistachios_lnixbu.jpg"
+                ]
+            },
+            "Raisins": {
+                title: "Raisins – Premium Quality Raisins for Snacking and Baking",
+                description: `
+                    Our premium raisins are perfect for snacking, baking, and adding a natural sweetness to your dishes. Known for their 
+                    rich, sweet flavor and chewy texture, raisins are a versatile dried fruit that can be enjoyed in a variety of ways. 
+                    Whether you're looking for a healthy snack or a delicious ingredient for your recipes, our raisins are a great choice. 
+                    Packed with essential nutrients like fiber, vitamins, and antioxidants, raisins offer numerous health benefits and are 
+                    a delicious addition to your diet.
+                `,
+                quality: `
+                    Sourced from the best vineyards, our raisins are carefully selected and processed to ensure the highest quality and 
+                    freshness. Each raisin is packed with essential nutrients and antioxidants, making them a healthy and flavorful snack 
+                    option. Our raisins are free from additives, preservatives, and artificial flavors, ensuring that you get nothing but 
+                    pure, natural goodness in every bite. Whether you're enjoying them on their own or incorporating them into your favorite 
+                    recipes, our raisins are a nutritious and delicious choice.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737526849/raisin-currant_fxzvwk.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737526849/raisins-dried_vzoklo.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737526849/top-close-up-view-raisins-green-black-raisins-brown-bowl-cream-table_a7spju.jpg"
+                ]
+            },
+            "Walnuts": {
+                title: "Walnuts – Premium Quality Walnuts for Snacking and Baking",
+                description: `
+                    Our premium walnuts are perfect for snacking, baking, and adding a nutritious crunch to your favorite dishes. Known for 
+                    their rich flavor and crunchy texture, walnuts are a versatile nut that can be enjoyed on their own or used in a variety 
+                    of recipes. Whether you're looking for a healthy snack or a delicious ingredient for your baked goods, our walnuts are a 
+                    great choice. Packed with essential nutrients like omega-3 fatty acids, antioxidants, and vitamins, walnuts offer numerous 
+                    health benefits and are a delicious addition to your diet.
+                `,
+                quality: `
+                    Sourced from the best walnut farms, our walnuts are carefully selected and processed to ensure the highest quality and 
+                    freshness. Each walnut is packed with essential nutrients and antioxidants, making them a healthy and flavorful snack 
+                    option. Our walnuts are free from additives, preservatives, and artificial flavors, ensuring that you get nothing but 
+                    pure, natural goodness in every bite. Whether you're enjoying them on their own or incorporating them into your favorite 
+                    recipes, our walnuts are a nutritious and delicious choice.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737528990/walnuts-walnut-kernels-blue-background-high-quality-photo_lppdhn.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737528991/top-view-walnuts-black-basket-wooden-vertical_m1iuuh.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737528991/side-view-bowl-with-walnuts-rustic_nq8tpv.jpg"
+                ]
+            },
+            "Apricots": {
+                title: "Apricots – Premium Quality Apricots for Snacking and Baking",
+                description: `
+                    Our premium apricots are perfect for snacking, baking, and adding a natural sweetness to your dishes. Known for their 
+                    rich, sweet flavor and chewy texture, apricots are a versatile dried fruit that can be enjoyed in a variety of ways. 
+                    Whether you're looking for a healthy snack or a delicious ingredient for your recipes, our apricots are a great choice. 
+                    Packed with essential nutrients like fiber, vitamins, and antioxidants, apricots offer numerous health benefits and are 
+                    a delicious addition to your diet.
+                `,
+                quality: `
+                    Sourced from the best orchards, our apricots are carefully selected and processed to ensure the highest quality and 
+                    freshness. Each apricot is packed with essential nutrients and antioxidants, making them a healthy and flavorful snack 
+                    option. Our apricots are free from additives, preservatives, and artificial flavors, ensuring that you get nothing but 
+                    pure, natural goodness in every bite. Whether you're enjoying them on their own or incorporating them into your favorite 
+                    recipes, our apricots are a nutritious and delicious choice.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737529815/apricots-with-dried-apricots-plate-plaster-picnic-cloth-flat-lay_it2ik9.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737529816/apricots-wicker-basket-wooden-table-flat-lay_anjcu6.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737529826/apricots-with-dried-apricots-colander-wooden-table-top-view_tx5g1p.jpg"
+                ],
+
+            },
+            "Dates": {
+                title: "Dates – Premium Quality Dates for Snacking and Baking",
+                description: `
+                    Our premium dates are perfect for snacking, baking, and adding natural sweetness to your dishes. Known for their rich, 
+                    sweet flavor and chewy texture, dates are a versatile dried fruit that can be enjoyed in a variety of ways. Whether you're 
+                    looking for a healthy snack or a delicious ingredient for your recipes, our dates are a great choice. Packed with essential 
+                    nutrients like fiber, vitamins, and antioxidants, dates offer numerous health benefits and are a delicious addition to your diet.
+                `,
+                quality: `
+                    Sourced from the best date farms, our dates are carefully selected and processed to ensure the highest quality and freshness. 
+                    Each date is packed with essential nutrients and antioxidants, making them a healthy and flavorful snack option. Our dates are 
+                    free from additives, preservatives, and artificial flavors, ensuring that you get nothing but pure, natural goodness in every bite. 
+                    Whether you're enjoying them on their own or incorporating them into your favorite recipes, our dates are a nutritious and delicious 
+                    choice.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737530244/arabic-food-concept-ramadan_okrnrg.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737530243/ramadan-concept-with-some-dates_mwjipq.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737530238/various-dried-dates-kurma_sz9rtw.jpg"
+                ]
+            }
+        },
+    },
+    Lentils: {
+        title: "Lentils",
+        description: "Explore our range of premium lentils, perfect for soups, stews, salads, and more.",
+        quality: "Our lentils are sourced from the finest farms, ensuring freshness and superior taste.",
+        items: {
+            "Black Lentils": {
+                title: "Black Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
+                description: `
+                Our premium black lentils are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their 
+                distinctive color and nutty taste, black lentils are a versatile legume that can be enjoyed in a variety of ways. 
+                Whether you're making soups, stews, salads, or side dishes, our black lentils are a great choice. Packed with essential 
+                nutrients like protein, fiber, and vitamins, black lentils offer numerous health benefits and are a delicious addition 
+                to your diet.
+            `,
+                quality: `
+                Sourced from the best lentil farms, our black lentils are carefully selected and processed to ensure the highest quality 
+                and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful 
+                ingredient. Our black lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing 
+                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad, 
+                our black lentils are a nutritious and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737531519/black-beans_u6zkig.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737531519/black-beans_1_wg0tpo.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737531520/black-beans-white-small-bowl-place-dark-floor_acfof9.jpg"
+                ]
+            },
+            "Green Lentils": {
+                title: "Green Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
+                description: `
+                Our premium green lentils are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their 
+                distinctive color and nutty taste, green lentils are a versatile legume that can be enjoyed in a variety of ways. 
+                Whether you're making soups, stews, salads, or side dishes, our green lentils are a great choice. Packed with essential 
+                nutrients like protein, fiber, and vitamins, green lentils offer numerous health benefits and are a delicious addition 
+                to your diet.
+            `,
+                quality: `
+                Sourced from the best lentil farms, our green lentils are carefully selected and processed to ensure the highest quality 
+                and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful 
+                ingredient. Our green lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing 
+                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad, 
+                our green lentils are a nutritious and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532226/sprouts-seed-white-small-bowl_ys53hv.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532226/sprouts-seed-wooden-small-bowl_pfcch6.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532236/top-view-frame-with-seeds_upidq5.jpg"
+                ]
+            },
+            "Red Lentils": {
+                title: "Red Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
+                description: ` 
+                Our premium red lentils are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their
+                distinctive color and nutty taste, red lentils are a versatile legume that can be enjoyed in a variety of ways.
+                Whether you're making soups, stews, salads, or side dishes, our red lentils are a great choice. Packed with essential
+                nutrients like protein, fiber, and vitamins, red lentils offer numerous health benefits and are a delicious addition
+                to your diet.
+            `,
+             quality: `
+                Sourced from the best lentil farms, our red lentils are carefully selected and processed to ensure the highest quality
+                and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful
+                ingredient. Our red lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing
+                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad,
+                our red lentils are a nutritious and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532546/top-view-rich-vitamins-lentils-bowl-with-lentils-isolated-white-wall-with-copy-space_hin5z8.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532541/wooden-bowls-red-raw-lentils-marble-table_niig6f.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532540/top-up-view-raw-uncooked-red-lentils-bowl_kg2drh.jpg"
+                ]
+            },
+            "Yellow Lentils": {
+                title: "Yellow Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
+                description: `
+                Our premium yellow lentils are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their    
+                distinctive color and nutty taste, yellow lentils are a versatile legume that can be enjoyed in a variety of ways.
+                Whether you're making soups, stews, salads, or side dishes, our yellow lentils are a great choice. Packed with essential
+                nutrients like protein, fiber, and vitamins, yellow lentils offer numerous health benefits and are a delicious addition
+                to your diet.
+            `,
+             quality: `
+                Sourced from the best lentil farms, our yellow lentils are carefully selected and processed to ensure the highest quality
+                and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful
+                ingredient. Our yellow lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing
+                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad,
+                our yellow lentils are a nutritious and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532790/soybean-seeds-wooden-floor-hemp-sacks-food-nutrition-concept_rlo8ev.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532791/yellow-soy-beans_d4ho8v.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532793/soybean-seeds-wooden-floor-hemp-sacks-food-nutrition-concept_1_pjelah.jpg"
+                ]
+            },
+        }
+    },
 };
 
 export default categoryData;
