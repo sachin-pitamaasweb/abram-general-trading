@@ -759,6 +759,7 @@ const categoryData = {
                     Our premium red chilli powder is known for its bold, spicy flavor and vibrant color, adding heat and depth to a variety of dishes.
                     Chilli is a versatile spice that enhances the taste of curries, marinades, sauces, and snacks, providing a fiery kick to your cooking.
                     It is also rich in capsaicin, which offers numerous health benefits, including boosting metabolism and reducing inflammation.
+                    Our red chilli powder is sourced from the best farms, ensuring freshness and quality.
                     `,
                 quality: `
                     Carefully sourced from the best farms, our red chilli powder is made from sun-dried red chillies, ensuring maximum flavor and heat.
