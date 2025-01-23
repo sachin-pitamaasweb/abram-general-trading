@@ -748,7 +748,7 @@ const categoryData = {
                     their meals with natural, pure flavor.
                     `,
                 images: [
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737549673/kghjkk_cqen0n.png",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737615578/kghjkk_1_ka8xlx-removebg-preview_ku0zms.png",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737615037/_freepicdownloader.com_-turmeric-powder-white-cup-white-space-normal-removebg-preview_bj7mpl.png",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737614837/_freepicdownloader.com_-bowl-turmeric-is-white-table-normal-removebg-preview_zsxevo.png"
                 ]
