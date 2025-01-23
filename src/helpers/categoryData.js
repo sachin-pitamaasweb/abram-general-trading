@@ -22,7 +22,7 @@ const categoryData = {
                 images: [
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735907233/chickpea-photo-1_i90txx.webp",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735907233/chickpeas_zg17bi.jpg",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735907233/the-how-to-guide-on-roasting-chickpeas-1200_ajo7rf.jpg"
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737548324/freepicdownloader.com_-dry-chickpeas-clay-bowl-isolated-white-background-uncooked-chick-pea-chickpea-grains-normal_xq3cdd.jpg"
                 ],
             },
             ChanaDal: {
@@ -261,7 +261,7 @@ const categoryData = {
                     Its quick cooking time and superior grain integrity make it versatile for a wide range of recipes, from everyday dishes to festive feasts.
                 `,
                 images: [
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735987719/1509-steam-free-896x1024_zsukmt.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737547146/top-view-raw-rice-inside-brown-plate-dark-surface-meal-food-rice-raw_pvfqb6.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735987719/1509-Steam-Rice_toyaqe.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735987718/1509-steam-basmati-rice-500x500_etnw1m.webp"
                 ]
@@ -313,8 +313,8 @@ const categoryData = {
                     Indian dishes to international cuisines.
                 `,
                 images: [
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735988437/1509_Golden_basmati_p6ijwz.jpg",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735988438/images_ob42mb.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737547146/top-view-raw-rice-inside-brown-plate-dark-surface-meal-food-rice-raw_pvfqb6.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737547513/freepicdownloader.com_-rice-groats-wooden-spoon-stone-background-healthy-food-normal_dmvmuu.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735988440/1509-golden-sella-basmati-rice_ukznnu.jpg"
                 ]
             },
@@ -481,7 +481,7 @@ const categoryData = {
                 `,
                 images: [
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735990037/Sharbati-Steam_tlidkp.png",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735990038/sharbati-steam-basmati-rice-1688557930-6968472_ixfumn.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737547894/freepicdownloader.com_-rice-flakes-rice-noodles-rice-bread-rice-top-view-medium_sna9sf.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735990039/Sharbati-Steam-Rice_yjdxuh.jpg"
                 ]
             },
@@ -609,9 +609,9 @@ const categoryData = {
                     This rice is also easy to cook and requires minimal preparation, making it a convenient choice for busy families or home cooks looking for a quick yet nutritious meal option. Whether you’re preparing a simple stir-fry or a complex curry, Long Grain Parboiled Rice will complement any dish with its excellent texture and flavor.
                 `,
                 images: [
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735991669/images_1_gex00b.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737548684/freepicdownloader.com_-food-background-rice-close-up-normal_nlbpq9.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735991669/165687-ir-36-long-grain-parboiled-rice-1000x1000_bnjnzf.jpg",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735991670/images_glud6v.jpg"
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737548684/freepicdownloader.com_-raw-rice-heart-shaped-plate-blue-background-normal_qvalci.jpg"
                 ]
             },
             "Long Grain White Rice": {
@@ -699,7 +699,7 @@ const categoryData = {
                     This rice is free from additives and preservatives, offering a natural and healthy product for your kitchen. Sona Mansoori Steam Rice is processed with the utmost care to ensure that it meets the highest quality standards, making it a reliable choice for every meal.
                 `,
                 images: [
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735992303/images_iakhor.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737548960/freepicdownloader.com_-pasta-dish-normal_faop0p.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735992305/bg-rice-swarna-masuri-01_vvagzb.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735992314/sona-masoori-steam-rice-500x500_dkllhs.webp"
                 ]
@@ -721,7 +721,7 @@ const categoryData = {
                     Sona Mansoori Raw Rice is processed with care to ensure that it meets the highest quality standards. Each grain is free from impurities and carefully packaged to preserve its freshness, making it a reliable choice for your cooking needs.
                 `,
                 images: [
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735992494/images_wdfmeg.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737549138/freepicdownloader.com_-rice-flakes-rice-noodles-rice-bread-rice-top-view-normal_vfknot.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735992494/71Fb9NkB4pL_pcrutn.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735992497/SonaMasooriRawRice_2_1200x1200_gi4sxv.webp"
                 ]
@@ -734,6 +734,43 @@ const categoryData = {
         description: "Explore our premium range of whole spices, each carefully sourced for rich aroma and superior flavor.",
         quality: `Our spices are sourced directly from farms, ensuring purity and freshness. Each spice undergoes minimal processing to retain its essential oils and natural flavor, making them perfect for cooking, health benefits, and everyday use.`,
         items: {
+            "Turmeric": {
+                title: "Turmeric – The Golden Spice for Flavorful Dishes and Health Benefits",
+                description: `
+                    Our premium turmeric powder is known for its vibrant color, earthy flavor, and numerous health benefits.
+                    Turmeric is a staple spice in Indian cuisine, adding depth and warmth to curries, rice dishes, and soups.
+                    It is also prized for its anti-inflammatory properties, antioxidant content, and immune-boosting benefits.
+                    `,
+                quality: `
+                    Sourced from the best farms, our turmeric is carefully harvested and processed to preserve its natural oils, earthy flavor,
+                    and vibrant color. We ensure the highest quality by providing freshly packed turmeric powder, retaining its full aromatic and
+                    taste potential. Our turmeric is free from additives and preservatives, making it a perfect choice for anyone looking to elevate
+                    their meals with natural, pure flavor.
+                    `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737549673/kghjkk_cqen0n.png",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737615037/_freepicdownloader.com_-turmeric-powder-white-cup-white-space-normal-removebg-preview_bj7mpl.png",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737614837/_freepicdownloader.com_-bowl-turmeric-is-white-table-normal-removebg-preview_zsxevo.png"
+                ]
+            },
+            "Chilli": {
+                title: "Chilli – The Fiery Spice for Bold, Spicy Dishes and Vibrant Flavors",
+                description: `
+                    Our premium red chilli powder is known for its bold, spicy flavor and vibrant color, adding heat and depth to a variety of dishes.
+                    Chilli is a versatile spice that enhances the taste of curries, marinades, sauces, and snacks, providing a fiery kick to your cooking.
+                    It is also rich in capsaicin, which offers numerous health benefits, including boosting metabolism and reducing inflammation.
+                    `,
+                quality: `
+                    Carefully sourced from the best farms, our red chilli powder is made from sun-dried red chillies, ensuring maximum flavor and heat.
+                    We ensure the highest quality by providing freshly packed red chilli powder, retaining its full aromatic and taste potential.
+                    Our chilli powder is free from additives and preservatives, making it a perfect choice for anyone looking to add a spicy kick to their meals.
+                    `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737613033/919_Red_Chilli_Powder_1.pdf_1_nqbwof.png",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737614686/_freepicdownloader.com_-red-chilli-lal-mirchi-mirch-with-powder-bowl-mortar-moody-background-selective-focus-normal-removebg-preview_h5foez.png",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737614334/freepicdownloader.com_-ground-paprika-plate-isolated-white-background-normal_x4nzwx.jpg"
+                ]
+            },
             "Black Pepper": {
                 title: "Black Pepper – The King of Spices for Bold, Flavorful Dishes",
                 description: `
@@ -810,7 +847,7 @@ const categoryData = {
                     which contribute to your overall health and well-being. Whether you're making a spice mix or adding them to a dish, our coriander seeds provide a fresh, aromatic burst of flavor.
                 `,
                 images: [
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735909305/coriander-seeds--close-up-614973136-54f0261f732e413fa4493bbfa93f0511_lf9ri7.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737548152/freepicdownloader.com_-dried-coriander-seeds-bowl-powder-green-leaves-grey-table-top-view-space-text-medium_otrmg1.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735909305/coriander-seeds-1S-670_wjnkwx.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735909304/coriander-seeds_j0x7nu.jpg"
                 ]
@@ -833,7 +870,7 @@ const categoryData = {
                 images: [
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735909483/th_1_lin3nb.jpg",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1735909486/Organic-Jeera-Cumin-Seeds7479658771854209_k0olmp.jpg",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735909483/th_zk7azj.jpg"
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737548023/freepicdownloader.com_-top-view-dried-rosemary-wooden-spoon-medium_qlxqct.jpg"
                 ]
             },
             "Dry Ginger": {
@@ -1337,7 +1374,7 @@ const categoryData = {
                 nutrients like protein, fiber, and vitamins, red lentils offer numerous health benefits and are a delicious addition
                 to your diet.
             `,
-             quality: `
+                quality: `
                 Sourced from the best lentil farms, our red lentils are carefully selected and processed to ensure the highest quality
                 and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful
                 ingredient. Our red lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing
@@ -1359,7 +1396,7 @@ const categoryData = {
                 nutrients like protein, fiber, and vitamins, yellow lentils offer numerous health benefits and are a delicious addition
                 to your diet.
             `,
-             quality: `
+                quality: `
                 Sourced from the best lentil farms, our yellow lentils are carefully selected and processed to ensure the highest quality
                 and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful
                 ingredient. Our yellow lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing

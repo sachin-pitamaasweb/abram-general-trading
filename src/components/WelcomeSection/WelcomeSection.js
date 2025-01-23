@@ -15,7 +15,6 @@ export default function WelcomeSection() {
             </h2>
             <div className="space-y-4 text-gray-600">
               <p className="leading-relaxed text-align-justify">
-                Delivering premium agro-products globally with excellence and care.
                 Our mission is to bridge the gap between farmers and global consumers by providing high-quality, sustainably sourced agro-products.
                 We believe in fostering relationships built on trust, innovation, and a shared commitment to agricultural excellence.
               </p>

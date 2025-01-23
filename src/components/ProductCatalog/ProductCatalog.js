@@ -84,6 +84,8 @@ const categories = [
     {
         name: "Spices",
         items: [
+            "Turmeric",
+            "Chilli",
             "Black Pepper",
             "Cardamom",
             "Clove",

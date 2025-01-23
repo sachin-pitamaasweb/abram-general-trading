@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import categoryData from '@/helpers/categoryData';
+import { Card } from '@/components/ui/card';
 
 export function ProductPreview({ item, category, subCategory }) {
     const titleRef = useRef(null); // Create a ref for the title
@@ -31,7 +32,7 @@ export function ProductPreview({ item, category, subCategory }) {
     }
 
     const { title, description, quality, images } = selectedProduct;
-
+console.log('category');
     return (
         <div className="space-y-8">
             <article className="prose dark:prose-invert max-w-none">
@@ -42,14 +43,14 @@ export function ProductPreview({ item, category, subCategory }) {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
                     {images?.map((img, index) => (
-                        <div key={index} className="aspect-square relative rounded-lg overflow-hidden">
+                        <Card key={index} className="aspect-square relative rounded-lg overflow-hidden">
                             <Image
                                 src={img}
                                 alt={`${title} image ${index + 1}`}
                                 fill
-                                className="object-cover"
+                                className={ title.includes('Chilli') ? "object-contain md:object-center" : "object-cover"}
                             />
-                        </div>
+                        </Card>
                     ))}
                 </div>
 

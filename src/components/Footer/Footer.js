@@ -29,7 +29,7 @@ export default function Footer() {
               <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                 HOME
               </Link>
-              <Link href="/about-us" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                 ABOUT US
               </Link>
               <Link href="/products" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">

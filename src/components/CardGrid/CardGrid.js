@@ -33,7 +33,7 @@ const cards = [
          image: "/images/home/services/s-4.png"
     },
     {
-        title: "Animal Feeds",
+        title: "Animal Feed",
         content: "Nutritionally balanced animal feed for superior livestock care.",
          image: "/images/home/services/s-5.png"
     }
