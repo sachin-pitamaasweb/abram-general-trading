@@ -32,7 +32,6 @@ export function ProductPreview({ item, category, subCategory }) {
     }
 
     const { title, description, quality, images } = selectedProduct;
-    console.log('category');
     return (
         <div className="space-y-8">
             <article className="prose dark:prose-invert max-w-none">
@@ -48,7 +47,8 @@ export function ProductPreview({ item, category, subCategory }) {
                                 src={img}
                                 alt={`${title} image ${index + 1}`}
                                 fill
-                                className={title.includes('Chilli') || title.includes('Turmeric') ? "object-contain md:object-center" : "object-cover"}
+                                className={title.includes('Chilli') || title.includes('Turmeric') ? "object-contain md:object-center p-[45px]" : "object-cover"}
+
                             />
 
                         </Card>

@@ -18,7 +18,7 @@ import Zehnab from "@/components/Zehnab/Zehnab";
 export default function Home() {
   const images = [
     {
-      src: "/images/home/banner/home.png",
+      src: "https://res.cloudinary.com/dtivafy25/image/upload/v1737982615/Website_Banner_1_z46xsz.jpg",
       alt: "Aerial view of agricultural fields showing farmers planting crops",
     },
   ];

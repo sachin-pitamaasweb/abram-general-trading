@@ -61,7 +61,7 @@ export default function ProductShowcase({ mainImage, additionalImages, className
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: isHovered ? 1 : 1, scale: isHovered ? 1.05 : 0.9 }}
+                        animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1.05 : 0.9 }}
                         transition={{ duration: 0.7, ease: "easeInOut" }}
                     >
                         <Image

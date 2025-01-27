@@ -750,7 +750,7 @@ const categoryData = {
                 images: [
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737615578/kghjkk_1_ka8xlx-removebg-preview_ku0zms.png",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737615037/_freepicdownloader.com_-turmeric-powder-white-cup-white-space-normal-removebg-preview_bj7mpl.png",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737614837/_freepicdownloader.com_-bowl-turmeric-is-white-table-normal-removebg-preview_zsxevo.png"
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737963807/_freepicdownloader.com_-dried-turmeric-roots-sookhi-haldi-as-whole-white-surface-selective-focus-normal-removebg-preview_zpqvcs.png"
                 ]
             },
             "Chilli": {
@@ -768,7 +768,7 @@ const categoryData = {
                     `,
                 images: [
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737613033/919_Red_Chilli_Powder_1.pdf_1_nqbwof.png",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737614686/_freepicdownloader.com_-red-chilli-lal-mirchi-mirch-with-powder-bowl-mortar-moody-background-selective-focus-normal-removebg-preview_h5foez.png",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737963508/_freepicdownloader.com_-dried-red-chilies-white-background-normal-removebg-preview_1_x7wgdz.png",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737614334/freepicdownloader.com_-ground-paprika-plate-isolated-white-background-normal_x4nzwx.jpg"
                 ]
             },
