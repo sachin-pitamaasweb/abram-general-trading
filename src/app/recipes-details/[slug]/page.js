@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import React from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
 import { recipes } from "@/helpers/recipes";
 
 export default function RecipeDetails() {
-    const params = useParams(); // Use useParams for dynamic segments
+    const params = useParams();
+    const router = useRouter();
     const { slug } = params;
 
     const images = [
@@ -18,7 +20,7 @@ export default function RecipeDetails() {
     ];
 
     const recipe = recipes.find((r) => r.title.toLowerCase().replace(/ /g, "-") === slug);
-    console.log('recipe', recipe.instructions.length);
+
     if (!recipe) {
         return (
             <section className="container mx-auto px-4 py-8">
@@ -35,19 +37,31 @@ export default function RecipeDetails() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Content */}
                     <div>
-                        <div className="bg-green-600 text-white text-xl font-bold px-4 py-2 rounded-t-md inline-block">
+                        {/* Back Button with Recipe Title */}
+                        <div
+                            className="bg-green-600 text-white text-xl font-bold px-6 py-3 rounded-md inline-flex items-center gap-3 cursor-pointer"
+                            onClick={() => router.back()}
+                        >
+                            <ArrowLeft className="w-5 h-5" />
                             {recipe.title}
                         </div>
 
+                        {/* Ingredients Section */}
                         <div className="mt-6">
                             <h2 className="text-2xl font-semibold mb-4">Ingredients:</h2>
-                            <ul className="list-disc pl-6">
+                            <ul className="pl-6 space-y-2">
                                 {Object.entries(recipe.ingredients).map(([section, items]) => (
                                     <li key={section} className="mb-2">
-                                        <strong>{section.charAt(0).toUpperCase() + section.slice(1)}:</strong>
-                                        <ul className="list-disc pl-10">
+                                        <strong className="font-semibold">{section.charAt(0).toUpperCase() + section.slice(1)}:</strong>
+                                        <ul className="pl-10 space-y-1">
                                             {items.map((item, index) => (
-                                                <li key={index}>{item}</li>
+                                                <li
+                                                    key={index}
+                                                    className="relative pl-4 text-gray-700"
+                                                >
+                                                    <span className="absolute left-0 top-1 text-[#FCCD4E]">•</span>
+                                                    {item}
+                                                </li>
                                             ))}
                                         </ul>
                                     </li>
@@ -56,7 +70,7 @@ export default function RecipeDetails() {
                         </div>
                     </div>
 
-                    {/* Right Content */}
+                    {/* Right Content - Recipe Image */}
                     <div>
                         <div className="relative w-full h-auto">
                             <Image
@@ -71,6 +85,8 @@ export default function RecipeDetails() {
                         </div>
                     </div>
                 </div>
+
+                {/* Instructions Section */}
                 <div className="mt-6 border-t border-gray-200 pt-6 container mx-auto">
                     <h2 className="text-2xl font-semibold mb-4">Instructions</h2>
                     <p className="text-gray-700">{recipe.instructions}</p>

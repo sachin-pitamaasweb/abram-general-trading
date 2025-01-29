@@ -124,7 +124,8 @@ export default function ProductCatalog() {
             ? categories[0].items[0]
             : categories[0].items[0].options[0]
     )
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [isSheetOpen, setIsSheetOpen] = useState(false); // Track Sheet state
 
     const renderCategoryItems = (items) => {
         return items.map((item) => {
@@ -138,6 +139,8 @@ export default function ProductCatalog() {
                         onClick={() => {
                             setSelectedItem(item)
                             setSelectedSubCategory(null)
+                            setSelectedCategory(selectedCategory)
+                            setIsSheetOpen(false)
                         }}
                     >
                         {item}
@@ -202,13 +205,16 @@ export default function ProductCatalog() {
                             if (typeof firstItem === 'string') {
                                 setSelectedItem(firstItem)
                                 setSelectedSubCategory(null)
+                                setSelectedCategory(category.name)
+                                setIsSheetOpen(false)
                             } else {
                                 setSelectedSubCategory(firstItem.name)
                                 setSelectedItem(firstItem.options[0])
+                                setIsSheetOpen(false)
                             }
                         }}
                     >
-                        {category.name}
+                        {category.name || "Categories"}
                     </AccordionTrigger>
                     <AccordionContent>
                         <div className="flex flex-col space-y-2">
@@ -223,15 +229,15 @@ export default function ProductCatalog() {
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col lg:flex-row gap-8">
-                <Sheet>
+                <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                     <SheetTrigger asChild>
-                        <Button variant="outline" className="lg:hidden mb-4">
-                            Categories
-                            <ChevronDown className="ml-2 h-4 w-4" />
+                        <Button variant="outline" className="lg:hidden mb-4 flex justify-between w-full">
+                            <span>Categories</span>
+                            <ChevronDown className="h-4 w-4" />
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                        <nav className="py-4">
+                        <nav className="py-4 h-full overflow-y-auto">
                             {loading ? (
                                 <div className="space-y-4">
                                     {Array(6).fill(null).map((_, index) => (

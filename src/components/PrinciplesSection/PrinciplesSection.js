@@ -32,16 +32,18 @@ export default function PrinciplesSection() {
 
   return (
     <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16" style={{ maxWidth: "90rem" }}>
-      <motion.div 
-        className="text-left mb-12"
+       <motion.div 
+        className="text-left mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-black text-3xl md:text-4xl font-semibold">OUR PRINCIPLES</h2>
-        <p className="text-gray-600 max-w-2xl text-lg md:text-xl leading-relaxed">
+        <h2 className="text-black text-2xl md:text-4xl font-semibold mb-4 md:mb-6">
+          OUR PRINCIPLES
+        </h2>
+        <p className="text-gray-600 text-lg md:text-xl leading-relaxed mx-auto">
           Committed to delivering superior-quality rice with sustainable practices,
-          innovative solutions, and unwavering integrity
+          innovative solutions, and unwavering integrity.
         </p>
       </motion.div>
 

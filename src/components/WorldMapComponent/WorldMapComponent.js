@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 // import WorldMap from "react-svg-worldmap";
 import Image from 'next/image';
 
@@ -11,11 +10,6 @@ export default function WorldMapComponent() {
   useEffect(() => {
     setIsClient(true); // Ensure WorldMap only renders on the client
   }, []);
-
-  const fadeInVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
 
   const countries = [
     "INDIA", "DUBAI", "TURKEY", "SAUDI ARABIA", "MADAGASCAR", "MIDDLE EAST",
@@ -42,21 +36,16 @@ export default function WorldMapComponent() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full px-4 py-8 sm:py-12 lg:py-16 max-w-7xl">
-        <h2 className="text-center text-3xl font-bold mb-8">Our Global Presence</h2>
-        <motion.div
-          className="relative w-full aspect-[16/9] lg:aspect-auto max-w-4xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.5 }}
-          variants={fadeInVariants}
-        >
+        <h2 className="text-center text-3xl font-bold mb-8 animate-fadeIn">
+          Our Global Presence
+        </h2>
+        <div className="relative w-full aspect-[16/9] lg:aspect-auto max-w-4xl mx-auto animate-fadeIn">
           {isClient && (
             // <WorldMap
             //   color="#09723C"
             //   valueSuffix="presence"
             //   size="responsive"
             //   data={data}
-              
             //   tooltipBgColor="#09723C"
             //   tooltipTextColor="#fff"
             // />
@@ -68,10 +57,9 @@ export default function WorldMapComponent() {
               layout="responsive"
               objectFit="contain"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-
             />
           )}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -29,12 +29,12 @@ export default function HeroCarousel({ images = [] }) {
                         <CarouselContent>
                             {images.map((image, index) => (
                                 <CarouselItem key={index}>
-                                    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[670px] rounded-[2rem] overflow-hidden">
+                                    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[770px] rounded-[2rem] overflow-hidden">
                                         <Image
                                             src={image.src}
                                             alt={image.alt}
                                             fill
-                                            className="object-cover"
+                                            className="object-fill transition-transform duration-300 hover:scale-105"
                                             priority={index === 0}
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                                         />

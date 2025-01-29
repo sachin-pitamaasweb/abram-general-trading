@@ -1,45 +1,24 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu, ChevronDown } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuTrigger,
-//   DropdownMenuSub,
-//   DropdownMenuSubContent,
-//   DropdownMenuSubTrigger,
-// } from '@/components/ui/dropdown-menu'
-// import { cn } from '@/lib/utils'
-// import { MobileDropdown } from '../MobileDropdown/MobileDropdown';
-import { CloseButton } from '../CloseButton/CloseButton';
+import { CloseButton } from '../CloseButton/CloseButton'
 
 import logo from '../../app/logo.png'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  // const productItems = {
-  //   'Rice': [],
-  //   'Pulses': [],
-  //   'Spices': ['Black Pepper', 'Cardamom', 'Cinnamon'],
-  //   'Chickpeas': [],
-  //   'Oil Seeds': ['Mustard Seeds', 'Sesame Seeds', 'Sunflower Seeds'],
-  //   'Edible Oil': ['Mustard Oil', 'Sunflower Oil', 'Soybean Oil'],
-  //   'Dry Fruits': ['Almonds', 'Cashews', 'Raisins'],
-  //   'Animal Feed': ['Cotton Seed Cake', 'Rapeseed Meal', 'Sorghum', 'Soybean Meal', 'Yellow Corn (Maize)'],
-  //   'Organic Products': ['Organic Rice', 'Organic Pulses', 'Organic Spices']
-  // }
+  const pathname = usePathname() // Get current route
 
   const navItems = [
     { label: 'HOME', href: '/' },
     { label: 'ABOUT US', href: '/about' },
     { label: 'OUR PRODUCTS', href: '/products' },
-    {label: 'BRANDS', href: '/brands'},
+    { label: 'BRANDS', href: '/brands' },
     { label: 'RECIPES', href: '/recipes' },
     { label: 'PHOTO GALLERY', href: '/gallery' },
     { label: 'CONTACT US', href: '/contact' },
@@ -62,15 +41,18 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8 lg:mr-[29px]">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="relative text-sm font-medium text-gray-800 hover:text-primary transition-transform hover:scale-105 group"
+                  className={`relative text-sm font-medium transition-all ${
+                    pathname === item.href
+                      ? 'text-primary border-b-2 border-primary pb-1'
+                      : 'text-gray-800 hover:text-primary'
+                  }`}
                 >
-                  <span className="group-hover:font-bold">{item.label}</span>
-                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primary transition-all group-hover:w-full"></span>
+                  {item.label}
                 </Link>
               ))}
             </nav>
@@ -90,7 +72,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className={`fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-transform transform">
           <div className="container mx-auto px-4 py-6">
             <div className="flex justify-between items-center mb-8">
               <CloseButton onClick={() => setIsMenuOpen(false)} className="order-2" />
@@ -99,15 +81,18 @@ export default function Header() {
             </div>
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <div key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-lg font-medium text-gray-800 hover:text-primary transition-transform hover:translate-x-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </div>
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`text-lg font-medium transition-all ${
+                    pathname === item.href
+                      ? 'text-primary border-b-2 border-primary pb-1'
+                      : 'text-gray-800 hover:text-primary'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>

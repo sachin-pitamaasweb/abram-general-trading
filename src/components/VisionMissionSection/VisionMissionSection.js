@@ -20,11 +20,14 @@ export default function VisionMissionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false }}
-          whileHover={{ scale: 1.1 }}
         >
-          <div className="w-24 h-24 rounded-full bg-emerald-600 flex items-center justify-center">
+          <motion.div 
+            className="w-24 h-24 rounded-full bg-emerald-600 flex items-center justify-center"
+            whileHover={{ scale: 1.1 }}
+            transition={{ scale: { duration: 0.3 } }}
+          >
             <Eye className="w-12 h-12 text-white" />
-          </div>
+          </motion.div>
           <div className="max-w-sm">
             <h2 className="font-medium text-lg mb-3">OUR VISION IS TO MAKE</h2>
             <p className="text-gray-800">
@@ -40,15 +43,18 @@ export default function VisionMissionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false }}
-          whileHover={{ scale: 1.1 }}
         >
-          <div className="w-24 h-24 rounded-full bg-emerald-600 flex items-center justify-center">
+          <motion.div 
+            className="w-24 h-24 rounded-full bg-emerald-600 flex items-center justify-center"
+            whileHover={{ scale: 1.1 }}
+            transition={{ scale: { duration: 0.3 } }}
+          >
             <Flag className="w-12 h-12 text-white" />
-          </div>
+          </motion.div>
           <div className="max-w-sm">
             <h2 className="font-medium text-lg mb-3">OUR MISSION IS TO MAKE</h2>
             <p className="text-gray-800">
-              THE WORLD EXPERIENCE THE TRUE AROMATIC FLAVOUR IN INDIA THAT BRING JOY AND HAPPINESS TO PALATES OF GLOBAL CONSUMERS
+              THE WORLD EXPERIENCE THE TRUE AROMATIC FLAVOUR IN INDIA THAT BRINGS JOY AND HAPPINESS TO THE PALATES OF GLOBAL CONSUMERS.
             </p>
           </div>
         </motion.div>

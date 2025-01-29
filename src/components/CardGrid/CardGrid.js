@@ -20,22 +20,22 @@ const cards = [
     {
         title: "Pulses and Lentils",
         content: "Nutrient-rich pulses processed to perfection.",
-         image: "/images/home/services/s-2.png"
+        image: "/images/home/services/s-2.png"
     },
     {
         title: "Spices",
-        content: " Authentic Indian spices packed with flavor and aroma.",
-         image: "/images/home/services/s-3.png"
+        content: "Authentic Indian spices packed with flavor and aroma.",
+        image: "/images/home/services/s-3.png"
     },
     {
         title: "Oil Seeds and Dry Fruits",
         content: "Premium quality seeds and nuts for healthy living.",
-         image: "/images/home/services/s-4.png"
+        image: "/images/home/services/s-4.png"
     },
     {
         title: "Animal Feed",
         content: "Nutritionally balanced animal feed for superior livestock care.",
-         image: "/images/home/services/s-5.png"
+        image: "/images/home/services/s-5.png"
     }
 ];
 
@@ -59,7 +59,7 @@ export default function CardGrid() {
 
     return (
         <motion.section
-            className="py-12 px-4 md:px-6"
+            className="py-12 px-4 md:px-6 overflow-hidden relative z-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
@@ -85,14 +85,14 @@ export default function CardGrid() {
                     </Carousel>
                 ) : (
                     <motion.div
-                        className="container mx-auto flex flex-wrap justify-start gap-[1rem]"
+                        className="container mx-auto flex flex-wrap justify-start gap-[1rem] pb-16" // Added bottom padding
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.2 }}
                         variants={cardVariants}
                     >
                         {cards.map((card, index) => (
-                            <Card key={index} {...card} />
+                            <Card key={index} {...card} cardStyle={{ boxShadow: "rgba(0, 0, 0, 0.08) 0px 4px 8px" }} />
                         ))}
                     </motion.div>
                 )}
@@ -100,4 +100,3 @@ export default function CardGrid() {
         </motion.section>
     );
 }
-
