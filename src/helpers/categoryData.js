@@ -1412,6 +1412,54 @@ const categoryData = {
             },
         }
     },
+    Sugar: {
+        title: "Sugar",
+        description: "Discover our range of premium sugars, perfect for baking, cooking, and sweetening your favorite beverages.",
+        quality: "Our sugars are sourced from the finest farms, ensuring purity and superior taste.",
+        items: {
+            "White Sugar (ICUMSA 45)": {
+                title: "White Sugar (ICUMSA 45) – Premium Quality Refined Sugar for Baking and Cooking",
+                description: `
+                Our premium white sugar (ICUMSA 45) is perfect for baking, cooking, and sweetening your favorite beverages. Known for its 
+                fine texture and pure taste, white sugar is a versatile sweetener that can be used in a variety of recipes. Whether you're 
+                making cakes, cookies, or beverages, our white sugar is a great choice. Packed with sweetness and energy, white sugar offers 
+                a quick and convenient way to add flavor to your dishes and drinks.
+            `,
+            quality: `
+                Sourced from the best sugar mills, our white sugar (ICUMSA 45) is carefully processed to ensure the highest quality and
+                purity. Each grain of sugar is refined to perfection, making it ideal for baking and cooking. Our white sugar is free from
+                additives, preservatives, and artificial flavors, ensuring that you get nothing but pure, natural sweetness in every bite.
+                Whether you're sweetening your morning coffee or baking a delicious dessert, our white sugar is a reliable and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/Icumsa-45_uobodn.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/icumsa-45-sugar_ajl0sb.avif",    
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/White_Sugar_ICUMSA_45_zmtjia.jpg"
+                ],
+            },
+            "Refined Sugar (ICUMSA 150)": {
+                title: "Refined Sugar (ICUMSA 150) – Premium Quality Refined Sugar for Baking and Cooking",
+                description: `
+                Our premium refined sugar (ICUMSA 150) is perfect for baking, cooking, and sweetening your favorite beverages. Known for its 
+                fine texture and pure taste, refined sugar is a versatile sweetener that can be used in a variety of recipes. Whether you're 
+                making cakes, cookies, or beverages, our refined sugar is a great choice. Packed with sweetness and energy, refined sugar offers 
+                a quick and convenient way to add flavor to your dishes and drinks.
+            `,
+            quality: `
+                Sourced from the best sugar mills, our refined sugar (ICUMSA 150) is carefully processed to ensure the highest quality and
+                purity. Each grain of sugar is refined to perfection, making it ideal for baking and cooking. Our refined sugar is free from
+                additives, preservatives, and artificial flavors, ensuring that you get nothing but pure, natural sweetness in every bite.
+                Whether you're sweetening your morning coffee or baking a delicious dessert, our refined sugar is a reliable and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130274/Refined_Sugar_ICUMSA_150_yakh2n.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/icumsa-sugar-150_aqxj55.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/150_spuhma.jpg"
+                ],
+            },
+        },
+    },
+                    
 };
 
 export default categoryData;

@@ -74,17 +74,17 @@ export default function Home() {
           />
         </div>
       </div>
-      <WelcomeSection />
+      {/* <WelcomeSection /> */}
       {/* <ServicesSection /> */}
       <CardGrid />
       {/* <Founders /> */}
-      <Milestones />
+      {/* <Milestones /> */}
       {/* <BrandMarquee /> */}
       {/* <ProductRange /> */}
-      <Infrastructure />
+      {/* <Infrastructure /> */}
       <PresenceMap />
       {/* <BannerSection /> */}
-      <Gallery />
+      {/* <Gallery /> */}
       <Testimonials />
     </>
   );

@@ -110,6 +110,10 @@ const categories = [
             "Sunflower Oil",
         ],
     },
+    {
+        name: "Sugar",
+        items: ["White Sugar (ICUMSA 45)", "Refined Sugar (ICUMSA 150)"],
+    }
 ]
 
 export default function ProductCatalog() {
