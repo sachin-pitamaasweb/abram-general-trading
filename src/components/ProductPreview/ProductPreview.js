@@ -56,7 +56,7 @@ export function ProductPreview({ item, category, subCategory }) {
                                             src={img}
                                             alt={`${title} image ${index + 1}`}
                                             fill
-                                            className="object-cover"
+                                            className={title.includes('Chilli') || title.includes('Turmeric') ? "object-contain md:object-center p-[45px]" : "object-cover"}
                                         />
                                     </Card>
                                 </CarouselItem>
@@ -75,7 +75,7 @@ export function ProductPreview({ item, category, subCategory }) {
                                 src={img}
                                 alt={`${title} image ${index + 1}`}
                                 fill
-                                className="object-cover"
+                                className={title.includes('Chilli') || title.includes('Turmeric') ? "object-contain md:object-center p-[45px]" : "object-cover"}
                             />
                         </Card>
                     ))}

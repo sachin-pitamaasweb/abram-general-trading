@@ -4,6 +4,7 @@
 
 body {
   font-family: var(--font-geist-sans); 
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 @layer base {
@@ -77,8 +78,6 @@ body {
   max-width: 1840px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem; /* Optional for consistent padding */
-  padding-right: 1rem; /* Optional for consistent padding */
 }
 
 .mt-5 {

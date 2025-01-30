@@ -1,0 +1,13 @@
+/* ✅ Marquee Animation for Right to Left Movement */
+@keyframes marquee-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .marquee-left {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee-left 15s linear infinite;
+  }
+  

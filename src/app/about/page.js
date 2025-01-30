@@ -19,6 +19,7 @@ const images = [
   {
     src: "/images/home/banner/about.png",
     alt: "Aerial view of agricultural fields showing farmers planting crops",
+    caption: "Nurtured in fertile lands, our rice brings purity, nutrition, and exquisite taste to your table",
   },
 ];
 
@@ -27,6 +28,7 @@ export default function AboutPage() {
     <>
       <HeroCarousel
         images={images}
+        title="about"
       />
       <WelcomeSectionAbout />
       <VisionMissionSection />

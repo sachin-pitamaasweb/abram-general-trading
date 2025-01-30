@@ -6,12 +6,10 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    // CarouselNext,
-    // CarouselPrevious
 } from '@/components/ui/carousel';
 import { useMediaQuery } from '@/hooks/use-media-query';
 
-export default function HeroCarousel({ images = [] }) {
+export default function HeroCarousel({ images = [], title = '' }) {
     const [api, setApi] = useState(null);
     const [current, setCurrent] = useState(0);
     const isMobile = useMediaQuery("(max-width: 768px)");
@@ -29,27 +27,26 @@ export default function HeroCarousel({ images = [] }) {
                         <CarouselContent>
                             {images.map((image, index) => (
                                 <CarouselItem key={index}>
-                                    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[770px] rounded-[2rem] overflow-hidden">
+                                    <div className="relative w-full h-[350px] sm:h-[350px] md:h-[500px] lg:h-[800px] rounded-[2rem] overflow-hidden">
                                         <Image
                                             src={image.src}
                                             alt={image.alt}
                                             fill
-                                            className="object-fill transition-transform duration-300 hover:scale-105"
+                                            className="object-inherit transition-transform duration-300"
                                             priority={index === 0}
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                                         />
+                                        {/* Responsive Overlay Text */}
+                                        {/* {title !== 'home' && (
+                                            <div className="absolute bottom-[0%] left-0 sm:bottom-[12%] md:bottom-[0%] lg:bottom-[0%] w-full bg-black bg-opacity-50 text-white px-6 py-4 text-center text-[1rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] leading-[1.5rem] sm:leading-[2rem] md:leading-[2.5rem] lg:leading-[3rem]">
+                                                {image.caption || 'Nurtured in fertile lands, our rice brings purity, nutrition, and exquisite taste to your table'}
+                                            </div>
+                                        )} */}
                                     </div>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
                     )}
-
-                    {/* {!isMobile && (
-                        <>
-                            <CarouselPrevious className="left-4" />
-                            <CarouselNext className="right-4" />
-                        </>
-                    )} */}
                 </Carousel>
                 {/* Pagination Dots */}
                 <div className="flex justify-center mt-4">
@@ -66,3 +63,6 @@ export default function HeroCarousel({ images = [] }) {
         </div>
     );
 }
+
+
+

@@ -14,7 +14,7 @@ export default function RecipeDetails() {
 
     const images = [
         {
-            src: "/images/home/banner/product.png",
+            src: "/images/Recipe/banner.jpg",
             alt: "Aerial view of agricultural fields showing farmers planting crops",
         },
     ];
@@ -32,8 +32,8 @@ export default function RecipeDetails() {
 
     return (
         <>
-            <HeroCarousel images={images} />
-            <section className="container mx-auto px-4 py-8" style={{ maxWidth: "90rem" }}>
+            {/* <HeroCarousel images={images} /> */}
+            <section className="container mx-auto px-4 py-8" style={{ maxWidth: "90rem", marginTop: "100px" }}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Content */}
                     <div>

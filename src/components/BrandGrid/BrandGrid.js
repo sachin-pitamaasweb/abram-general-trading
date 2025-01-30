@@ -1,6 +1,64 @@
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 
+// const brandItems = [
+//     {
+//         id: 1,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_27_ykfclh.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048035/1212_qfbfyn.png",
+//         leftImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1737709736/uhlkuk_1_oubkrg.png",
+//         rightImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1737709735/287_c6r2ag.png",
+//         productName: "1211 Basmati Rice",
+//     },
+//     {
+//         id: 2,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_28_ogisx9.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048037/noora_25kg_us1c8y.png",
+//         productName: "XXXL Indian Sella Rice",
+
+//     },
+//     {
+//         id: 3,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_29_zpxcns.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048031/285_usjcwr.png",
+//         leftImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1737709734/295_spap4o.png",
+//         rightImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1737709733/294_n8l0nj.png",
+//         productName: "1211 Basmati Rice",
+//     },
+//     {
+//         id: 4,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_30_tk1zmy.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048037/golden_star_rice_lqdibo.png",
+//         productName: "Indian Basmati Rice",
+//     },
+//     {
+//         id: 5,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_31_ebyv3r.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048035/925_ckjnks.png",
+//         leftImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/292-3N5HVBHWlTvjp90jm8PXxthhj4CWFw.png",
+//         rightImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/290-HUFjz10t5mFMtM479ovCZYuqKBJ0V3.png",
+//         productName: "Indian Basmati Rice Classic",
+//     },
+//     {
+//         id: 6,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_32_l9tk4q.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048036/crystal_gold_18kg_back5v.png",
+//         productName: "Indian Sona Masoori Rice",
+//     },
+//     {
+//         id: 7,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_33_ebghnc.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048035/ABRAM_Rice_35kg_gyzx5s.png",
+//         productName: "ABRAM Basmati Rice",
+//     },
+//     {
+//         id: 8,
+//         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047588/Frame_34_c5n304.png",
+//         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048031/919_Red_Chilli_Powder_1.pdf_rzrvcm.png",
+//         productName: "Red Chilli Powder",
+//     }
+// ]
+
 const brandItems = [
     {
         id: 1,
@@ -12,12 +70,6 @@ const brandItems = [
     },
     {
         id: 2,
-        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_28_ogisx9.png",
-        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048037/noora_25kg_us1c8y.png",
-        productName: "XXXL Indian Sella Rice",
-    },
-    {
-        id: 3,
         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_29_zpxcns.png",
         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048031/285_usjcwr.png",
         leftImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1737709734/295_spap4o.png",
@@ -25,13 +77,7 @@ const brandItems = [
         productName: "1211 Basmati Rice",
     },
     {
-        id: 4,
-        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_30_tk1zmy.png",
-        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048037/golden_star_rice_lqdibo.png",
-        productName: "Indian Basmati Rice",
-    },
-    {
-        id: 5,
+        id: 3,
         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_31_ebyv3r.png",
         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048035/925_ckjnks.png",
         leftImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/292-3N5HVBHWlTvjp90jm8PXxthhj4CWFw.png",
@@ -39,24 +85,31 @@ const brandItems = [
         productName: "Indian Basmati Rice Classic",
     },
     {
-        id: 6,
-        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_32_l9tk4q.png",
-        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048036/crystal_gold_18kg_back5v.png",
-        productName: "Indian Sona Masoori Rice",
-    },
-    {
-        id: 7,
+        id: 4,
         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_33_ebghnc.png",
         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048035/ABRAM_Rice_35kg_gyzx5s.png",
         productName: "ABRAM Basmati Rice",
     },
     {
-        id: 8,
-        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047588/Frame_34_c5n304.png",
-        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048031/919_Red_Chilli_Powder_1.pdf_rzrvcm.png",
-        productName: "Red Chilli Powder",
-    }
-]
+        id: 5,
+        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_28_ogisx9.png",
+        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048037/noora_25kg_us1c8y.png",
+        productName: "XXXL Indian Sella Rice",
+
+    },
+    {
+        id: 6,
+        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_30_tk1zmy.png",
+        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048037/golden_star_rice_lqdibo.png",
+        productName: "Indian Basmati Rice",
+    },
+        {
+        id: 7,
+        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_32_l9tk4q.png",
+        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048036/crystal_gold_18kg_back5v.png",
+        productName: "Indian Sona Masoori Rice",
+    },
+];
 
 export default function BrandGrid() {
     return (

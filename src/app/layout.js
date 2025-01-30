@@ -1,9 +1,15 @@
+'use client';
+
 import localFont from "next/font/local";
 import "./globals.css";
+import { useMediaQuery } from "../hooks/use-media-query";
 
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+
+import Header from "../components/Header/Header";
+import HeaderMobile from "../components/Header/HeaderMobile";
+import Footer from "../components/Footer/Footer";
 // import FooterBottom from "@/components/Footer/FooterBottom";
+import { metadata } from "../helpers/metatags";
 
 const geistSans = localFont({
   src: "./fonts/MADE-Tommy-Soft-Light-PERSONAL-USE.woff",
@@ -16,16 +22,9 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: "Abram General Trading L.L.C. | Quality Agro Products Exporter",
-  description: "Abram General Trading L.L.C. exports premium Basmati Rice, Spices, Pulses, Tea, and Dairy Products globally. Based in Dubai, we ensure quality.",
-  keywords:
-    "Abram General Trading, Agro Products Exporter, Basmati Rice, Chickpeas, Groundnuts, Spices, Pulses, Sugar, Dairy Products, Agro Products Dubai, Indian Agro Products Exporter, Gulf Agro Supplier",
-  author: "Abram General Trading Team",
-  robots: "index, follow",
-};
-
 export default function RootLayout({ children }) {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+
   return (
     <html lang="en">
       <head>
@@ -35,10 +34,8 @@ export default function RootLayout({ children }) {
         <meta name="author" content={metadata.author} />
         <meta name="robots" content={metadata.robots} />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         {/* OpenGraph Meta Tags */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
@@ -77,7 +74,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ backgroundColor: "#F2F2F2" }}
       >
-        <Header />
+        {/* Dynamically render headers based on screen size */}
+        {isMobile ? <HeaderMobile /> : <Header />}
+
         <main>{children}</main>
         <Footer />
         {/* <FooterBottom /> */}

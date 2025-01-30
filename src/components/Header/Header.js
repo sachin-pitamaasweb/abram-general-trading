@@ -70,15 +70,15 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-transform transform">
+        <div className="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-transform transform h-[50vh] translate-y-0 ease-in-out shadow-lg">
           <div className="container mx-auto px-4 py-6">
             <div className="flex justify-between items-center mb-8">
               <CloseButton onClick={() => setIsMenuOpen(false)} className="order-2" />
               <h2 className="text-2xl font-bold text-gray-800">Menu</h2>
-              <div className="w-10" /> {/* Spacer for alignment */}
+              <div className="w-10" />
             </div>
+            <div className="border-b border-gray-500 mb-4" />
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
@@ -86,7 +86,7 @@ export default function Header() {
                   href={item.href}
                   className={`text-lg font-medium transition-all ${
                     pathname === item.href
-                      ? 'text-primary border-b-2 border-primary pb-1'
+                      ? 'pb-1 text-black text-bold text-2xl'
                       : 'text-gray-800 hover:text-primary'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -101,3 +101,5 @@ export default function Header() {
     </header>
   )
 }
+
+

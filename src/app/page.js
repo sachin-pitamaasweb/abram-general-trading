@@ -1,4 +1,6 @@
+"use client";
 import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
+import HeroCarouselMobile from "@/components/HeroCarousel/HeroCarouselMobile";
 import PresenceMap from "@/components/PresenceMap/PresenceMap";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import CardGrid from "@/components/CardGrid/CardGrid";
@@ -6,7 +8,11 @@ import ProductShowcase from "@/components/ProductShowcase/ProductShowcase";
 import PunjabKitchen from "@/components/PunjabKitchen/PunjabKitchen";
 import Zehnab from "@/components/Zehnab/Zehnab";
 
+import { useMediaQuery } from "../hooks/use-media-query";
+
+
 export default function Home() {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
   const images = [
     {
       src: "https://res.cloudinary.com/dtivafy25/image/upload/v1737982615/Website_Banner_1_z46xsz.jpg",
@@ -33,9 +39,11 @@ export default function Home() {
 
   return (
     <>
-      <HeroCarousel
-        images={images}
-      />
+      {isMobile ? (
+        <HeroCarouselMobile images={images} title="home" />
+      ) : (
+        <HeroCarousel images={images} title="home" />
+      )}
       <div className="container mx-auto p-12">
         <div className="max-w-5xl mx-auto" style={{ maxWidth: "90rem" }}>
           <PunjabKitchen
