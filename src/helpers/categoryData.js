@@ -25,6 +25,50 @@ const categoryData = {
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737548324/freepicdownloader.com_-dry-chickpeas-clay-bowl-isolated-white-background-uncooked-chick-pea-chickpea-grains-normal_xq3cdd.jpg"
                 ],
             },
+            "Green Lentils": {
+                title: "Green Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
+                description: `
+                Our premium green lentils are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their 
+                distinctive color and nutty taste, green lentils are a versatile legume that can be enjoyed in a variety of ways. 
+                Whether you're making soups, stews, salads, or side dishes, our green lentils are a great choice. Packed with essential 
+                nutrients like protein, fiber, and vitamins, green lentils offer numerous health benefits and are a delicious addition 
+                to your diet.
+            `,
+                quality: `
+                Sourced from the best lentil farms, our green lentils are carefully selected and processed to ensure the highest quality 
+                and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful 
+                ingredient. Our green lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing 
+                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad, 
+                our green lentils are a nutritious and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532226/sprouts-seed-white-small-bowl_ys53hv.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532226/sprouts-seed-wooden-small-bowl_pfcch6.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532236/top-view-frame-with-seeds_upidq5.jpg"
+                ]
+            },
+            "Red Lentils": {
+                title: "Red Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
+                description: ` 
+                Our premium red lentils are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their
+                distinctive color and nutty taste, red lentils are a versatile legume that can be enjoyed in a variety of ways.
+                Whether you're making soups, stews, salads, or side dishes, our red lentils are a great choice. Packed with essential
+                nutrients like protein, fiber, and vitamins, red lentils offer numerous health benefits and are a delicious addition
+                to your diet.
+            `,
+                quality: `
+                Sourced from the best lentil farms, our red lentils are carefully selected and processed to ensure the highest quality
+                and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful
+                ingredient. Our red lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing
+                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad,
+                our red lentils are a nutritious and delicious choice.
+            `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532546/top-view-rich-vitamins-lentils-bowl-with-lentils-isolated-white-wall-with-copy-space_hin5z8.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532541/wooden-bowls-red-raw-lentils-marble-table_niig6f.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737532540/top-up-view-raw-uncooked-red-lentils-bowl_kg2drh.jpg"
+                ]
+            },
             ChanaDal: {
                 title: "Chana Dal – Authentic Taste for Traditional Recipes",
                 description: `
@@ -1322,6 +1366,45 @@ const categoryData = {
         description: "Explore our range of premium lentils, perfect for soups, stews, salads, and more.",
         quality: "Our lentils are sourced from the finest farms, ensuring freshness and superior taste.",
         items: {
+            ChickPeas: {
+                title: "Chickpeas – Protein-Packed and Farm Fresh",
+                description: `
+                Discover the goodness of our premium chickpeas, sourced directly from top-quality farms.
+                Carefully harvested and processed to preserve their natural taste and nutritional value, 
+                our chickpeas are perfect for creating delicious dishes such as creamy hummus, flavorful chana masala,
+                protein-rich salads, and healthy roasted snacks. Add a wholesome touch to your meals with these nutrient-packed legumes.
+                `,
+                quality: `
+                Our chickpeas are naturally rich in plant-based protein and fiber, making them an ideal choice for a balanced and healthy diet. 
+                They undergo rigorous cleaning and quality checks to ensure only the best grains make it to your kitchen. 
+                Completely free from additives and preservatives, our chickpeas offer purity and freshness in every bite..
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735907233/chickpea-photo-1_i90txx.webp",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735907233/chickpeas_zg17bi.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1737548324/freepicdownloader.com_-dry-chickpeas-clay-bowl-isolated-white-background-uncooked-chick-pea-chickpea-grains-normal_xq3cdd.jpg"
+                ],
+            },
+            Rajma: {
+                title: "Rajma – Premium Kidney Beans for Authentic Indian Curries",
+                description: `
+                 Our Rajma beans are known for their rich texture, bold taste, and vibrant red color, 
+                 making them the perfect choice for classic Indian curries like Rajma Masala. 
+                 Loved for their ability to soak in spices and flavors, these kidney beans are a must-have for hearty, satisfying meals. 
+                 Whether paired with steamed rice or enjoyed in global recipes like chili, our Rajma delivers authentic taste in every bite.
+                `,
+                quality: `
+                   Carefully sourced from trusted farms, our Rajma is packed with essential nutrients like iron, fiber, and protein. 
+                   These kidney beans are cleaned and processed naturally to retain their natural goodness, 
+                   ensuring they cook to a soft, creamy consistency while maintaining their vibrant color and rich flavor. 
+                   Completely free from preservatives and additives, our Rajma is perfect for creating wholesome, delicious meals.
+                `,
+                images: [
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735972251/Red-Kidney-Beans_eruo31.jpg",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735972250/rajma-dal-500x500-1_j6lwbb.webp",
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1735972249/bhaderwah-marwah-rajma-red-kidney-beans-pack-400-gm-pulses-442_lxnqyi.jpg"
+                ]
+            },
             "Black Lentils": {
                 title: "Black Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
                 description: `
@@ -1388,21 +1471,21 @@ const categoryData = {
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737532540/top-up-view-raw-uncooked-red-lentils-bowl_kg2drh.jpg"
                 ]
             },
-            "Yellow Lentils": {
-                title: "Yellow Lentils – Premium Quality Lentils for Soups, Stews, and Salads",
+            "Soybeans": {
+                title: "Soybeans – Premium Quality Lentils for Soups, Stews, and Salads",
                 description: `
-                Our premium yellow lentils are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their    
-                distinctive color and nutty taste, yellow lentils are a versatile legume that can be enjoyed in a variety of ways.
-                Whether you're making soups, stews, salads, or side dishes, our yellow lentils are a great choice. Packed with essential
-                nutrients like protein, fiber, and vitamins, yellow lentils offer numerous health benefits and are a delicious addition
+                Our premium soybeans are perfect for adding a rich, earthy flavor to your favorite dishes. Known for their 
+                distinctive color and nutty taste, soybeans are a versatile legume that can be enjoyed in a variety of ways. 
+                Whether you're making soups, stews, salads, or side dishes, our soybeans are a great choice. Packed with essential 
+                nutrients like protein, fiber, and vitamins, soybeans offer numerous health benefits and are a delicious addition 
                 to your diet.
             `,
                 quality: `
-                Sourced from the best lentil farms, our yellow lentils are carefully selected and processed to ensure the highest quality
-                and freshness. Each lentil is packed with essential nutrients and antioxidants, making them a healthy and flavorful
-                ingredient. Our yellow lentils are free from additives, preservatives, and artificial flavors, ensuring that you get nothing
-                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad,
-                our yellow lentils are a nutritious and delicious choice.
+                Sourced from the best soybean farms, our soybeans are carefully selected and processed to ensure the highest quality 
+                and freshness. Each soybean is packed with essential nutrients and antioxidants, making them a healthy and flavorful 
+                ingredient. Our soybeans are free from additives, preservatives, and artificial flavors, ensuring that you get nothing
+                but pure, natural goodness in every bite. Whether you're making a hearty soup, a flavorful stew, or a refreshing salad, 
+                our soybeans are a nutritious and delicious choice.
             `,
                 images: [
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1737532790/soybean-seeds-wooden-floor-hemp-sacks-food-nutrition-concept_rlo8ev.jpg",
@@ -1425,7 +1508,7 @@ const categoryData = {
                 making cakes, cookies, or beverages, our white sugar is a great choice. Packed with sweetness and energy, white sugar offers 
                 a quick and convenient way to add flavor to your dishes and drinks.
             `,
-            quality: `
+                quality: `
                 Sourced from the best sugar mills, our white sugar (ICUMSA 45) is carefully processed to ensure the highest quality and
                 purity. Each grain of sugar is refined to perfection, making it ideal for baking and cooking. Our white sugar is free from
                 additives, preservatives, and artificial flavors, ensuring that you get nothing but pure, natural sweetness in every bite.
@@ -1433,7 +1516,7 @@ const categoryData = {
             `,
                 images: [
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/Icumsa-45_uobodn.jpg",
-                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/icumsa-45-sugar_ajl0sb.avif",    
+                    "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/icumsa-45-sugar_ajl0sb.avif",
                     "https://res.cloudinary.com/dtivafy25/image/upload/v1738130273/White_Sugar_ICUMSA_45_zmtjia.jpg"
                 ],
             },
@@ -1445,7 +1528,7 @@ const categoryData = {
                 making cakes, cookies, or beverages, our refined sugar is a great choice. Packed with sweetness and energy, refined sugar offers 
                 a quick and convenient way to add flavor to your dishes and drinks.
             `,
-            quality: `
+                quality: `
                 Sourced from the best sugar mills, our refined sugar (ICUMSA 150) is carefully processed to ensure the highest quality and
                 purity. Each grain of sugar is refined to perfection, making it ideal for baking and cooking. Our refined sugar is free from
                 additives, preservatives, and artificial flavors, ensuring that you get nothing but pure, natural sweetness in every bite.
@@ -1459,7 +1542,7 @@ const categoryData = {
             },
         },
     },
-                    
+
 };
 
 export default categoryData;

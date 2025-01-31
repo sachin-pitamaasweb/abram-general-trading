@@ -12,9 +12,11 @@ const categories = [
     {
         name: "Pulses",
         items: [
-            "ChickPeas",
+            // "ChickPeas",
+            "Green Lentils",
+            "Red Lentils",
             "ChanaDal",
-            "Rajma",
+            // "Rajma",
             "ToorDal",
             "UradDal",
             "MasoorDal",
@@ -36,10 +38,12 @@ const categories = [
     {
         name: "Lentils",
         items: [
+            "ChickPeas",
+            "Rajma",
             "Black Lentils",
-            "Green Lentils",
-            "Red Lentils",
-            "Yellow Lentils",
+            // "Green Lentils",
+            // "Red Lentils",
+            "Soybeans",
         ],
     },
     {

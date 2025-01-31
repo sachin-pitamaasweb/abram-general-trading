@@ -190,7 +190,6 @@ export default function ContactSocialSection() {
   // Handle form submission
   async function onSubmit(values) {
     try {
-      console.log("Success!", values);
       alert("Your message has been sent successfully.");
       form.reset();
     } catch (error) {

@@ -7,7 +7,7 @@ export default function FooterBottom() {
         <div className="flex flex-col items-center text-center space-y-2">
           {/* Credits */}
           <p className="text-sm color-#000">
-            Designed and Developed by <span className="font-semibold">Pitamaas</span>
+            Designed and Developed by <a className="font-semibold" href="https://www.pitamaas.com">Pitamaas</a>
           </p>
           {/* Rights Reserved */}
           <p className="text-sm color-#000">

@@ -27,14 +27,15 @@ export default function HeroCarousel({ images = [], title = "" }) {
       <div className="container mx-auto">
         {/* ✅ Stop Carousel if only one image */}
         {images.length === 1 ? (
-          <div className="relative w-full h-[95vh] sm:h-[600px] overflow-hidden">
+          <div className="relative w-full h-[91vh] sm:h-[600px] overflow-hidden">
             <Image
               src={images[0].src}
               alt={images[0].alt}
               fill
-              className="object-inherit ios-fix"
+              style={{ height: "100%" }}
+              className="object-cover ios-fix"
               priority
-              sizes="100vw"
+              // sizes="100vw"
             />
           </div>
         ) : (
@@ -54,7 +55,7 @@ export default function HeroCarousel({ images = [], title = "" }) {
                   </div>
                 </CarouselItem>
               ))}
-            </CarouselContent>
+            </CarouselContent>  
           </Carousel>
         )}
 

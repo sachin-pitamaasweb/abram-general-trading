@@ -10,10 +10,12 @@ export default function Footer() {
     <footer className="w-full bg-gray-50 py-8 px-4 md:px-6 lg:px-8">
       <div className="container mx-auto">
         <Card className="p-6 md:p-8 shadow-sm rounded-lg">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-[1864px] mx-auto justify-items-center">
+
             {/* Logo Column */}
             <div className="flex flex-col items-center justify-center lg:items-start">
-              <div className="relative h-24 w-24 overflow-hidden">
+             <Link href="/">
+             <div className="relative h-24 w-24 overflow-hidden">
                 <Image
                   src={Logo}
                   alt="Company Logo"
@@ -22,26 +24,27 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
+             </Link>
             </div>
 
             {/* Quick Links Column */}
             <nav className="flex flex-col items-center lg:items-start space-y-3">
-              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-gray-400 pb-1">
+              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b  hover:border-[#FCCD4E]-400 pb-1">
                 HOME
               </Link>
-              <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-gray-400 pb-1">
+              <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b  hover:border-[#FCCD4E]-400 pb-1">
                 ABOUT US
               </Link>
-              <Link href="/products" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-gray-400 pb-1">
+              <Link href="/products" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b  hover:border-[#FCCD4E]-400 pb-1">
                 OUR PRODUCTS
               </Link>
-              <Link href="/recipes" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-gray-400 pb-1">
+              <Link href="/recipes" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b  hover:border-[#FCCD4E]-400 pb-1">
                 RECIPES
               </Link>
-              <Link href="/gallery" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-gray-400 pb-1">
+              <Link href="/gallery" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-[#FCCD4E]-400 pb-1">
                 PHOTO GALLERY
               </Link>
-              <Link href="/contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-gray-400 pb-1">
+              <Link href="/contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover:border-b hover:border-[#FCCD4E]-400 pb-1">
                 CONTACT US
               </Link>
             </nav>
@@ -90,7 +93,7 @@ export default function Footer() {
             <p className="text-xs text-gray-600">
               Copyright by ARIRAM GENERAL TRADING {new Date().getFullYear()}
             </p>
-            <p className="text-xs text-gray-600">Design & Developed by PITAMAAS</p>
+            <p className="text-xs text-gray-600">Design & Developed by <a href="https://www.pitamaas.com/" className="hover:text-gray-900 hover:border-b  hover:border-[#FCCD4E]-400 transition-colors">PITAMAAS</a></p>
           </div>
         </div>
       </div>

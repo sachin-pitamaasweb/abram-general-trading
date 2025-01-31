@@ -4,9 +4,12 @@ import HeroCarouselMobile from "@/components/HeroCarousel/HeroCarouselMobile";
 import PresenceMap from "@/components/PresenceMap/PresenceMap";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import CardGrid from "@/components/CardGrid/CardGrid";
-import ProductShowcase from "@/components/ProductShowcase/ProductShowcase";
+import MahraDesktop from "@/components/MahraDesktop/MahraDesktop";
+import Mahra from "@/components/Mahra/Mahra";
 import PunjabKitchen from "@/components/PunjabKitchen/PunjabKitchen";
+import PunjabKitchenMobile from "@/components/PunjabKitchenMobile/PunjabKitchenMobile";
 import Zehnab from "@/components/Zehnab/Zehnab";
+import ZehnabMobile from "@/components/ZehnabMobile/ZehnabMobile";
 
 import { useMediaQuery } from "../hooks/use-media-query";
 
@@ -46,31 +49,31 @@ export default function Home() {
       )}
       <div className="container mx-auto p-12">
         <div className="max-w-5xl mx-auto" style={{ maxWidth: "90rem" }}>
-          <PunjabKitchen
+         { isMobile ? <PunjabKitchenMobile /> : <PunjabKitchen
             mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709738/924_fk0uix.png"
             additionalImages={additionalImagesForPunjab}
             title="Punjab Kitchen"
             bgGradient="linear-gradient(120deg, #000000, #3E403F 35%, #F74731 100%)"
-          />
+          />}
         </div>
       </div>
       <div className="container mx-auto p-12">
         <div className="max-w-5xl mx-auto" style={{ maxWidth: "90rem" }}>
-          <ProductShowcase
+        { isMobile ? <Mahra /> :  <MahraDesktop
             mainImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/923-Cyx2G6dVFzyTYE4sklNz6277Dy6eDD.png"
             additionalImages={additionalImages}
             bgGradient="linear-gradient(90deg, #FFFFFF -5%, #2384F6 100%, #52A2FF 45%)"
-          />
+          />}
         </div>
       </div>
       <div className="container mx-auto p-12">
         <div className="max-w-5xl mx-auto" style={{ maxWidth: "90rem" }}>
-          <Zehnab
+        { isMobile ? <ZehnabMobile /> :  <Zehnab
             mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709734/921_ybq4b7.png"
             additionalImages={additionalImagesForZehnab}
             title="Zehnab"
             bgGradient="linear-gradient(90deg, #FFF578 -15%, #35BE95 100%, #35BE95 45%)"
-          />
+          />}
         </div>
       </div>
       <CardGrid />

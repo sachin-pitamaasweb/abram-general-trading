@@ -103,12 +103,18 @@ const brandItems = [
         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048037/golden_star_rice_lqdibo.png",
         productName: "Indian Basmati Rice",
     },
-        {
+    {
         id: 7,
         logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047587/Frame_32_l9tk4q.png",
         productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048036/crystal_gold_18kg_back5v.png",
         productName: "Indian Sona Masoori Rice",
     },
+    {
+        id: 8,
+        logo: "https://res.cloudinary.com/dtivafy25/image/upload/v1738047588/Frame_34_c5n304.png",
+        productImage: "https://res.cloudinary.com/dtivafy25/image/upload/v1738048031/919_Red_Chilli_Powder_1.pdf_rzrvcm.png",
+        productName: "Red Chilli Powder",
+    }
 ];
 
 export default function BrandGrid() {

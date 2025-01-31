@@ -2,11 +2,8 @@
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react';
 
 export default function PrinciplesSection() {
-  const [hasAnimated, setHasAnimated] = useState(false);
-
   const principles = [
     {
       imageUrl: "https://res.cloudinary.com/dtivafy25/image/upload/v1736494626/img-1_vao3hs.png",
@@ -28,26 +25,28 @@ export default function PrinciplesSection() {
       imageUrl: "https://res.cloudinary.com/dtivafy25/image/upload/v1736494626/img-5_ncu3df.png",
       title: "DRIVEN TO INNOVATE",
     },
-  ]
+  ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16" style={{ maxWidth: "90rem" }}>
-       <motion.div 
-        className="text-left mb-8 md:mb-12"
+    <section className="w-full max-w-[90rem] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 py-16 md:py-20">
+      {/* Header Section */}
+      <motion.div
+        className="text-left mb-12 md:mb-16"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-black text-2xl md:text-4xl font-semibold mb-4 md:mb-6">
+        <h2 className="text-gray-900 text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
           OUR PRINCIPLES
         </h2>
-        <p className="text-gray-600 text-lg md:text-xl leading-relaxed mx-auto">
+        <p className="text-gray-700 text-lg sm:text-xl md:text-2xl leading-relaxed mx-auto">
           Committed to delivering superior-quality rice with sustainable practices,
           innovative solutions, and unwavering integrity.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 justify-center">
+      {/* Principles Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-center">
         {principles.map((principle, index) => (
           <motion.div
             key={index}
@@ -56,13 +55,12 @@ export default function PrinciplesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
           >
-            <Card 
-              className="border-none shadow-sm flex justify-center hover:scale-105 transition-transform duration-300"
+            <Card
+              className="border-none shadow-lg bg-white rounded-xl flex justify-center items-center h-[296px]"
             >
-              <CardContent className="flex flex-col items-center justify-center p-6 text-center">
+              <CardContent className="flex flex-col items-center justify-center p-8 text-center">
                 <motion.div
-                  className="mb-4 relative w-32 h-32"
-                  whileHover={{ scale: 1.1 }}
+                  className="mb-6 relative w-36 h-36"
                 >
                   <Image
                     src={principle.imageUrl}
@@ -72,7 +70,7 @@ export default function PrinciplesSection() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </motion.div>
-                <h3 className="font-medium text-lg tracking-wide">
+                <h3 className="font-semibold text-xl sm:text-2xl tracking-wide text-gray-900">
                   {principle.title}
                 </h3>
               </CardContent>
@@ -81,5 +79,5 @@ export default function PrinciplesSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }
