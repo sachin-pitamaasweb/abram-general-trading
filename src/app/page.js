@@ -23,6 +23,13 @@ export default function Home() {
     },
   ];
 
+  const mobileimages = [
+    {
+      src: "/images/home/banner.jpg",
+      alt: "Aerial view of agricultural fields showing farmers planting crops",
+    },
+  ];
+
   const additionalImagesForPunjab = [
     "https://res.cloudinary.com/dtivafy25/image/upload/v1737709736/uhlkuk_1_oubkrg.png",
     "https://res.cloudinary.com/dtivafy25/image/upload/v1737709735/287_c6r2ag.png",
@@ -43,7 +50,7 @@ export default function Home() {
   return (
     <>
       {isMobile ? (
-        <HeroCarouselMobile images={images} title="home" />
+        <HeroCarouselMobile images={mobileimages} title="home" />
       ) : (
         <HeroCarousel images={images} title="home" />
       )}
