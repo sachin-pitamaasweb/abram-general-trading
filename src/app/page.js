@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
 import HeroCarouselMobile from "@/components/HeroCarousel/HeroCarouselMobile";
 import PresenceMap from "@/components/PresenceMap/PresenceMap";
@@ -10,12 +11,18 @@ import PunjabKitchen from "@/components/PunjabKitchen/PunjabKitchen";
 import PunjabKitchenMobile from "@/components/PunjabKitchenMobile/PunjabKitchenMobile";
 import Zehnab from "@/components/Zehnab/Zehnab";
 import ZehnabMobile from "@/components/ZehnabMobile/ZehnabMobile";
-
+import { Skeleton } from "@/components/ui/skeleton";
 import { useMediaQuery } from "../hooks/use-media-query";
-
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width: 1024px)");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 100); // Simulating loading delay
+  }, []);
+
   const images = [
     {
       src: "https://res.cloudinary.com/dtivafy25/image/upload/v1737982615/Website_Banner_1_z46xsz.jpg",
@@ -50,42 +57,64 @@ export default function Home() {
   return (
     <>
       {isMobile ? (
-        <HeroCarouselMobile images={mobileimages} title="home" />
+        loading ? <Skeleton className="h-[400px] w-full rounded-md" /> : <HeroCarouselMobile images={mobileimages} title="home" />
       ) : (
-        <HeroCarousel images={images} title="home" />
+        loading ? <Skeleton className="h-[500px] w-full rounded-md" /> : <HeroCarousel images={images} title="home" />
       )}
+
       <div className="container mx-auto p-12">
         <div className="max-w-5xl mx-auto" style={{ maxWidth: "90rem" }}>
-         { isMobile ? <PunjabKitchenMobile /> : <PunjabKitchen
-            mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709738/924_fk0uix.png"
-            additionalImages={additionalImagesForPunjab}
-            title="Punjab Kitchen"
-            bgGradient="linear-gradient(120deg, #000000, #3E403F 35%, #F74731 100%)"
-          />}
+          {loading ? (
+            <Skeleton className="h-[400px] w-full rounded-md" />
+          ) : isMobile ? (
+            <PunjabKitchenMobile />
+          ) : (
+            <PunjabKitchen
+              mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709738/924_fk0uix.png"
+              additionalImages={additionalImagesForPunjab}
+              title="Punjab Kitchen"
+              bgGradient="linear-gradient(120deg, #000000, #3E403F 35%, #F74731 100%)"
+            />
+          )}
         </div>
       </div>
+
       <div className="container mx-auto p-12">
         <div className="max-w-5xl mx-auto" style={{ maxWidth: "90rem" }}>
-        { isMobile ? <Mahra /> :  <MahraDesktop
-            mainImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/923-Cyx2G6dVFzyTYE4sklNz6277Dy6eDD.png"
-            additionalImages={additionalImages}
-            bgGradient="linear-gradient(90deg, #FFFFFF -5%, #2384F6 100%, #52A2FF 45%)"
-          />}
+          {loading ? (
+            <Skeleton className="h-[400px] w-full rounded-md" />
+          ) : isMobile ? (
+            <Mahra />
+          ) : (
+            <MahraDesktop
+              mainImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/923-Cyx2G6dVFzyTYE4sklNz6277Dy6eDD.png"
+              additionalImages={additionalImages}
+              bgGradient="linear-gradient(90deg, #FFFFFF -5%, #2384F6 100%, #52A2FF 45%)"
+            />
+          )}
         </div>
       </div>
+
       <div className="container mx-auto p-12">
         <div className="max-w-5xl mx-auto" style={{ maxWidth: "90rem" }}>
-        { isMobile ? <ZehnabMobile /> :  <Zehnab
-            mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709734/921_ybq4b7.png"
-            additionalImages={additionalImagesForZehnab}
-            title="Zehnab"
-            bgGradient="linear-gradient(90deg, #FFF578 -15%, #35BE95 100%, #35BE95 45%)"
-          />}
+          {loading ? (
+            <Skeleton className="h-[400px] w-full rounded-md" />
+          ) : isMobile ? (
+            <ZehnabMobile />
+          ) : (
+            <Zehnab
+              mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709734/921_ybq4b7.png"
+              additionalImages={additionalImagesForZehnab}
+              title="Zehnab"
+              bgGradient="linear-gradient(90deg, #FFF578 -15%, #35BE95 100%, #35BE95 45%)"
+            />
+          )}
         </div>
       </div>
-      <CardGrid />
-      <PresenceMap />
-      <Testimonials />
+
+      {loading ? <Skeleton className="h-[400px] w-full rounded-md" /> : <CardGrid />}
+      {loading ? <Skeleton className="h-[400px] w-full rounded-md" /> : <PresenceMap />}
+      {loading ? <Skeleton className="h-[400px] w-full rounded-md" /> : <Testimonials />}
     </>
   );
 }

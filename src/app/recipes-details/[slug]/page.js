@@ -1,25 +1,47 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
 import { recipes } from "@/helpers/recipes";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function RecipeDetails() {
     const params = useParams();
     const router = useRouter();
     const { slug } = params;
+    
+    const [loading, setLoading] = useState(true);
+    const [recipe, setRecipe] = useState(null);
 
-    const images = [
-        {
-            src: "/images/Recipe/banner.jpg",
-            alt: "Aerial view of agricultural fields showing farmers planting crops",
-        },
-    ];
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            const foundRecipe = recipes.find((r) => r.title.toLowerCase().replace(/ /g, "-") === slug);
+            setRecipe(foundRecipe);
+            setLoading(false);
+        }, 500); // 🔥 Reduced load time to 500ms for quick rendering
+    }, [slug]);
 
-    const recipe = recipes.find((r) => r.title.toLowerCase().replace(/ /g, "-") === slug);
+    if (loading) {
+        return (
+            <section className="container mx-auto px-4 py-8" style={{ maxWidth: "90rem", marginTop: "100px" }}>
+                <Skeleton className="h-[50px] w-1/3 rounded-md mb-6" />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <Skeleton className="h-[250px] w-full rounded-md mb-6" />
+                        <Skeleton className="h-[20px] w-3/4 rounded-md mb-2" />
+                        <Skeleton className="h-[20px] w-1/2 rounded-md mb-2" />
+                        <Skeleton className="h-[20px] w-2/3 rounded-md mb-2" />
+                    </div>
+                    <div>
+                        <Skeleton className="h-[400px] w-full rounded-lg" />
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     if (!recipe) {
         return (
@@ -32,7 +54,6 @@ export default function RecipeDetails() {
 
     return (
         <>
-            {/* <HeroCarousel images={images} /> */}
             <section className="container mx-auto px-4 py-8" style={{ maxWidth: "90rem", marginTop: "100px" }}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Content */}
