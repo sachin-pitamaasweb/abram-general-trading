@@ -28,6 +28,14 @@ export default function Home() {
       src: "https://res.cloudinary.com/dtivafy25/image/upload/v1737982615/Website_Banner_1_z46xsz.jpg",
       alt: "Aerial view of agricultural fields showing farmers planting crops",
     },
+    {
+      src: "/images/home/banner-1.jpg",
+      alt: "Aerial view of agricultural fields showing farmers planting crops",
+    },
+    {
+      src: "/images/home/banner-2.jpg",
+      alt: "Aerial view of agricultural fields showing farmers planting crops",
+    }
   ];
 
   const mobileimages = [
@@ -35,6 +43,14 @@ export default function Home() {
       src: "/images/home/banner.jpg",
       alt: "Aerial view of agricultural fields showing farmers planting crops",
     },
+    {
+      src: "/images/home/mobile-1.jpg",
+      alt: "Aerial view of agricultural fields showing farmers planting crops",
+    },
+    {
+      src: "/images/home/mobile-2.jpg",
+      alt: "Aerial view of agricultural fields showing farmers planting crops",
+    }
   ];
 
   const additionalImagesForPunjab = [

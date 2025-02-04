@@ -43,12 +43,12 @@ export default function HeroCarousel({ images = [], title = "" }) {
             <CarouselContent>
               {images.map((image, index) => (
                 <CarouselItem key={index}>
-                  <div className="relative w-full h-[250px] sm:h-[300px] rounded-md overflow-hidden">
+                  <div className="relative w-full h-[91vh] sm:h-[600px] rounded-md overflow-hidden">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover ios-fix"
+                      className="object-fill ios-fix"
                       priority={index === 0}
                       sizes="100vw"
                     />

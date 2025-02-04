@@ -20,7 +20,7 @@ export default function HeroCarousel({ images = [], title = '' }) {
     }, [api]);
 
     return (
-        <div className="w-full px-4 pb-6 mt-5">
+        <div className="w-full px-4 pb-6 mt-[6rem]">
             <div className="container mx-auto">
                 <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
                     {images?.length > 0 && (
@@ -32,9 +32,9 @@ export default function HeroCarousel({ images = [], title = '' }) {
                                             src={image.src}
                                             alt={image.alt}
                                             fill
-                                            className="object-inherit transition-transform duration-300"
+                                            className="object-fill w-full h-full transition-transform duration-300"
                                             priority={index === 0}
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                                            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                                         />
                                         {/* Responsive Overlay Text */}
                                         {/* {title !== 'home' && (
