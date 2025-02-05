@@ -1,7 +1,6 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import WorldMap from "react-svg-worldmap";
 
 export default function PresenceMap() {
@@ -10,41 +9,6 @@ export default function PresenceMap() {
   useEffect(() => {
     setIsClient(true); // Ensure WorldMap only renders on the client
   }, []);
-
-  const fadeInVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
-
-  const animateParagraph = (text) => {
-    const words = text.split(" ");
-    return (
-      <motion.p
-        className="text-gray-600 text-sm sm:text-base leading-relaxed flex flex-wrap"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
-        }}
-      >
-        {words.map((word, index) => (
-          <motion.span
-            key={index}
-            className="mr-1"
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 },
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            {word}
-          </motion.span>
-        ))}
-      </motion.p>
-    );
-  };
 
   const countries = [
     "INDIA", "DUBAI", "TURKEY", "SAUDI ARABIA", "MADAGASCAR", "MIDDLE EAST", 
@@ -73,39 +37,21 @@ export default function PresenceMap() {
       <div className="mx-auto px-4 py-8 sm:py-12 lg:py-16" style={{ maxWidth: "90rem" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
-          <motion.div
-            className="space-y-4 text-center lg:text-left"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.5 }}
-            variants={fadeInVariants}
-          >
-            <motion.h2
-              className="text-4xl font-medium mb-8"
-              initial={{ opacity: 0, x: 50, scale: 0.8 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
+          <div className="space-y-4 text-center lg:text-left">
+            <h2 className="text-4xl font-medium mb-8">
               Global Presence
-            </motion.h2>
-            {animateParagraph(
-              "We have established a strong global presence, spanning across multiple continents and regions. Our operations extend from India to the Middle East, Europe, North America, Africa, and the Asia-Pacific region."
-            )}
-            {animateParagraph(
-              "This extensive international network allows us to serve a diverse range of markets efficiently, fostering global partnerships and driving innovation across borders. Our strategic presence in key locations worldwide reinforces our commitment to global excellence and sustainable growth."
-            )}
-          </motion.div>
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              We have established a strong global presence, spanning across multiple continents and regions. Our operations extend from India to the Middle East, Europe, North America, Africa, and the Asia-Pacific region.
+            </p>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              This extensive international network allows us to serve a diverse range of markets efficiently, fostering global partnerships and driving innovation across borders. Our strategic presence in key locations worldwide reinforces our commitment to global excellence and sustainable growth.
+            </p>
+          </div>
 
           {/* World Map */}
           {isClient && (
-            <motion.div
-              className="relative w-full aspect-[16/9] max-w-lg mx-auto lg:max-w-none"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.5 }}
-              variants={fadeInVariants}
-            >
+            <div className="relative w-full aspect-[16/9] max-w-lg mx-auto lg:max-w-none">
               <WorldMap
                 color="#09723C"
                 valueSuffix="presence"
@@ -114,7 +60,7 @@ export default function PresenceMap() {
                 tooltipBgColor="#09723C"
                 tooltipTextColor="#ffffff"
               />
-            </motion.div>
+            </div>
           )}
         </div>
       </div>

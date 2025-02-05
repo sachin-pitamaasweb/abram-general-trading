@@ -27,7 +27,7 @@ export default function MahraDesktop({ mainImage, additionalImages, className, t
     return (
         <div
             className={cn(
-                "relative w-full h-[480px] overflow-hidden rounded-xl p-4 sm:p-6 lg:p-8 transition-colors duration-500",
+                "relative w-full h-[520px] overflow-hidden rounded-xl p-4 sm:p-6 lg:p-8 transition-colors duration-500",
                 isHovered
                     ? "bg-gradient-to-r from-black via-gray-800 to-red-500"
                     : "bg-gradient-to-r from-black via-gray-800 to-red-500",

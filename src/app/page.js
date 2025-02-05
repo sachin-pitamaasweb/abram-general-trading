@@ -54,20 +54,18 @@ export default function Home() {
   ];
 
   const additionalImagesForPunjab = [
-    "https://res.cloudinary.com/dtivafy25/image/upload/v1737709736/uhlkuk_1_oubkrg.png",
-    "https://res.cloudinary.com/dtivafy25/image/upload/v1737709735/287_c6r2ag.png",
+    "https://res.cloudinary.com/dtivafy25/image/upload/v1738731381/Global_Agro_Rice00082_2_r08jgp.png",
+    "https://res.cloudinary.com/dtivafy25/image/upload/v1738731428/Global_Agro_Rice00084_3_mf1gi7.png",
   ];
 
   const additionalImages = [
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/292-3N5HVBHWlTvjp90jm8PXxthhj4CWFw.png",
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/288-06msZ9cT5lCwLII7rlvdTjKMtOtYhX.png",
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/290-HUFjz10t5mFMtM479ovCZYuqKBJ0V3.png",
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/291-lacqDIcsGp0Vzs3wjxF98KDrffSvI2.png",
+    "https://res.cloudinary.com/dtivafy25/image/upload/v1738731567/Global_Agro_Rice00358_uozdm7.png",
+    "https://res.cloudinary.com/dtivafy25/image/upload/v1738731564/Global_Agro_Rice00096_wu6ymw.png",
   ];
 
   const additionalImagesForZehnab = [
-    "https://res.cloudinary.com/dtivafy25/image/upload/v1737709734/295_spap4o.png",
-    "https://res.cloudinary.com/dtivafy25/image/upload/v1737709733/294_n8l0nj.png",
+    "https://res.cloudinary.com/dtivafy25/image/upload/v1738730867/Global_Agro_Rice00074_kork9c.png",
+    "https://res.cloudinary.com/dtivafy25/image/upload/v1738730867/Global_Agro_Rice00381_ins8su.png",
   ];
 
   return (
@@ -86,7 +84,7 @@ export default function Home() {
             <PunjabKitchenMobile />
           ) : (
             <PunjabKitchen
-              mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709738/924_fk0uix.png"
+              mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1738731106/Global_Agro_Rice00092_1_wfvxol.png"
               additionalImages={additionalImagesForPunjab}
               title="Punjab Kitchen"
               bgGradient="linear-gradient(120deg, #000000, #3E403F 35%, #F74731 100%)"
@@ -103,8 +101,9 @@ export default function Home() {
             <Mahra />
           ) : (
             <MahraDesktop
-              mainImage="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/923-Cyx2G6dVFzyTYE4sklNz6277Dy6eDD.png"
+              mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1738731567/Global_Agro_Rice00367_qpvsef.png"
               additionalImages={additionalImages}
+              title="Mahra"
               bgGradient="linear-gradient(90deg, #FFFFFF -5%, #2384F6 100%, #52A2FF 45%)"
             />
           )}
@@ -119,7 +118,7 @@ export default function Home() {
             <ZehnabMobile />
           ) : (
             <Zehnab
-              mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1737709734/921_ybq4b7.png"
+              mainImage="https://res.cloudinary.com/dtivafy25/image/upload/v1738730499/Global_Agro_Rice00410_mx7nmm.png"
               additionalImages={additionalImagesForZehnab}
               title="Zehnab"
               bgGradient="linear-gradient(90deg, #FFF578 -15%, #35BE95 100%, #35BE95 45%)"

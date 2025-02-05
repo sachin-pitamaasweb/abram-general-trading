@@ -27,7 +27,7 @@ export default function Zehnab({ mainImage, additionalImages, className, title, 
     return (
         <div
             className={cn(
-                "relative w-full h-[480px] overflow-hidden rounded-xl p-4 sm:p-6 lg:p-8 transition-colors duration-500",
+                "relative w-full h-[520px] overflow-hidden rounded-xl p-4 sm:p-6 lg:p-8 transition-colors duration-500",
                 isHovered
                     ? "bg-gradient-to-r from-black via-gray-800 to-red-500"
                     : "bg-gradient-to-r from-black via-gray-800 to-red-500",
@@ -50,7 +50,7 @@ export default function Zehnab({ mainImage, additionalImages, className, title, 
 
             {/* Product Images Container */}
             <motion.div
-                initial={{ y: 0, minHeight: "400px" }}
+                initial={{ y: 0, minHeight: "430px" }}
                 animate={{ y: isHovered ? -20 : 0, minHeight: isHovered ? "318px" : "400px" }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="relative flex justify-center items-center min-h-[200px] sm:min-h-[300px]"
